@@ -1,0 +1,122 @@
+.selected-work {
+  background: var(--color-bg-white);
+  overflow: hidden;
+}
+
+/* ─── Track ─── */
+.work-track {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--gutter);
+  padding-bottom: var(--space-lg);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.work-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Cards ─── */
+.work-card {
+  flex: 0 0 clamp(280px, 70vw, 420px);
+  scroll-snap-align: start;
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: var(--color-accent-lavender);
+}
+
+.work-card:nth-child(2) .work-card-image {
+  background: var(--color-accent-yellow);
+}
+
+.work-card:nth-child(3) .work-card-image {
+  background: var(--color-accent-teal);
+}
+
+.work-card:nth-child(4) .work-card-image {
+  background: var(--color-accent-lavender);
+}
+
+.work-card-content {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex: 1;
+}
+
+.work-situation {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.work-outcome {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* ─── CTA card ─── */
+.work-card--cta {
+  background: var(--color-text-primary);
+  padding: var(--space-xl);
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.work-cta-headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-subheadline);
+  color: var(--color-bg-warm);
+  line-height: 1.3;
+}
+
+.work-card--cta .btn {
+  border-color: var(--color-bg-warm);
+  color: var(--color-bg-warm);
+  align-self: flex-start;
+}
+
+.work-card--cta .btn:hover {
+  background: var(--color-bg-warm);
+  color: var(--color-text-primary);
+}
+
+/* ─── Dots ─── */
+.carousel-dots {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition-fast), width var(--transition-fast);
+}
+
+.carousel-dot--active {
+  background: var(--color-text-primary);
+  width: 20px;
+}

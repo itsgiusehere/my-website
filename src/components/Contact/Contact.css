@@ -1,0 +1,111 @@
+.contact {
+  background: var(--color-bg-warm);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* ─── Copy side ─── */
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact-headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.contact-sub {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.contact-linkedin {
+  align-self: flex-start;
+}
+
+/* ─── Form ─── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.form-input {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: border-color var(--transition-fast);
+  outline: none;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--color-text-primary);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-error {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: #c0392b;
+}
+
+/* ─── Success state ─── */
+.contact-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+}
+
+.contact-success-msg {
+  font-family: var(--font-serif);
+  font-size: var(--text-subheadline);
+  color: var(--color-text-primary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xxl);
+  }
+}

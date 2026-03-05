@@ -1,0 +1,38 @@
+.the-problem {
+  background: var(--color-bg-white);
+}
+
+.problem-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.problem-headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+}
+
+.problem-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.problem-body p {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .problem-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
