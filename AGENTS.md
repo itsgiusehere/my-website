@@ -98,3 +98,9 @@ If any agent's behaviour contradicts these files, the files win.
 | Cooper | Active | 2026-03-05 |
 | Bulk | Defined, not yet active | — |
 | Reviewer | Defined, not yet active | — |
+
+## Where We Left Off (2026-03-05)
+
+Doctrine and ecosystem fully set up. Ready to write content.
+
+**Next task for Cooper:** Draft copy for Section 1 — Hero. One-line positioning statement and CTA. Content must be approved before Bulk touches anything.

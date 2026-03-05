@@ -75,6 +75,13 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 - **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
 - **Call to action:** All three options (contact form, calendar link, LinkedIn DM) will be available. Final hierarchy — which is primary, which are secondary — is TBD.
+- **Site structure:** Single page, scroll-based, six sections in this order:
+  1. **Hero** — name, one-line positioning, primary CTA
+  2. **The problem** — name the situation clients are in before hiring Giuseppe
+  3. **How I work** — three engagement modes as a choice, not a process
+  4. **Selected work** — 2–3 outcome-framed case studies
+  5. **About** — who Giuseppe is, what he believes, personal not biographical
+  6. **Contact** — all three CTAs (calendar, form, LinkedIn)
 
 ## Open Questions
 
