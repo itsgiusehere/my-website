@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
+import illustration from '../../assets/illustration-how-i-work-vision-sprint.png'
 import './HowIWork.css'
 
 const DEFAULT_ACTIVE = 'vision-sprint'
@@ -22,9 +23,12 @@ export default function HowIWork() {
         <p className="section-label" id="hiw-label">How I work</p>
         <div ref={ref} className="hiw-layout fade-up">
           <div className="hiw-left">
-            <div className="hiw-illustration img-placeholder" aria-hidden="true">
-              Illustration — Coming Soon
-            </div>
+            <img
+              src={illustration}
+              alt=""
+              aria-hidden="true"
+              className="hiw-illustration"
+            />
             <p className="hiw-statement" key={activeId}>
               {activeMode?.statement}
             </p>

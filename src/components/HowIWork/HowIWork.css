@@ -26,8 +26,8 @@
 
 .hiw-illustration {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: var(--color-accent-lavender);
+  height: auto;
+  display: block;
 }
 
 .hiw-statement {
