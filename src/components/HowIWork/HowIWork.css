@@ -33,7 +33,6 @@
 .hiw-statement {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2.2vw, 1.625rem);
-  font-style: italic;
   line-height: 1.5;
   color: var(--color-text-primary);
 }
@@ -58,9 +57,7 @@
 }
 
 .accordion-item--open .accordion-title {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .accordion-trigger {
@@ -122,12 +119,10 @@
   margin-top: var(--space-xl);
   padding-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.75;
   color: var(--color-text-secondary);
-  font-style: italic;
-  letter-spacing: 0.01em;
 }
 
 /* ─── Mobile ─── */

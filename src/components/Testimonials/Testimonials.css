@@ -42,10 +42,9 @@
 
 .testimonial-quote p {
   font-family: var(--font-serif);
-  font-size: 1.0625rem;
+  font-size: var(--text-body);
   line-height: 1.75;
   color: var(--color-text-primary);
-  font-style: italic;
 }
 
 .testimonial-attribution {
