@@ -32,7 +32,6 @@ export default function Accordion({ items, activeId, onToggle }) {
               onClick={() => onToggle(item.id)}
             >
               <span className="accordion-title">{item.title}</span>
-              <span className="accordion-duration">{item.duration}</span>
               <span className="accordion-chevron" aria-hidden="true">
                 {isOpen ? '−' : '+'}
               </span>
@@ -43,7 +42,10 @@ export default function Accordion({ items, activeId, onToggle }) {
               aria-labelledby={headingId}
               className="accordion-panel"
             >
-              <p className="accordion-body">{item.body}</p>
+              <div className="accordion-panel-inner">
+                <p className="accordion-duration">{item.duration}</p>
+                <p className="accordion-body">{item.body}</p>
+              </div>
             </div>
           </div>
         )

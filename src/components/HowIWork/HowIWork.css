@@ -1,5 +1,5 @@
 .how-i-work {
-  background: var(--color-bg-warm);
+  background: var(--color-bg-white);
 }
 
 .hiw-inner {
@@ -26,6 +26,7 @@
 
 .hiw-illustration {
   width: 100%;
+  max-width: 320px;
   height: auto;
   display: block;
 }
@@ -80,12 +81,6 @@
   flex: 1;
 }
 
-.accordion-duration {
-  font-size: var(--text-small);
-  color: var(--color-text-secondary);
-  white-space: nowrap;
-}
-
 .accordion-chevron {
   font-size: var(--text-body);
   color: var(--color-text-secondary);
@@ -105,8 +100,18 @@
   grid-template-rows: 1fr;
 }
 
-.accordion-body {
+.accordion-panel-inner {
   overflow: hidden;
+}
+
+.accordion-duration {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  padding: 0 var(--space-lg) var(--space-sm);
+}
+
+.accordion-body {
   padding: 0 var(--space-lg) var(--space-lg);
   font-family: var(--font-sans);
   font-size: var(--text-body);
