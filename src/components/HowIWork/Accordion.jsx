@@ -43,19 +43,23 @@ export default function Accordion({ items, activeId, onToggle }) {
               className="accordion-panel"
             >
               <div className="accordion-panel-inner">
-                <div className="accordion-panel-header">
+                <div className={`accordion-panel-content${item.illustration ? ' accordion-panel-content--with-visual' : ''}`}>
+                  <div className="accordion-panel-text">
+                    <p className="accordion-duration">{item.duration}</p>
+                    <p className="accordion-statement">{item.statement}</p>
+                    <p className="accordion-body">{item.body}</p>
+                  </div>
                   {item.illustration && (
-                    <img
-                      src={item.illustration}
-                      alt=""
-                      aria-hidden="true"
-                      className="accordion-illustration"
-                    />
+                    <div className="accordion-panel-visual">
+                      <img
+                        src={item.illustration}
+                        alt=""
+                        aria-hidden="true"
+                        className="accordion-illustration"
+                      />
+                    </div>
                   )}
-                  <p className="accordion-statement">{item.statement}</p>
                 </div>
-                <p className="accordion-duration">{item.duration}</p>
-                <p className="accordion-body">{item.body}</p>
               </div>
             </div>
           </div>

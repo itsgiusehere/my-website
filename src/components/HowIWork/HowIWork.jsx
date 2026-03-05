@@ -9,14 +9,12 @@ const ILLUSTRATIONS = {
   'vision-sprint': illustrationVisionSprint,
 }
 
-const DEFAULT_ACTIVE = 'vision-sprint'
-
 export default function HowIWork() {
-  const [activeId, setActiveId] = useState(DEFAULT_ACTIVE)
+  const [activeId, setActiveId] = useState(null)
   const ref = useFadeIn()
 
   function handleToggle(id) {
-    setActiveId(id === activeId ? activeId : id)
+    setActiveId(id === activeId ? null : id)
   }
 
   const itemsWithIllustrations = engagementModes.map((m) => ({
