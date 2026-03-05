@@ -18,10 +18,11 @@
 
 .contact-headline {
   font-family: var(--font-serif);
-  font-size: var(--text-headline);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--color-text-primary);
+  letter-spacing: -0.01em;
 }
 
 .contact-sub {
@@ -50,26 +51,33 @@
 
 .form-label {
   font-family: var(--font-sans);
-  font-size: var(--text-label);
+  font-size: var(--text-small);
   font-weight: 500;
-  color: var(--color-text-primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
 
 .form-input {
   font-family: var(--font-sans);
   font-size: var(--text-body);
   color: var(--color-text-primary);
-  background: var(--color-bg-white);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--color-border);
+  border-radius: 0;
+  padding: var(--space-md) 0;
   transition: border-color var(--transition-fast);
   outline: none;
   width: 100%;
 }
 
 .form-input:focus {
-  border-color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-primary);
+}
+
+.form-input::placeholder {
+  color: var(--color-border);
 }
 
 .form-textarea {

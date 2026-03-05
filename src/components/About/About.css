@@ -37,29 +37,42 @@
 }
 
 .about-beliefs-intro {
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .about-beliefs {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-sm);
 }
 
 .about-belief {
   display: flex;
   gap: var(--space-md);
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .belief-marker {
   flex-shrink: 0;
-  color: var(--color-text-primary);
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  padding-top: 0.15em;
 }
 
 @media (max-width: 768px) {

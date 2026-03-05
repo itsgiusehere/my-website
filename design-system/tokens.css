@@ -19,11 +19,15 @@
 
   /* Type scale */
   --text-display: clamp(2.25rem, 5vw, 3.5rem);
+  --text-display-lg: clamp(3rem, 7vw, 5rem);
   --text-headline: clamp(1.75rem, 3vw, 2.25rem);
   --text-subheadline: 1.25rem;
   --text-body: 1rem;
   --text-label: 0.875rem;
   --text-small: 0.8125rem;
+
+  /* Layout */
+  --nav-height: 60px;
 
   /* Spacing scale */
   --space-xs: 4px;
@@ -45,7 +49,7 @@
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
   --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.1);
 
-  /* Layout */
+  /* Layout widths */
   --max-width: 1200px;
   --content-width: 760px;
   --gutter: clamp(1.25rem, 5vw, 3rem);

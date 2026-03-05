@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { submitContactForm } from '../../../services/contact.js'
+import { useFadeIn } from '../../hooks/useFadeIn.js'
 import './Contact.css'
 
 const INITIAL = { name: '', company: '', message: '' }
@@ -27,9 +28,11 @@ export default function Contact() {
     }
   }
 
+  const ref = useFadeIn()
+
   return (
     <section className="contact" id="contact" aria-labelledby="contact-headline">
-      <div className="section-wrapper contact-inner">
+      <div ref={ref} className="section-wrapper contact-inner fade-up">
         <div className="contact-copy">
           <h2 className="contact-headline" id="contact-headline">
             Let's find out if we're a fit.

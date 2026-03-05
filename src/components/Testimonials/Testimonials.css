@@ -11,17 +11,38 @@
   break-inside: avoid;
   background: var(--color-bg-white);
   border-radius: var(--radius-card);
-  padding: var(--space-xl);
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
   margin-bottom: var(--space-xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative oversized quote mark */
+.testimonial-mark {
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--color-accent-lavender);
+  position: absolute;
+  top: -8px;
+  left: var(--space-lg);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+}
+
+.testimonial-quote {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-xl);
 }
 
 .testimonial-quote p {
   font-family: var(--font-serif);
-  font-size: var(--text-body);
+  font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--color-text-primary);
   font-style: italic;
@@ -31,6 +52,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
 }
 
 .testimonial-name {

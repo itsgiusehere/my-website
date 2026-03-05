@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { engagementModes } from '../../../core/content.js'
+import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
 import './HowIWork.css'
 
@@ -7,6 +8,7 @@ const DEFAULT_ACTIVE = 'vision-sprint'
 
 export default function HowIWork() {
   const [activeId, setActiveId] = useState(DEFAULT_ACTIVE)
+  const ref = useFadeIn()
 
   const activeMode = engagementModes.find((m) => m.id === activeId)
 
@@ -18,7 +20,7 @@ export default function HowIWork() {
     <section className="how-i-work" id="how-i-work" aria-labelledby="hiw-label">
       <div className="section-wrapper hiw-inner">
         <p className="section-label" id="hiw-label">How I work</p>
-        <div className="hiw-layout">
+        <div ref={ref} className="hiw-layout fade-up">
           <div className="hiw-left">
             <div className="hiw-illustration img-placeholder" aria-hidden="true">
               Illustration — Coming Soon
