@@ -15,27 +15,25 @@ export default function About() {
     <section className="about" id="about" aria-labelledby="about-headline">
       <div className="section-wrapper about-inner">
         <p className="section-label">About</p>
-        <div ref={ref} className="about-content fade-up">
+        <div ref={ref} className="about-body fade-up">
           <h2 className="about-headline" id="about-headline">
             I went independent to move faster.
           </h2>
-          <div className="about-body">
-            <p>
-              Inside one company, you see one context. Working across logistics, fintech, hardware, music software, and manufacturing — you cross-pollinate. You bring approaches that teams inside one industry rarely encounter. And you can focus on what actually moves things forward, without internal politics slowing you down.
-            </p>
-            <p>
-              I've been doing this for 15+ years, based in Berlin, working globally.
-            </p>
-            <p className="about-beliefs-intro">A few things I hold to:</p>
-            <ul className="about-beliefs" role="list">
-              {beliefs.map((belief, i) => (
-                <li key={i} className="about-belief">
-                  <span className="belief-marker" aria-hidden="true">—</span>
-                  <span>{belief}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p>
+            Inside one company, you see one context. Working across logistics, fintech, hardware, music software, and manufacturing — you cross-pollinate. You bring approaches that teams inside one industry rarely encounter. And you can focus on what actually moves things forward, without internal politics slowing you down.
+          </p>
+          <p>
+            I've been doing this for 15+ years, based in Berlin, working globally.
+          </p>
+          <p className="about-beliefs-intro">A few things I hold to:</p>
+          <ul className="about-beliefs" role="list">
+            {beliefs.map((belief, i) => (
+              <li key={i} className="about-belief">
+                <span className="belief-marker" aria-hidden="true">—</span>
+                <span>{belief}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

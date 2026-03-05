@@ -12,7 +12,6 @@ export default function Testimonials() {
         <div ref={ref} className="testimonials-grid fade-up">
           {testimonials.map((t) => (
             <figure key={t.id} className="testimonial-card">
-              <span className="testimonial-mark" aria-hidden="true">"</span>
               <blockquote className="testimonial-quote">
                 <p>{t.quote}</p>
               </blockquote>
