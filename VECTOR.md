@@ -83,6 +83,10 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
   5. **About** — who Giuseppe is, what he believes, personal not biographical
   6. **Contact** — all three CTAs (calendar, form, LinkedIn)
 
+## Next Session
+
+**Start here:** Review the six-section site structure with Giuseppe before writing any copy. Confirm the order, the section jobs, and whether anything is missing or should be cut.
+
 ## Open Questions
 
 - What does a client need to see to move from "interesting" to "I want to reach out"?
