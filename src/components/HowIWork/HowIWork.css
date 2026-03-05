@@ -8,46 +8,33 @@
   gap: var(--space-xxl);
 }
 
-.hiw-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: start;
-}
-
-/* ─── Left side ─── */
-.hiw-left {
+.hiw-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
-  position: sticky;
-  top: calc(60px + var(--space-xl));
 }
 
-.hiw-illustration {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  display: block;
-}
-
-.hiw-statement {
+/* ─── Differentiator — section intro ─── */
+.hiw-differentiator {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2.2vw, 1.625rem);
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--color-text-primary);
+  max-width: 48rem;
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ─── Accordion ─── */
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 .accordion-item {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   transition: border-color var(--transition-base), background var(--transition-base);
 }
@@ -57,36 +44,38 @@
   background: var(--accent);
 }
 
-.accordion-item--open .accordion-title {
-  font-weight: 500;
-}
-
 .accordion-trigger {
   width: 100%;
   display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-lg);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-xxl);
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: var(--font-sans);
 }
 
 .accordion-title {
-  font-size: var(--text-body);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: var(--text-display-lg);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   color: var(--color-text-primary);
-  flex: 1;
+}
+
+.accordion-item--open .accordion-title {
+  font-weight: 400;
 }
 
 .accordion-chevron {
-  font-size: var(--text-body);
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
   color: var(--color-text-secondary);
   line-height: 1;
-  width: 20px;
-  text-align: center;
   flex-shrink: 0;
 }
 
@@ -104,40 +93,53 @@
   overflow: hidden;
 }
 
+/* ─── Panel header: illustration + statement ─── */
+.accordion-panel-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: 0 var(--space-xxl) var(--space-lg);
+}
+
+.accordion-illustration {
+  width: 140px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.accordion-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.375rem);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* ─── Panel body ─── */
 .accordion-duration {
   font-family: var(--font-sans);
   font-size: var(--text-small);
   color: var(--color-text-secondary);
-  padding: 0 var(--space-lg) var(--space-sm);
+  padding: 0 var(--space-xxl) var(--space-sm);
 }
 
 .accordion-body {
-  padding: 0 var(--space-lg) var(--space-lg);
+  padding: 0 var(--space-xxl) var(--space-xxl);
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.7;
   color: var(--color-text-secondary);
-}
-
-/* ─── Differentiator ─── */
-.hiw-differentiator {
-  margin-top: var(--space-xl);
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-border);
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.75;
-  color: var(--color-text-secondary);
+  max-width: 48rem;
 }
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .hiw-layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-xxl);
+  .accordion-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
   }
 
-  .hiw-left {
-    position: static;
+  .accordion-illustration {
+    width: 100px;
   }
 }

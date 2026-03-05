@@ -2,7 +2,7 @@ import { useId } from 'react'
 
 /**
  * @param {{
- *   items: Array<{ id: string, title: string, duration: string, body: string, accent: string }>,
+ *   items: Array<{ id: string, title: string, duration: string, body: string, accent: string, statement: string, illustration: string|null }>,
  *   activeId: string,
  *   onToggle: (id: string) => void
  * }} props
@@ -43,6 +43,17 @@ export default function Accordion({ items, activeId, onToggle }) {
               className="accordion-panel"
             >
               <div className="accordion-panel-inner">
+                <div className="accordion-panel-header">
+                  {item.illustration && (
+                    <img
+                      src={item.illustration}
+                      alt=""
+                      aria-hidden="true"
+                      className="accordion-illustration"
+                    />
+                  )}
+                  <p className="accordion-statement">{item.statement}</p>
+                </div>
                 <p className="accordion-duration">{item.duration}</p>
                 <p className="accordion-body">{item.body}</p>
               </div>
