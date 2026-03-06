@@ -37,6 +37,11 @@
   transition: border-color var(--transition-base), background var(--transition-base);
 }
 
+.accordion-item:hover {
+  border-color: transparent;
+  background: var(--accent);
+}
+
 .accordion-item--open {
   border-color: transparent;
   background: var(--accent);
@@ -69,12 +74,41 @@
 }
 
 .accordion-chevron {
-  font-family: var(--font-serif);
-  font-size: var(--text-display);
-  font-weight: 400;
-  color: var(--color-text-secondary);
-  line-height: 1;
+  position: relative;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+  align-self: center;
+}
+
+.accordion-chevron::before,
+.accordion-chevron::after {
+  content: '';
+  position: absolute;
+  background: var(--color-text-secondary);
+  top: 50%;
+  left: 50%;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* horizontal bar */
+.accordion-chevron::before {
+  width: 24px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+
+/* vertical bar */
+.accordion-chevron::after {
+  width: 1px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+
+/* open state: fade and rotate vertical bar out */
+.accordion-chevron--open::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .accordion-panel {
@@ -146,7 +180,7 @@
 }
 
 .accordion-illustration {
-  width: 300px;
+  width: 360px;
   height: auto;
 }
 

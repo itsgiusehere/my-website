@@ -32,9 +32,7 @@ export default function Accordion({ items, activeId, onToggle }) {
               onClick={() => onToggle(item.id)}
             >
               <span className="accordion-title">{item.title}</span>
-              <span className="accordion-chevron" aria-hidden="true">
-                {isOpen ? '−' : '+'}
-              </span>
+              <span className={`accordion-chevron${isOpen ? ' accordion-chevron--open' : ''}`} aria-hidden="true" />
             </button>
             <div
               id={panelId}

@@ -1,25 +1,37 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
 import illustrationVisionSprint from '../../assets/illustration-how-i-work-vision-sprint.png'
+import illustrationEmbedded from '../../assets/illustration-embedded-leadership.png'
+import illustrationStrategicClarity from '../../assets/illustration-strategic-clarity.png'
 import './HowIWork.css'
 
 const ILLUSTRATIONS = {
   'vision-sprint': illustrationVisionSprint,
+  'embedded': illustrationEmbedded,
+  'strategic-clarity': illustrationStrategicClarity,
 }
 
 export default function HowIWork() {
   const [activeId, setActiveId] = useState(null)
   const ref = useFadeIn()
 
+  useLayoutEffect(() => {
+    const section = document.getElementById('how-i-work')
+    if (!section) return
+    const rect = section.getBoundingClientRect()
+    document.body.classList.toggle('bg-white', rect.top < window.innerHeight && rect.bottom > 0)
+  }, [])
+
   useEffect(() => {
     const section = document.getElementById('how-i-work')
+    if (!section) return
     const observer = new IntersectionObserver(
       ([entry]) => document.body.classList.toggle('bg-white', entry.isIntersecting),
       { threshold: 0.1 }
     )
-    if (section) observer.observe(section)
+    observer.observe(section)
     return () => observer.disconnect()
   }, [])
 
