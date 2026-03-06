@@ -8,7 +8,7 @@ vector_version: "0.1"
 project:
   name: "Giuseppe de Cesare — Strategic Designer"
   description: "Personal website for a freelance strategic designer to attract and convert senior design and product leaders seeking project-based collaboration."
-  stage: "definition"
+  stage: "draft-built"
   started: "2026-03-05"
   repo: ""
 
@@ -64,6 +64,19 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Competitive Analysis | Not started | `./vector/research/competitive/` |
 | Assumptions | Not started | `./vector/research/assumptions/` |
 
+## Build Status
+
+| Section | Copy | Component | Notes |
+|---------|------|-----------|-------|
+| Hero | Done | Done | Profile picture, headline, subheadline, scroll CTA |
+| The Problem | Done | Done | Two-paragraph framing, illustration |
+| How I Work | Done | Done | Three engagement modes in accordion; content in `core/content.js` |
+| Selected Work | Done | Done | Four outcome-framed case studies in carousel + CTA card; images are placeholders |
+| Testimonials | Done | Done | Seven testimonials from real clients; not in original six-section plan — added during build |
+| About | Done | Done | Personal voice, four beliefs |
+| Contact | Done | Done | Contact form (functional) + LinkedIn link; calendar link TBD |
+| Nav | Done | Done | Present, not yet detailed in spec |
+
 ## Key Assumptions (Seed These Early)
 
 1. **Primary clients find this site before reaching out** — They discover Giuseppe via LinkedIn, referral, or search, then visit the site to validate whether to engage. The site is a conversion tool, not a discovery tool. — *hypothesis*
@@ -85,13 +98,16 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 ## Next Session
 
-**Start here:** Review the six-section site structure with Giuseppe before writing any copy. Confirm the order, the section jobs, and whether anything is missing or should be cut.
+**Start here:** Review the built draft end-to-end. All sections have real copy and functional components. Open items: case study images (currently placeholders), calendar link in Contact, final sign-off on copy and visual design.
 
 ## Open Questions
 
 - What does a client need to see to move from "interesting" to "I want to reach out"?
 - How much of Giuseppe's personal POV and beliefs should surface on the site — and where?
 - Which CTA should be the primary prompt? Calendar link (low friction, high intent signal), contact form (more context, slightly more effort), or LinkedIn (familiar but off-site)?
+- Calendar link: not yet added to Contact section — decide on tool (Cal.com, Calendly, etc.) and add.
+- Case study images: currently placeholders — decide whether to use real visuals, illustrations, or keep text-only cards.
+- Testimonials section: added during build, not in original six-section plan — confirm it stays and where it sits in the flow.
 
 ---
 
