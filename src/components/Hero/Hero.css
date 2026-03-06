@@ -58,7 +58,7 @@
 /* ─── Subheadline ─── */
 .hero-subheadline {
   font-family: var(--font-sans);
-  font-size: var(--text-subheadline);
+  font-size: var(--text-body);
   line-height: 1.7;
   color: var(--color-text-secondary);
   max-width: 800px;

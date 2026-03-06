@@ -1,5 +1,5 @@
 .selected-work {
-  background: var(--color-bg-white);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -81,7 +81,7 @@
 
 .work-cta-headline {
   font-family: var(--font-serif);
-  font-size: var(--text-subheadline);
+  font-size: var(--text-body);
   color: var(--color-bg-warm);
   line-height: 1.3;
 }

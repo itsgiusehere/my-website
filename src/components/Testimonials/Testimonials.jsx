@@ -1,9 +1,20 @@
+import { useEffect } from 'react'
 import { testimonials } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import './Testimonials.css'
 
 export default function Testimonials() {
   const ref = useFadeIn()
+
+  useEffect(() => {
+    const section = document.getElementById('testimonials')
+    const observer = new IntersectionObserver(
+      ([entry]) => document.body.classList.toggle('bg-white', !entry.isIntersecting),
+      { threshold: 0.1 }
+    )
+    if (section) observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="testimonials" id="testimonials" aria-labelledby="testimonials-label">

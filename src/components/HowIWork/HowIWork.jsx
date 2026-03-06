@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
@@ -12,6 +12,16 @@ const ILLUSTRATIONS = {
 export default function HowIWork() {
   const [activeId, setActiveId] = useState(null)
   const ref = useFadeIn()
+
+  useEffect(() => {
+    const section = document.getElementById('how-i-work')
+    const observer = new IntersectionObserver(
+      ([entry]) => document.body.classList.toggle('bg-white', entry.isIntersecting),
+      { threshold: 0.1 }
+    )
+    if (section) observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
 
   function handleToggle(id) {
     setActiveId(id === activeId ? null : id)

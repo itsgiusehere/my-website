@@ -1,8 +1,8 @@
 import './Nav.css'
 
 const links = [
-  { label: 'Work', href: '#work' },
   { label: 'How I work', href: '#how-i-work' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'About', href: '#about' },
 ]
 
