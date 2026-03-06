@@ -10,7 +10,7 @@ export default function Nav() {
   return (
     <nav className="nav" aria-label="Main navigation">
       <div className="nav-inner">
-        <a href="#hero" className="nav-name">Giuseppe de Cesare</a>
+        <a href="#hero" className="nav-identity" aria-label="Back to top" />
         <ul className="nav-links" role="list">
           {links.map(({ label, href }) => (
             <li key={href}>
