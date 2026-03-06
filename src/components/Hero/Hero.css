@@ -13,38 +13,41 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-lg);
   max-width: 1200px;
 }
 
+/* ─── Intro block: avatar + name ─── */
 .hero-intro {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-lg);
-  max-width: 800px;
-  margin-top: var(--space-3xl);
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .hero-avatar {
-  width: 88px;
-  height: 88px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .hero-name {
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
 }
 
+/* ─── Headline ─── */
 .hero-headline {
   font-family: var(--font-serif);
   font-size: var(--text-display-lg);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--color-text-primary);
   letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin-top: var(--space-xl);
 }
 
 .hero-headline em {
@@ -52,14 +55,21 @@
   color: var(--color-text-secondary);
 }
 
+/* ─── Subheadline ─── */
 .hero-subheadline {
   font-family: var(--font-sans);
   font-size: var(--text-subheadline);
   line-height: 1.7;
   color: var(--color-text-secondary);
   max-width: 800px;
+  margin-top: var(--space-3xl);
 }
 
+.hero-subheadline mark {
+  background: none;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
 
 /* ─── Scroll indicator ─── */
 .hero-scroll {
