@@ -66,16 +66,18 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 ## Build Status
 
+**Bulk owns this table.** Update it at the end of every session — no need to route through Cooper or Giuseppe unless a strategic question surfaces.
+
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Done | Done | Profile picture, headline, subheadline, scroll CTA |
-| The Problem | Done | Done | Two-paragraph framing, illustration |
-| How I Work | Done | Done | Three engagement modes in accordion; content in `core/content.js` |
-| Selected Work | Done | Done | Four outcome-framed case studies in carousel + CTA card; images are placeholders |
-| Testimonials | Done | Done | Seven testimonials from real clients; not in original six-section plan — added during build |
-| About | Done | Done | Personal voice, four beliefs |
-| Contact | Done | Done | Contact form (functional) + LinkedIn link; calendar link TBD |
-| Nav | Done | Done | Present, not yet detailed in spec |
+| Hero | Reviewed | Done | Profile picture, headline, subheadline, scroll CTA |
+| The Problem | Reviewed | Done | Two-paragraph framing, illustration |
+| How I Work | Reviewed | Done | Three engagement modes in accordion; content in `core/content.js` |
+| Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
+| Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
+| About | Reviewed | Done | Personal voice, four beliefs |
+| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD |
+| Nav | Reviewed | Done | Present and functional |
 
 ## Key Assumptions (Seed These Early)
 
@@ -95,10 +97,6 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
   4. **Selected work** — 2–3 outcome-framed case studies
   5. **About** — who Giuseppe is, what he believes, personal not biographical
   6. **Contact** — all three CTAs (calendar, form, LinkedIn)
-
-## Next Session
-
-**Start here:** Review the built draft end-to-end. All sections have real copy and functional components. Open items: case study images (currently placeholders), calendar link in Contact, final sign-off on copy and visual design.
 
 ## Open Questions
 
