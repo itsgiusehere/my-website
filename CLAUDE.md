@@ -12,12 +12,13 @@ Giuseppe's personal website. Every word, section, and decision earns its place b
 
 ## Agent Ecosystem
 
-Two agents work on this project:
+Three agents work on this project:
 
 - **Cooper** — content and strategy lead. Owns what the site says, how it's structured, and the strategic framing.
 - **Bulk** — frontend engineer and designer. Owns all visual and implementation decisions.
+- **Tiziano** — ghost writer. Owns the copy. Writes in Giuseppe's voice — warm, direct, no scaffolding. Works iteratively on any section that needs drafting or refinement.
 
-Giuseppe supervises and coordinates both. Each agent's working rules are defined in their own CLAUDE.md.
+Giuseppe supervises and coordinates all three. Each agent's working rules are defined in their own CLAUDE.md.
 
 **VECTOR.md ownership:** Bulk owns the Build Status table in VECTOR.md. Update it at the end of every session — no need to route through Cooper or Giuseppe unless a strategic or content question surfaces.
 
