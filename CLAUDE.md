@@ -19,6 +19,8 @@ Two agents work on this project:
 
 Giuseppe supervises and coordinates both. Each agent's working rules are defined in their own CLAUDE.md.
 
+**VECTOR.md ownership:** Bulk owns the Build Status table in VECTOR.md. Update it at the end of every session — no need to route through Cooper or Giuseppe unless a strategic or content question surfaces.
+
 ---
 
 ## Sequencing
