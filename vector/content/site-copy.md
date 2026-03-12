@@ -21,6 +21,8 @@ Design leaders and CPOs bring me in when everyone has a different picture of whe
 
 ## Section 2: The Problem
 
+**Section label:** Where things usually start
+
 **Situation 1 — The vision only you can see**
 You have a clear direction in your head but you can't get others to see it the same way yet. Every conversation feels like starting from scratch. What's needed is something concrete enough for people to commit to and build from.
 
