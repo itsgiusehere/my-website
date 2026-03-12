@@ -1,0 +1,133 @@
+/* ─── Variant A — Vertical flow with sticky illustration ─── */
+
+/* Two columns: situations scroll on the left, illustration sticks on the right */
+.problem-a-scroll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+}
+
+/* ─── Situations column: natural vertical flow ─── */
+.problem-a-situations {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.problem-a-situation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.problem-a-situation--seen {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.problem-a-number {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-decorative);
+}
+
+.problem-a-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.problem-a-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
+/* ─── Sticky illustration column ─── */
+.problem-a-sticky {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-xl));
+  align-self: start;
+  height: fit-content;
+}
+
+.problem-a-visual {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+}
+
+.problem-a-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity var(--transition-base), filter var(--transition-base);
+}
+
+.problem-a-img--active {
+  opacity: 1;
+}
+
+/* Placeholder state variations — remove when real assets arrive */
+.problem-a-img--0 {
+  filter: none;
+}
+
+.problem-a-img--1 {
+  filter: hue-rotate(30deg) saturate(1.2);
+}
+
+.problem-a-img--2 {
+  filter: hue-rotate(60deg) saturate(1.4) brightness(1.05);
+}
+
+/* ─── Footer: closing + CTA ─── */
+.problem-a-footer {
+  margin-top: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.problem-a-closing {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
+/* ─── Mobile: no sticky, illustration before each situation ─── */
+@media (max-width: 768px) {
+  .problem-a-scroll {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-a-sticky {
+    display: none;
+  }
+
+  .problem-a-situation {
+    opacity: 1;
+    transform: none;
+  }
+}
