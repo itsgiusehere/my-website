@@ -21,9 +21,6 @@ Design leaders and CPOs bring me in when everyone has a different picture of whe
 
 ## Section 2: The Problem
 
-**Intro:**
-Most of the leaders who reach out are in one of these three places.
-
 **Situation 1 — The vision only you can see**
 You have a clear direction in your head but you can't get others to see it the same way yet. Every conversation feels like starting from scratch. What's needed is something concrete enough for people to commit to and build from.
 
@@ -33,8 +30,10 @@ You're steering something through significant change — org, product, technolog
 **Situation 3 — The bounded initiative**
 You have a specific area to move forward — a channel, a journey, an experience. The mandate exists. What's needed is someone to envision where it goes and co-create that with the teams involved.
 
-**Closing line:**
-Whatever the situation, you're looking for the same thing: someone senior enough to hold their own in a room full of stakeholders, carry the work forward, and move things without needing to be managed.
+**Closing line + CTA:**
+This is what I usually get hired for — and in each case, what makes it work is the same: someone senior enough to hold their own in a room full of stakeholders, carry the work forward, and move things without needing to be managed.
+
+[Get in touch →]
 
 ---
 
