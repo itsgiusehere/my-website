@@ -1,3 +1,33 @@
 .the-problem {
   background: transparent;
 }
+
+/* ─── Temporary variant toggle ─── */
+.problem-variant-toggle {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-3xl);
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  width: fit-content;
+}
+
+.problem-toggle-btn {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1;
+  padding: var(--space-xs) var(--space-md);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.problem-toggle-btn--active {
+  background: var(--color-text-primary);
+  color: var(--color-bg-warm);
+}

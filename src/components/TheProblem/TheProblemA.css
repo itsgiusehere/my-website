@@ -1,13 +1,18 @@
-/* ─── Variant A — Vertical flow with sticky illustration ─── */
+/* ─── Variant A — Scroll with dominant sticky illustration ─── */
 
-/* Two columns: situations scroll on the left, illustration sticks on the right */
+/* Two columns: content scrolls left, illustration anchors right */
 .problem-a-scroll {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
 }
 
-/* ─── Situations column: natural vertical flow ─── */
+/* ─── Left column: scrolling content ─── */
+.problem-a-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .problem-a-situations {
   list-style: none;
   padding: 0;
@@ -54,21 +59,39 @@
   font-size: var(--text-body);
   line-height: 1.8;
   color: var(--color-text-secondary);
-  max-width: 42rem;
 }
 
-/* ─── Sticky illustration column ─── */
+/* ─── Closing + CTA: part of the scrolling column ─── */
+.problem-a-closing {
+  margin-top: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.problem-a-closing-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* ─── Right column: sticky, viewport-centered illustration ─── */
 .problem-a-sticky {
   position: sticky;
-  top: calc(var(--nav-height) + var(--space-xl));
+  top: 50vh;
+  transform: translateY(-50%);
   align-self: start;
   height: fit-content;
+  display: flex;
+  justify-content: center;
 }
 
 .problem-a-visual {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   aspect-ratio: 1 / 1;
 }
 
@@ -99,31 +122,23 @@
   filter: hue-rotate(60deg) saturate(1.4) brightness(1.05);
 }
 
-/* ─── Footer: closing + CTA ─── */
-.problem-a-footer {
-  margin-top: var(--space-3xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  align-items: flex-start;
-}
-
-.problem-a-closing {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  max-width: 42rem;
-}
-
-/* ─── Mobile: no sticky, illustration before each situation ─── */
+/* ─── Mobile: no sticky, vertical stack ─── */
 @media (max-width: 768px) {
   .problem-a-scroll {
     grid-template-columns: 1fr;
   }
 
   .problem-a-sticky {
-    display: none;
+    position: relative;
+    top: auto;
+    transform: none;
+    order: -1;
+    margin-bottom: var(--space-xxl);
+  }
+
+  .problem-a-visual {
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .problem-a-situation {

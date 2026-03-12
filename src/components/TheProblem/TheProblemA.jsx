@@ -18,19 +18,26 @@ export default function TheProblemA() {
   return (
     <div ref={sectionRef} className="problem-a fade-up">
       <div className="problem-a-scroll">
-        <ol className="problem-a-situations" aria-label="Three common situations">
-          {problemContent.situations.map((s, i) => (
-            <li
-              key={s.id}
-              ref={el => setRef(el, i)}
-              className={`problem-a-situation${seen.has(i) ? ' problem-a-situation--seen' : ''}`}
-            >
-              <span className="problem-a-number" aria-hidden="true">{s.number}</span>
-              <h3 className="problem-a-title">{s.title}</h3>
-              <p className="problem-a-body">{s.body}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="problem-a-content">
+          <ol className="problem-a-situations" aria-label="Three common situations">
+            {problemContent.situations.map((s, i) => (
+              <li
+                key={s.id}
+                ref={el => setRef(el, i)}
+                className={`problem-a-situation${seen.has(i) ? ' problem-a-situation--seen' : ''}`}
+              >
+                <span className="problem-a-number" aria-hidden="true">{s.number}</span>
+                <h3 className="problem-a-title">{s.title}</h3>
+                <p className="problem-a-body">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="problem-a-closing">
+            <p className="problem-a-closing-text">{problemContent.closing}</p>
+            <a href="#contact" className="btn">{problemContent.cta} →</a>
+          </div>
+        </div>
 
         <div className="problem-a-sticky">
           <div className="problem-a-visual">
@@ -45,11 +52,6 @@ export default function TheProblemA() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="problem-a-footer">
-        <p className="problem-a-closing">{problemContent.closing}</p>
-        <a href="#contact" className="btn">{problemContent.cta} →</a>
       </div>
     </div>
   )

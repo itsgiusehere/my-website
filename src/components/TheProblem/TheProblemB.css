@@ -1,0 +1,187 @@
+/* ─── Variant B — Trident: illustration top, 1+2 side by side, 3 centered ─── */
+
+.problem-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Illustration ─── */
+.problem-b-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.problem-b-visual img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+}
+
+/* ─── Top connectors: stem splits into two branches ─── */
+.problem-b-connectors-top {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
+
+/* Vertical stem from illustration to split point */
+.problem-b-connectors-top::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  width: 1px;
+  height: calc(24px + 1px);
+  background: var(--color-border);
+}
+
+/* Horizontal bar at the split */
+.problem-b-connectors-top::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Left branch: vertical drop from bar to situation 1 */
+.problem-b-branch--left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 1px;
+  height: 100%;
+  background: var(--color-border);
+}
+
+/* Right branch: vertical drop from bar to situation 2 */
+.problem-b-branch--right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 25%;
+  width: 1px;
+  height: 100%;
+  background: var(--color-border);
+}
+
+.problem-b-branch {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─── Row: situations 1 and 2 ─── */
+.problem-b-situations-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  width: 100%;
+}
+
+/* ─── Bottom connector: vertical line from row to situation 3 ─── */
+.problem-b-connectors-bottom {
+  position: relative;
+  width: 1px;
+  height: 48px;
+  background: var(--color-border);
+}
+
+/* ─── Center: situation 3 ─── */
+.problem-b-situations-center {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: calc(50% - var(--space-xl));
+}
+
+/* ─── Shared situation styles ─── */
+.problem-b-situation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.problem-b-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-decorative);
+}
+
+.problem-b-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-xs);
+}
+
+.problem-b-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* ─── Footer ─── */
+.problem-b-footer {
+  margin-top: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: center;
+  text-align: center;
+}
+
+.problem-b-closing {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .problem-b-visual img {
+    max-width: 300px;
+  }
+
+  .problem-b-connectors-top,
+  .problem-b-connectors-bottom {
+    display: none;
+  }
+
+  .problem-b-situations-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-xxl);
+  }
+
+  .problem-b-situations-center {
+    max-width: none;
+    margin-top: var(--space-xxl);
+  }
+
+  .problem-b-situation {
+    text-align: left;
+  }
+
+  .problem-b-footer {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
