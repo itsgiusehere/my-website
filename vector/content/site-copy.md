@@ -21,13 +21,20 @@ Design leaders and CPOs bring me in when everyone has a different picture of whe
 
 ## Section 2: The Problem
 
-**Headline:**
-You know what needs to happen. You can't get everyone to see it the same way yet.
+**Intro:**
+Most of the leaders who reach out are in one of these three places.
 
-**Body:**
-Product, design, business — everyone has a different read on the priority, the problem, or the direction. The initiative has been "almost ready to move" for months. There's no shortage of opinions. What's missing is something concrete enough for everyone to commit to.
+**Situation 1 — The vision only you can see**
+You have a clear direction in your head but you can't get others to see it the same way yet. Every conversation feels like starting from scratch. What's needed is something concrete enough for people to commit to and build from.
 
-Strategy documents don't unlock that. Pixel-perfect designs don't either. What moves things is a tangible vision — something you can point to, test, and build from.
+**Situation 2 — The transition without direction**
+You're steering something through significant change — org, product, technology. Multiple teams are involved, each with their own read. What's missing is a shared direction and someone to hold the end-to-end view as things move.
+
+**Situation 3 — The bounded initiative**
+You have a specific area to move forward — a channel, a journey, an experience. The mandate exists. What's needed is someone to envision where it goes and co-create that with the teams involved.
+
+**Closing line:**
+Whatever the situation, you're looking for the same thing: someone senior enough to hold their own in a room full of stakeholders, carry the work forward, and move things without needing to be managed.
 
 ---
 
