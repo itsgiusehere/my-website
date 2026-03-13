@@ -1,0 +1,132 @@
+/* ─── Direction D — Stacked card deck ─── */
+/* Cards layered with offset. Click to bring to top. Brutal title scale. */
+
+.pd-deck {
+  position: relative;
+  min-height: 480px;
+}
+
+/* ─── Card base ─── */
+.pd-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-xxl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--card-accent, var(--color-bg-white));
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s ease,
+              opacity 0.45s ease;
+  /* Position based on depth: cards behind shift right and down */
+  transform: translate(
+    calc(var(--card-depth) * -20px),
+    calc(var(--card-depth) * -16px)
+  );
+}
+
+.pd-card--active {
+  position: relative;
+  cursor: default;
+  box-shadow: var(--shadow-hover);
+}
+
+/* Background cards: slightly dimmed, just peeking out */
+.pd-card:not(.pd-card--active) {
+  opacity: 0.85;
+}
+
+.pd-card:not(.pd-card--active):hover {
+  opacity: 1;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Number ─── */
+.pd-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  opacity: 0.3;
+}
+
+/* ─── Title — matches Vision Sprint accordion-title style ─── */
+.pd-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-lg);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+}
+
+/* ─── Body — only visible on active card ─── */
+.pd-body-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.pd-card--active .pd-body-wrap {
+  grid-template-rows: 1fr;
+}
+
+.pd-body {
+  overflow: hidden;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+  padding-top: var(--space-md);
+}
+
+.pd-card--active .pd-body {
+  color: var(--color-text-primary);
+}
+
+/* ─── Footer ─── */
+.pd-footer {
+  margin-top: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.pd-closing {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .pd-deck {
+    min-height: 400px;
+  }
+
+  .pd-card {
+    width: calc(100% - 24px);
+    padding: var(--space-xl);
+    transform: translate(
+      calc(var(--card-depth) * -12px),
+      calc(var(--card-depth) * -12px)
+    );
+  }
+
+  .pd-title {
+    font-size: var(--text-display);
+  }
+}
