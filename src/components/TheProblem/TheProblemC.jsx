@@ -7,6 +7,8 @@ export default function TheProblemC() {
   const ref = useFadeIn()
   const [activeIndex, setActiveIndex] = useState(0)
 
+  const active = problemContent.situations[activeIndex]
+
   return (
     <div ref={ref} className="pc fade-up">
       <p className="section-label">Sound familiar?</p>
@@ -22,7 +24,6 @@ export default function TheProblemC() {
               onClick={() => setActiveIndex(i)}
               className={`pc-tab${i === activeIndex ? ' pc-tab--active' : ''}`}
             >
-              <span className="pc-tab-number">{s.number}</span>
               <span className="pc-tab-label">{s.title}</span>
             </button>
           ))}
@@ -37,6 +38,7 @@ export default function TheProblemC() {
               className={`pc-panel${i === activeIndex ? ' pc-panel--active' : ''}`}
               aria-hidden={i !== activeIndex}
             >
+              <span className="pc-panel-number" aria-hidden="true">{s.number}</span>
               <p className="pc-body">{s.body}</p>
             </div>
           ))}

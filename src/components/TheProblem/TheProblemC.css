@@ -1,5 +1,5 @@
-/* ─── Direction C — Classic tabs with shared panel ─── */
-/* Active tab merges into panel. Inactive tabs sit above the panel border. */
+/* ─── Direction C — Refined tabs ─── */
+/* Border-only panel, lavender only on active tab. Decorative number inside. */
 
 /* ─── Tab row ─── */
 .pc-tabs {
@@ -7,7 +7,6 @@
   gap: var(--space-sm);
   position: relative;
   z-index: 1;
-  /* Tabs overlap the panel top border by 1px */
   margin-bottom: -1px;
 }
 
@@ -24,30 +23,16 @@
 }
 
 .pc-tab:hover {
-  background: var(--color-accent-lavender);
-  border-color: var(--color-border);
+  border-color: var(--color-text-secondary);
 }
 
+/* Active tab: bottom border hidden to merge with panel */
 .pc-tab--active {
-  background: var(--color-accent-lavender);
-  border-bottom-color: var(--color-accent-lavender);
+  border-bottom-color: transparent;
 }
 
 .pc-tab--active:hover {
-  border-bottom-color: var(--color-accent-lavender);
-}
-
-.pc-tab-number {
-  font-family: var(--font-serif);
-  font-size: var(--text-body);
-  font-weight: 400;
-  color: var(--color-text-decorative);
-  transition: color 0.25s ease;
-}
-
-.pc-tab--active .pc-tab-number {
-  color: var(--color-text-primary);
-  opacity: 0.4;
+  border-bottom-color: transparent;
 }
 
 .pc-tab-label {
@@ -57,16 +42,18 @@
   color: var(--color-text-primary);
 }
 
-/* ─── Panel area ─── */
+/* ─── Panel area — border only, no fill ─── */
 .pc-panel-area {
   border: 1px solid var(--color-border);
   border-radius: 0 var(--radius-xl) var(--radius-xl) var(--radius-xl);
-  background: var(--color-accent-lavender);
+  background: transparent;
   padding: var(--space-3xl) var(--space-xxl);
   position: relative;
-  min-height: 10rem;
+  min-height: 12rem;
+  overflow: hidden;
 }
 
+/* ─── Panel crossfade ─── */
 .pc-panel {
   position: absolute;
   top: 0;
@@ -74,7 +61,8 @@
   width: 100%;
   padding: var(--space-3xl) var(--space-xxl);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
 }
 
@@ -82,7 +70,22 @@
   position: relative;
   padding: 0;
   opacity: 1;
+  transform: translateY(0);
   pointer-events: auto;
+}
+
+/* ─── Decorative number inside panel ─── */
+.pc-panel-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 10vw, 8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-text-decorative);
+  opacity: 0.25;
+  margin-bottom: var(--space-lg);
+  user-select: none;
 }
 
 .pc-body {
@@ -112,29 +115,41 @@
   max-width: 42rem;
 }
 
-/* ─── Mobile ─── */
+/* ─── Mobile: horizontal scroll tabs ─── */
 @media (max-width: 768px) {
   .pc-tabs {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: -1px;
+    gap: var(--space-xs);
+  }
+
+  .pc-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .pc-tab {
-    border-radius: 0;
-    border-bottom: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: var(--space-md) var(--space-lg);
   }
 
-  .pc-tab:first-child {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  .pc-tab-label {
+    font-size: var(--text-label);
   }
 
-  .pc-tab--active {
-    border-bottom: none;
+  .pc-tab-number {
+    font-size: var(--text-label);
   }
 
   .pc-panel-area {
     border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    padding: var(--space-xxl) var(--space-lg);
+  }
+
+  .pc-panel-number {
+    font-size: clamp(3rem, 12vw, 5rem);
   }
 
   .pc-body {

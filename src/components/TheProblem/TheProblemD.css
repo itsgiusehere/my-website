@@ -1,5 +1,5 @@
 /* ─── Direction D — Stacked card deck ─── */
-/* Cards layered with offset. Click to bring to top. Brutal title scale. */
+/* Clean borders, no fill. Cards offset to show depth. Motion on switch. */
 
 .pd-deck {
   position: relative;
@@ -11,68 +11,75 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 40px);
+  width: calc(100% - 48px);
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
   padding: var(--space-xxl);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  background: var(--card-accent, var(--color-bg-white));
+  background: var(--color-bg-warm);
   cursor: pointer;
   text-align: left;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.45s ease,
-              opacity 0.45s ease;
-  /* Position based on depth: cards behind shift right and down */
-  transform: translate(
-    calc(var(--card-depth) * -20px),
-    calc(var(--card-depth) * -16px)
-  );
+
+  /* Stack offset: each card behind shifts right + down */
+  transform:
+    translateX(calc(var(--card-offset) * 24px))
+    translateY(calc(var(--card-offset) * 20px))
+    scale(calc(1 - var(--card-offset) * 0.03));
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
+/* Front card */
 .pd-card--active {
   position: relative;
   cursor: default;
-  box-shadow: var(--shadow-hover);
 }
 
-/* Background cards: slightly dimmed, just peeking out */
+/* Cards behind: taller to peek out at bottom, progressively faded */
 .pd-card:not(.pd-card--active) {
-  opacity: 0.85;
+  min-height: calc(100% + var(--card-offset) * 24px);
+  opacity: calc(0.6 - var(--card-offset) * 0.15);
 }
 
 .pd-card:not(.pd-card--active):hover {
-  opacity: 1;
-  box-shadow: var(--shadow-card);
+  opacity: 0.8;
 }
 
-/* ─── Number ─── */
+/* ─── Number — big decorative anchor ─── */
 .pd-number {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-decorative);
+  transition: color 0.3s ease;
+}
+
+.pd-card--active .pd-number {
+  color: var(--color-text-primary);
+}
+
+/* ─── Title — headline scale ─── */
+.pd-title {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--color-text-primary);
-  opacity: 0.3;
-}
-
-/* ─── Title — matches Vision Sprint accordion-title style ─── */
-.pd-title {
-  font-family: var(--font-serif);
-  font-size: var(--text-display-lg);
-  font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
 }
 
-/* ─── Body — only visible on active card ─── */
+/* ─── Body — reveals on active card ─── */
 .pd-body-wrap {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
 }
 
@@ -90,8 +97,44 @@
   padding-top: var(--space-md);
 }
 
-.pd-card--active .pd-body {
+/* ─── Navigation ─── */
+.pd-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.pd-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
   color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.pd-nav-btn:hover {
+  background: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-bg-warm);
+}
+
+.pd-nav-counter {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  min-width: 4ch;
+  text-align: center;
 }
 
 /* ─── Footer ─── */
@@ -118,12 +161,12 @@
   }
 
   .pd-card {
-    width: calc(100% - 24px);
+    width: calc(100% - 32px);
     padding: var(--space-xl);
-    transform: translate(
-      calc(var(--card-depth) * -12px),
-      calc(var(--card-depth) * -12px)
-    );
+    transform:
+      translateX(calc(var(--card-offset) * 16px))
+      translateY(calc(var(--card-offset) * 14px))
+      scale(calc(1 - var(--card-offset) * 0.03));
   }
 
   .pd-title {

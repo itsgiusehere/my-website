@@ -3,42 +3,35 @@ import { useFadeIn } from '../../hooks/useFadeIn.js'
 import { problemContent } from '../../../core/content.js'
 import './TheProblemD.css'
 
-const ACCENTS = [
-  'var(--color-accent-lavender)',
-  'var(--color-accent-yellow)',
-  'var(--color-accent-teal)',
-]
+const TOTAL = problemContent.situations.length
 
 export default function TheProblemD() {
   const ref = useFadeIn()
   const [activeIndex, setActiveIndex] = useState(0)
 
-  /* Build render order: active card last (on top), others behind */
-  const order = problemContent.situations.map((_, i) => i)
-  const behind = order.filter(i => i !== activeIndex)
-  const stack = [...behind, activeIndex]
+  function goTo(i) {
+    setActiveIndex(i)
+  }
 
   return (
     <div ref={ref} className="pd fade-up">
       <p className="section-label">Sound familiar?</p>
 
       <div className="pd-deck" aria-label="Three common situations">
-        {stack.map((i, stackPos) => {
-          const s = problemContent.situations[i]
-          const isActive = i === activeIndex
-          const depth = stackPos - (stack.length - 1) // -2, -1, 0
+        {problemContent.situations.map((s, i) => {
+          /* Position relative to active: 0 = front, 1 = behind, 2 = furthest */
+          const offset = (i - activeIndex + TOTAL) % TOTAL
 
           return (
             <button
               key={s.id}
-              className={`pd-card${isActive ? ' pd-card--active' : ''}`}
+              className={`pd-card${offset === 0 ? ' pd-card--active' : ''}`}
               style={{
-                '--card-accent': ACCENTS[i],
-                '--card-depth': depth,
-                zIndex: stackPos,
+                '--card-offset': offset,
+                zIndex: TOTAL - offset,
               }}
-              onClick={() => setActiveIndex(i)}
-              aria-pressed={isActive}
+              onClick={() => goTo(i)}
+              aria-pressed={offset === 0}
               aria-label={`${s.number} — ${s.title}`}
             >
               <span className="pd-number" aria-hidden="true">{s.number}</span>
@@ -49,6 +42,26 @@ export default function TheProblemD() {
             </button>
           )
         })}
+      </div>
+
+      <div className="pd-nav">
+        <button
+          className="pd-nav-btn"
+          onClick={() => goTo((activeIndex - 1 + TOTAL) % TOTAL)}
+          aria-label="Previous situation"
+        >
+          ←
+        </button>
+        <span className="pd-nav-counter">
+          {String(activeIndex + 1).padStart(2, '0')} / {String(TOTAL).padStart(2, '0')}
+        </span>
+        <button
+          className="pd-nav-btn"
+          onClick={() => goTo((activeIndex + 1) % TOTAL)}
+          aria-label="Next situation"
+        >
+          →
+        </button>
       </div>
 
       <div className="pd-footer">
