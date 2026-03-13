@@ -1,12 +1,14 @@
-/* ─── Direction C — Tabs + Stage ─── */
-/* Bordered tabs at top (matching HowIWork accordion style). One situation at a time. */
+/* ─── Direction C — Classic tabs with shared panel ─── */
+/* Active tab merges into panel. Inactive tabs sit above the panel border. */
 
 /* ─── Tab row ─── */
-.pc-selector {
+.pc-tabs {
   display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-3xl);
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+  /* Tabs overlap the panel top border by 1px */
+  margin-bottom: -1px;
 }
 
 .pc-tab {
@@ -15,20 +17,24 @@
   gap: var(--space-sm);
   padding: var(--space-xl) var(--space-xxl);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  background: transparent;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background: var(--color-bg-warm);
   cursor: pointer;
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .pc-tab:hover {
-  border-color: transparent;
   background: var(--color-accent-lavender);
+  border-color: var(--color-border);
 }
 
 .pc-tab--active {
-  border-color: transparent;
   background: var(--color-accent-lavender);
+  border-bottom-color: var(--color-accent-lavender);
+}
+
+.pc-tab--active:hover {
+  border-bottom-color: var(--color-accent-lavender);
 }
 
 .pc-tab-number {
@@ -51,10 +57,14 @@
   color: var(--color-text-primary);
 }
 
-/* ─── Stage area ─── */
-.pc-stage {
+/* ─── Panel area ─── */
+.pc-panel-area {
+  border: 1px solid var(--color-border);
+  border-radius: 0 var(--radius-xl) var(--radius-xl) var(--radius-xl);
+  background: var(--color-accent-lavender);
+  padding: var(--space-3xl) var(--space-xxl);
   position: relative;
-  min-height: 6rem;
+  min-height: 10rem;
 }
 
 .pc-panel {
@@ -62,16 +72,16 @@
   top: 0;
   left: 0;
   width: 100%;
+  padding: var(--space-3xl) var(--space-xxl);
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .pc-panel--active {
   position: relative;
+  padding: 0;
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 
@@ -88,8 +98,6 @@
 /* ─── Footer ─── */
 .pc-footer {
   margin-top: var(--space-3xl);
-  padding-top: var(--space-3xl);
-  border-top: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
@@ -106,13 +114,27 @@
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .pc-selector {
+  .pc-tabs {
     flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
   }
 
   .pc-tab {
-    width: 100%;
-    justify-content: flex-start;
+    border-radius: 0;
+    border-bottom: none;
+  }
+
+  .pc-tab:first-child {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  .pc-tab--active {
+    border-bottom: none;
+  }
+
+  .pc-panel-area {
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   }
 
   .pc-body {
