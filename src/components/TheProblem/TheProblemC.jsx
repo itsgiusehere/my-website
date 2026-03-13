@@ -21,10 +21,10 @@ export default function TheProblemC() {
             aria-selected={i === activeIndex}
             aria-controls={`pc-stage-${s.id}`}
             onClick={() => setActiveIndex(i)}
-            className={`pc-pill${i === activeIndex ? ' pc-pill--active' : ''}`}
+            className={`pc-tab${i === activeIndex ? ' pc-tab--active' : ''}`}
           >
-            <span className="pc-pill-number">{s.number}</span>
-            <span className="pc-pill-label">{s.title}</span>
+            <span className="pc-tab-number">{s.number}</span>
+            <span className="pc-tab-label">{s.title}</span>
           </button>
         ))}
       </div>
