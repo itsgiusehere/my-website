@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import TheProblemA from './TheProblemA'
 import TheProblemB from './TheProblemB'
-import TheProblemD from './TheProblemD'
+import TheProblemC from './TheProblemC'
 import './TheProblem.css'
 
-const variants = { A: TheProblemA, B: TheProblemB, D: TheProblemD }
+const variants = { A: TheProblemA, B: TheProblemB, C: TheProblemC }
 
 export default function TheProblem() {
-  const [variant, setVariant] = useState('D')
+  const [variant, setVariant] = useState('A')
 
   const Component = variants[variant]
 

@@ -1,68 +1,130 @@
-/* ─── Variant A — Scroll with dominant sticky illustration ─── */
+/* ─── Direction A — Editorial Accordion ─── */
+/* Typographic, minimal. Big numbers anchor each row. */
 
-/* Two columns: content scrolls left, illustration anchors right */
-.problem-a-scroll {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-}
-
-/* ─── Left column: scrolling content ─── */
-.problem-a-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.problem-a-situations {
+.pa-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3xl);
 }
 
-.problem-a-situation {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+.pa-item {
+  border-top: 1px solid var(--color-border);
 }
 
-.problem-a-situation--seen {
-  opacity: 1;
-  transform: translateY(0);
+.pa-item:last-child {
+  border-bottom: 1px solid var(--color-border);
 }
 
-.problem-a-number {
+/* ─── Trigger row ─── */
+.pa-trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: var(--space-xl);
+  padding: var(--space-xl) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pa-number {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--color-text-decorative);
+  transition: color 0.3s ease;
+  min-width: 2.5ch;
 }
 
-.problem-a-title {
+.pa-item--open .pa-number {
+  color: var(--color-text-primary);
+}
+
+.pa-item:hover .pa-number {
+  color: var(--color-text-secondary);
+}
+
+.pa-item--open:hover .pa-number {
+  color: var(--color-text-primary);
+}
+
+.pa-title {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--color-text-primary);
   letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
 }
 
-.problem-a-body {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.8;
+.pa-item:hover .pa-title {
   color: var(--color-text-secondary);
 }
 
-/* ─── Closing + CTA: part of the scrolling column ─── */
-.problem-a-closing {
+.pa-item--open .pa-title,
+.pa-item--open:hover .pa-title {
+  color: var(--color-text-primary);
+}
+
+/* Arrow indicator */
+.pa-arrow {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.pa-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid var(--color-text-secondary);
+  border-bottom: 1.5px solid var(--color-text-secondary);
+  transform: translate(-50%, -65%) rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.pa-item--open .pa-arrow::before {
+  transform: translate(-50%, -35%) rotate(-135deg);
+}
+
+/* ─── Panel (animated reveal) ─── */
+.pa-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.pa-item--open .pa-panel {
+  grid-template-rows: 1fr;
+}
+
+.pa-panel-inner {
+  overflow: hidden;
+}
+
+.pa-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 38rem;
+  padding: 0 0 var(--space-xl) 0;
+  /* Indent to align with title text */
+  margin-left: calc(clamp(3rem, 6vw, 4.5rem) + var(--space-xl));
+}
+
+/* ─── Footer ─── */
+.pa-footer {
   margin-top: var(--space-3xl);
   display: flex;
   flex-direction: column;
@@ -70,79 +132,32 @@
   align-items: flex-start;
 }
 
-.problem-a-closing-text {
+.pa-closing {
   font-family: var(--font-sans);
   font-size: var(--text-body);
-  line-height: 1.8;
+  line-height: 1.75;
   color: var(--color-text-secondary);
+  max-width: 42rem;
 }
 
-/* ─── Right column: sticky, viewport-centered illustration ─── */
-.problem-a-sticky {
-  position: sticky;
-  top: 50vh;
-  transform: translateY(-50%);
-  align-self: start;
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-}
-
-.problem-a-visual {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 1 / 1;
-}
-
-.problem-a-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity var(--transition-base), filter var(--transition-base);
-}
-
-.problem-a-img--active {
-  opacity: 1;
-}
-
-/* Placeholder state variations — remove when real assets arrive */
-.problem-a-img--0 {
-  filter: none;
-}
-
-.problem-a-img--1 {
-  filter: hue-rotate(30deg) saturate(1.2);
-}
-
-.problem-a-img--2 {
-  filter: hue-rotate(60deg) saturate(1.4) brightness(1.05);
-}
-
-/* ─── Mobile: no sticky, vertical stack ─── */
+/* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .problem-a-scroll {
-    grid-template-columns: 1fr;
+  .pa-trigger {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-md);
   }
 
-  .problem-a-sticky {
-    position: relative;
-    top: auto;
-    transform: none;
-    order: -1;
-    margin-bottom: var(--space-xxl);
+  .pa-arrow {
+    display: none;
   }
 
-  .problem-a-visual {
-    max-width: 320px;
-    margin: 0 auto;
+  .pa-number {
+    font-size: clamp(2rem, 8vw, 3rem);
+    min-width: auto;
   }
 
-  .problem-a-situation {
-    opacity: 1;
-    transform: none;
+  .pa-body {
+    margin-left: 0;
+    padding-left: calc(clamp(2rem, 8vw, 3rem) + var(--space-md));
   }
 }

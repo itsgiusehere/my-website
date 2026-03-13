@@ -20,7 +20,7 @@ Three agents work on this project:
 
 Giuseppe supervises and coordinates all three. Each agent's working rules are defined in their own CLAUDE.md.
 
-**VECTOR.md ownership:** Bulk owns the Build Status table in VECTOR.md. Update it at the end of every session — no need to route through Cooper or Giuseppe unless a strategic or content question surfaces.
+**VECTOR.md ownership:** Bulk owns the Build Status table in VECTOR.md, but **every agent must update VECTOR.md at the end of every session** — add current status, next steps, and any pending decisions to the relevant rows. VECTOR.md is the handoff between sessions and between agents. If it is not updated, the next session starts blind.
 
 ---
 

@@ -1,0 +1,125 @@
+/* ─── Direction C — Selector + Stage ─── */
+/* Pills at top. One situation at a time. Full-width reading. */
+
+/* ─── Selector pills ─── */
+.pc-selector {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3xl);
+}
+
+.pc-pill {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.pc-pill:hover {
+  border-color: var(--color-text-secondary);
+}
+
+.pc-pill--active {
+  background: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+}
+
+.pc-pill-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-label);
+  font-weight: 400;
+  color: var(--color-text-decorative);
+  transition: color 0.25s ease;
+}
+
+.pc-pill--active .pc-pill-number {
+  color: var(--color-bg-warm);
+  opacity: 0.6;
+}
+
+.pc-pill-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: color 0.25s ease;
+}
+
+.pc-pill--active .pc-pill-label {
+  color: var(--color-bg-warm);
+}
+
+/* ─── Stage area ─── */
+.pc-stage {
+  position: relative;
+  min-height: 6rem;
+}
+
+.pc-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.pc-panel--active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pc-body {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  max-width: 22ch;
+}
+
+/* ─── Footer ─── */
+.pc-footer {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.pc-closing {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .pc-selector {
+    flex-direction: column;
+  }
+
+  .pc-pill {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pc-body {
+    font-size: var(--text-headline);
+  }
+}

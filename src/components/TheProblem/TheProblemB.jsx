@@ -1,50 +1,55 @@
+import { useState } from 'react'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import { problemContent } from '../../../core/content.js'
-import illustration from '../../assets/illustration-problem.png'
 import './TheProblemB.css'
+
+const ACCENTS = ['lavender', 'yellow', 'teal']
 
 export default function TheProblemB() {
   const ref = useFadeIn()
-  const [s1, s2, s3] = problemContent.situations
+  const [openId, setOpenId] = useState(null)
+
+  function toggle(id) {
+    setOpenId(openId === id ? null : id)
+  }
 
   return (
-    <div ref={ref} className="problem-b fade-up">
-      <p className="section-label">The problem</p>
+    <div ref={ref} className="pb fade-up">
+      <p className="section-label">Sound familiar?</p>
 
-      <div className="problem-b-visual">
-        <img src={illustration} alt="" aria-hidden="true" />
-      </div>
-
-      <div className="problem-b-connectors-top" aria-hidden="true">
-        <span className="problem-b-branch problem-b-branch--left" />
-        <span className="problem-b-branch problem-b-branch--right" />
-      </div>
-
-      <ol className="problem-b-situations-row" aria-label="Three common situations">
-        <li className="problem-b-situation">
-          <span className="problem-b-number" aria-hidden="true">{s1.number}</span>
-          <h3 className="problem-b-title">{s1.title}</h3>
-          <p className="problem-b-body">{s1.body}</p>
-        </li>
-        <li className="problem-b-situation">
-          <span className="problem-b-number" aria-hidden="true">{s2.number}</span>
-          <h3 className="problem-b-title">{s2.title}</h3>
-          <p className="problem-b-body">{s2.body}</p>
-        </li>
+      <ol className="pb-cards" aria-label="Three common situations">
+        {problemContent.situations.map((s, i) => {
+          const isOpen = openId === s.id
+          return (
+            <li
+              key={s.id}
+              className={`pb-card pb-card--${ACCENTS[i]}${isOpen ? ' pb-card--open' : ''}${openId && !isOpen ? ' pb-card--dimmed' : ''}`}
+            >
+              <button
+                className="pb-trigger"
+                onClick={() => toggle(s.id)}
+                aria-expanded={isOpen}
+                aria-controls={`pb-panel-${s.id}`}
+              >
+                <span className="pb-number" aria-hidden="true">{s.number}</span>
+                <span className="pb-title">{s.title}</span>
+              </button>
+              <div
+                id={`pb-panel-${s.id}`}
+                className="pb-panel"
+                role="region"
+              >
+                <div className="pb-panel-inner">
+                  <p className="pb-body">{s.body}</p>
+                </div>
+              </div>
+            </li>
+          )
+        })}
       </ol>
 
-      <div className="problem-b-connectors-bottom" aria-hidden="true" />
-
-      <ol className="problem-b-situations-center" start="3">
-        <li className="problem-b-situation">
-          <span className="problem-b-number" aria-hidden="true">{s3.number}</span>
-          <h3 className="problem-b-title">{s3.title}</h3>
-          <p className="problem-b-body">{s3.body}</p>
-        </li>
-      </ol>
-
-      <div className="problem-b-footer">
-        <p className="problem-b-closing">{problemContent.closing}</p>
+      <div className="pb-footer">
+        <p className="pb-closing">{problemContent.closing}</p>
         <a href="#contact" className="btn">{problemContent.cta} →</a>
       </div>
     </div>

@@ -1,57 +1,52 @@
+import { useState } from 'react'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
-import { useActiveOnScroll } from '../../hooks/useActiveOnScroll.js'
 import { problemContent } from '../../../core/content.js'
-import illustration from '../../assets/illustration-problem.png'
 import './TheProblemA.css'
 
-/* Placeholder: same image with CSS filter per state.
-   Replace with real assets when ready:
-   import ill01 from '../../assets/illustration-problem-01.png'
-   import ill02 from '../../assets/illustration-problem-02.png'
-   import ill03 from '../../assets/illustration-problem-03.png' */
-const illustrations = [illustration, illustration, illustration]
-
 export default function TheProblemA() {
-  const sectionRef = useFadeIn()
-  const [setRef, activeIndex, seen] = useActiveOnScroll(problemContent.situations.length)
+  const ref = useFadeIn()
+  const [openId, setOpenId] = useState(null)
+
+  function toggle(id) {
+    setOpenId(openId === id ? null : id)
+  }
 
   return (
-    <div ref={sectionRef} className="problem-a fade-up">
-      <div className="problem-a-scroll">
-        <div className="problem-a-content">
-          <ol className="problem-a-situations" aria-label="Three common situations">
-            {problemContent.situations.map((s, i) => (
-              <li
-                key={s.id}
-                ref={el => setRef(el, i)}
-                className={`problem-a-situation${seen.has(i) ? ' problem-a-situation--seen' : ''}`}
+    <div ref={ref} className="pa fade-up">
+      <p className="section-label">Sound familiar?</p>
+
+      <ol className="pa-list" aria-label="Three common situations">
+        {problemContent.situations.map((s) => {
+          const isOpen = openId === s.id
+          return (
+            <li key={s.id} className={`pa-item${isOpen ? ' pa-item--open' : ''}`}>
+              <button
+                className="pa-trigger"
+                onClick={() => toggle(s.id)}
+                aria-expanded={isOpen}
+                aria-controls={`pa-panel-${s.id}`}
               >
-                <span className="problem-a-number" aria-hidden="true">{s.number}</span>
-                <h3 className="problem-a-title">{s.title}</h3>
-                <p className="problem-a-body">{s.body}</p>
-              </li>
-            ))}
-          </ol>
+                <span className="pa-number" aria-hidden="true">{s.number}</span>
+                <span className="pa-title">{s.title}</span>
+                <span className="pa-arrow" aria-hidden="true" />
+              </button>
+              <div
+                id={`pa-panel-${s.id}`}
+                className="pa-panel"
+                role="region"
+              >
+                <div className="pa-panel-inner">
+                  <p className="pa-body">{s.body}</p>
+                </div>
+              </div>
+            </li>
+          )
+        })}
+      </ol>
 
-          <div className="problem-a-closing">
-            <p className="problem-a-closing-text">{problemContent.closing}</p>
-            <a href="#contact" className="btn">{problemContent.cta} →</a>
-          </div>
-        </div>
-
-        <div className="problem-a-sticky">
-          <div className="problem-a-visual">
-            {illustrations.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                aria-hidden="true"
-                className={`problem-a-img problem-a-img--${i}${i === activeIndex ? ' problem-a-img--active' : ''}`}
-              />
-            ))}
-          </div>
-        </div>
+      <div className="pa-footer">
+        <p className="pa-closing">{problemContent.closing}</p>
+        <a href="#contact" className="btn">{problemContent.cta} →</a>
       </div>
     </div>
   )
