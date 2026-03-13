@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Reviewed | Done | Profile picture, headline, subheadline, scroll CTA |
-| The Problem | Reviewed | Done | Two-paragraph framing, illustration |
+| The Problem | Reviewed | In progress | Three progressive disclosure directions (A/B/C) behind toggle. A: editorial accordion, B: spotlight cards, C: selector+stage. Giuseppe reviewing — next session: pick a direction and refine. Key visual removed for now. |
 | How I Work | Reviewed | Done | Three engagement modes in accordion; content in `core/content.js` |
 | Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
 | Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
