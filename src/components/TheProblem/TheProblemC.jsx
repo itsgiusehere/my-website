@@ -48,30 +48,27 @@ export default function TheProblemC() {
                 className={`pc-panel${i === activeIndex ? ' pc-panel--active' : ''}`}
                 aria-hidden={i !== activeIndex}
               >
-                <div className="pc-panel-content">
-                  <div className="pc-panel-text">
-                    <span className="pc-panel-number" aria-hidden="true">{s.number}</span>
-                    <p className="pc-hook">{hook}</p>
-                    {detail && <p className="pc-detail">{detail}</p>}
-                  </div>
-                  <div className="pc-panel-visual">
-                    <img
-                      src={visuals[i]}
-                      alt=""
-                      aria-hidden="true"
-                      className="pc-visual-img"
-                    />
+                <div className="pc-panel-inner">
+                  <div className="pc-panel-content">
+                    <div className="pc-panel-text">
+                      <p className="pc-hook">{hook}</p>
+                      {detail && <p className="pc-detail">{detail}</p>}
+                      <a href="#contact" className="btn pc-panel-cta">{problemContent.cta}</a>
+                    </div>
+                    <div className="pc-panel-visual">
+                      <img
+                        src={visuals[i]}
+                        alt=""
+                        aria-hidden="true"
+                        className="pc-visual-img"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             )
           })}
         </div>
-      </div>
-
-      <div className="pc-footer">
-        <p className="pc-closing">{problemContent.closing}</p>
-        <a href="#contact" className="btn">{problemContent.cta} →</a>
       </div>
     </div>
   )

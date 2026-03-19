@@ -55,26 +55,25 @@ export const workCards = [
 ]
 
 export const problemContent = {
-  closing: 'This is what I usually get hired for \u2014 and in each case, what makes it work is the same: someone senior enough to hold their own in a room full of stakeholders, carry the work forward, and move things without needing to be managed.',
   cta: 'Get in touch',
   situations: [
     {
       id: 'vision',
       number: '01',
       title: 'The vision only you can see',
-      body: 'You have a clear direction in your head but you can\u2019t get others to see it the same way yet. Every conversation feels like starting from scratch. What\u2019s needed is something concrete enough for people to commit to and build from.',
+      body: 'You have a clear direction in your head but you can\u2019t get others to see it the same way yet. Every conversation feels like starting from scratch. What\u2019s needed is something concrete enough for people to commit to and build from \u2014 and someone senior enough to hold their own in the room, carry the work forward, and turn what\u2019s in your head into something the whole team can get behind.',
     },
     {
       id: 'transition',
       number: '02',
       title: 'The transition without direction',
-      body: 'You\u2019re steering something through significant change \u2014 org, product, technology. Multiple teams are involved, each with their own read. What\u2019s missing is a shared direction and someone to hold the end-to-end view as things move.',
+      body: 'You\u2019re steering something through significant change \u2014 org, product, technology. Multiple teams are involved, each with their own read. What\u2019s missing is a shared direction and someone who can hold the end-to-end view \u2014 senior enough to carry the work across stakeholders and move things forward without needing to be managed.',
     },
     {
       id: 'bounded',
       number: '03',
       title: 'The bounded initiative',
-      body: 'You have a specific area to move forward \u2014 a channel, a journey, an experience. The mandate exists. What\u2019s needed is someone to envision where it goes and co-create that with the teams involved.',
+      body: 'You have a specific area to move forward \u2014 a channel, a journey, an experience. The mandate exists. What\u2019s needed is someone to envision where it goes and co-create it with the teams involved \u2014 someone who can hold their own in the room, keep the work coherent, and move it from direction to delivery.',
     },
   ],
 }

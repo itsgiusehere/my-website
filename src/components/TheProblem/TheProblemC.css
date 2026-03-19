@@ -1,5 +1,5 @@
-/* ─── Direction C — Refined tabs ─── */
-/* Border-only panel, lavender only on active tab. Decorative number inside. */
+/* ─── Direction C — Tabs with accent fill ─── */
+/* Mirrors HowIWork accordion pattern: border → transparent + bg fill on hover/active. */
 
 /* ─── Tab row ─── */
 .pc-tabs {
@@ -18,25 +18,33 @@
   gap: var(--space-sm);
   padding: var(--space-xl) var(--space-xxl);
   border: 1px solid var(--color-border);
+  border-bottom: none;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  background: var(--color-bg-warm);
+  background: transparent;
   cursor: pointer;
-  transition: background var(--transition-base), border-color var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
+/* Hover inactive: border vanishes, accent fill, subtle inner shadow from bottom */
 .pc-tab:hover {
-  border-color: var(--color-text-secondary);
+  border-color: transparent;
+  background: var(--color-accent-mist);
+  box-shadow: inset 0 -8px 12px -6px rgba(0, 0, 0, 0.06);
 }
 
-/* Active tab: solid bottom border masks the panel's top border */
+/* Active tab: filled, no border, no shadow */
 .pc-tab--active {
-  border-bottom-color: var(--color-bg-warm);
+  border-color: transparent;
+  background: var(--color-accent-mist);
+  box-shadow: none;
 }
 
 .pc-tab--active:hover {
-  border-bottom-color: var(--color-bg-warm);
+  border-color: transparent;
+  box-shadow: none;
 }
 
+/* Tab label — matches .btn text style */
 .pc-tab-label {
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -44,42 +52,40 @@
   color: var(--color-text-primary);
 }
 
-/* ─── Panel area — border only, no fill ─── */
+/* ─── Panel area — filled to match active tab ─── */
 .pc-panel-area {
-  border: 1px solid var(--color-border);
+  border: 1px solid transparent;
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  background: transparent;
+  background: var(--color-accent-mist);
   padding: var(--space-3xl) var(--space-xxl);
   position: relative;
   min-height: 12rem;
-  overflow: hidden;
 }
 
 /* ─── Panel crossfade ─── */
 .pc-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: var(--space-3xl) var(--space-xxl);
+  display: grid;
+  grid-template-rows: 0fr;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.35s ease;
   pointer-events: none;
 }
 
 .pc-panel--active {
-  position: relative;
-  padding: 0;
+  grid-template-rows: 1fr;
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 
-/* ─── Panel inner: two-column grid ─── */
+.pc-panel-inner {
+  overflow: hidden;
+}
+
+/* ─── Panel content: text + visual ─── */
 .pc-panel-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: var(--space-3xl);
   align-items: start;
 }
@@ -88,19 +94,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-}
-
-/* ─── Decorative number ─── */
-.pc-panel-number {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(4rem, 8vw, 6rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--color-text-decorative);
-  opacity: 0.3;
-  user-select: none;
 }
 
 /* Hook: first sentence, big serif */
@@ -113,12 +106,18 @@
   color: var(--color-text-primary);
 }
 
-/* Detail: rest of body, standard size */
+/* Detail: rest of body + closing line */
 .pc-detail {
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.75;
   color: var(--color-text-secondary);
+}
+
+/* CTA inside panel — fit content, not full width */
+.pc-panel-cta {
+  margin-top: var(--space-lg);
+  width: fit-content;
 }
 
 /* ─── Key visual ─── */
@@ -135,24 +134,7 @@
   display: block;
 }
 
-/* ─── Footer ─── */
-.pc-footer {
-  margin-top: var(--space-3xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  align-items: flex-start;
-}
-
-.pc-closing {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.75;
-  color: var(--color-text-secondary);
-  max-width: 42rem;
-}
-
-/* ─── Mobile: horizontal scroll tabs ─── */
+/* ─── Mobile ─── */
 @media (max-width: 768px) {
   .pc-tabs {
     overflow-x: auto;
@@ -176,12 +158,7 @@
     font-size: var(--text-label);
   }
 
-  .pc-tab-number {
-    font-size: var(--text-label);
-  }
-
   .pc-panel-area {
-    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
     padding: var(--space-xxl) var(--space-lg);
   }
 
@@ -196,10 +173,6 @@
 
   .pc-visual-img {
     max-width: 260px;
-  }
-
-  .pc-panel-number {
-    font-size: clamp(3rem, 10vw, 4rem);
   }
 
   .pc-hook {
