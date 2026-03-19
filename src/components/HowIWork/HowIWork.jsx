@@ -14,7 +14,7 @@ const ILLUSTRATIONS = {
 }
 
 export default function HowIWork() {
-  const [activeId, setActiveId] = useState(null)
+  const [activeId, setActiveId] = useState(engagementModes[0]?.id ?? null)
   const ref = useFadeIn()
 
   useLayoutEffect(() => {
@@ -49,14 +49,21 @@ export default function HowIWork() {
       <div className="section-wrapper hiw-inner">
         <p className="section-label" id="hiw-label">How I work</p>
         <div ref={ref} className="hiw-content fade-up">
-          <p className="hiw-differentiator">
-            Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design.
-          </p>
           <Accordion
             items={itemsWithIllustrations}
             activeId={activeId}
             onToggle={handleToggle}
           />
+        </div>
+      </div>
+
+      <div className="hiw-divider">
+        <p className="hiw-differentiator">
+          Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design.
+        </p>
+        <div className="hiw-divider-actions">
+          <a href="#contact" className="btn btn-primary">Get in touch</a>
+          <a href="#work" className="link">See selected work</a>
         </div>
       </div>
     </section>
