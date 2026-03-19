@@ -71,13 +71,13 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Reviewed | Done | Profile picture, headline, subheadline, scroll CTA |
-| The Problem | Reviewed | In progress | Four directions (A/B/C/D) behind toggle. C and D most iterated. C: full-width tabs, border-only panel, two-column layout inside (hook sentence in big serif + detail at body size left, key visual placeholder right). D: tabs + rich card panel with two-column layout and key visual. B: spotlight cards with display-size title. A: editorial accordion. Next: pick a direction and finalise. |
-| How I Work | Reviewed | Done | Three engagement modes in accordion; content in `core/content.js` |
+| The Problem | Draft | Done | Direction C finalised. Tabs with accent-mist fill (accordion pattern). Hook sentence in serif + detail body per tab. Primary CTA + "Learn more" link inside each panel. Key visual placeholder in right column. Closing copy merged into each situation body — draft for review with Cooper and Tiziano. Variant files (A/B/D) deleted. |
+| How I Work | Reviewed | Done | First accordion open by default. Differentiator copy moved after accordions as centered typographic divider with primary CTA + "See selected work" link. |
 | Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
 | Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
 | About | Reviewed | Done | Personal voice, four beliefs |
 | Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD |
-| Nav | Reviewed | Done | Present and functional |
+| Nav | Reviewed | Done | CTA switched to secondary (outline). Links set to font-weight 500. Shared `.link` class extracted to App.css. |
 
 ## Key Assumptions (Seed These Early)
 
