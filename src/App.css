@@ -99,6 +99,36 @@ a {
   color: var(--color-text-primary);
 }
 
+/* ─── Shared link ─── */
+.link {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-text-primary);
+  transition: width var(--transition-base);
+}
+
+.link:hover {
+  color: var(--color-text-secondary);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
 /* ─── Image placeholder ─── */
 .img-placeholder {
   display: flex;

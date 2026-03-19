@@ -14,11 +14,11 @@ export default function Nav() {
         <ul className="nav-links" role="list">
           {links.map(({ label, href }) => (
             <li key={href}>
-              <a href={href} className="nav-link">{label}</a>
+              <a href={href} className="nav-link link">{label}</a>
             </li>
           ))}
           <li>
-            <a href="#contact" className="nav-cta btn btn-primary">Get in touch</a>
+            <a href="#contact" className="nav-cta btn">Get in touch</a>
           </li>
         </ul>
       </div>

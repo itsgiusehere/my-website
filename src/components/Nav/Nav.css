@@ -31,36 +31,6 @@
   gap: var(--space-xl);
 }
 
-.nav-link {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.nav-link:hover {
-  color: var(--color-text-primary);
-}
-
-.nav-link {
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-text-primary);
-  transition: width var(--transition-base);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
 
 .nav-cta {
   font-size: var(--text-body);
