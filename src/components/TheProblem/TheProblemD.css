@@ -1,71 +1,103 @@
-/* ─── Direction D — Stacked card deck ─── */
-/* Clean borders, no fill. Cards offset to show depth. Motion on switch. */
+/* ─── Direction D — Tabs + rich card panel with key visual ─── */
+/* C's tab navigation merged with D's articulated card content. */
 
-.pd-deck {
+/* ─── Tab row ─── */
+.pd-tabs {
+  display: flex;
+  gap: var(--space-sm);
   position: relative;
-  min-height: 480px;
+  z-index: 1;
+  margin-bottom: -1px;
 }
 
-/* ─── Card base ─── */
-.pd-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% - 48px);
+.pd-tab {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  padding: var(--space-xxl);
+  align-items: baseline;
+  padding: var(--space-xl) var(--space-xxl);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   background: var(--color-bg-warm);
   cursor: pointer;
-  text-align: left;
-
-  /* Stack offset: each card behind shifts right + down */
-  transform:
-    translateX(calc(var(--card-offset) * 24px))
-    translateY(calc(var(--card-offset) * 20px))
-    scale(calc(1 - var(--card-offset) * 0.03));
-
-  transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.4s ease,
-    box-shadow 0.4s ease;
+  transition: border-color var(--transition-base);
 }
 
-/* Front card */
-.pd-card--active {
-  position: relative;
-  cursor: default;
+.pd-tab:hover {
+  border-color: var(--color-text-secondary);
 }
 
-/* Cards behind: taller to peek out at bottom, progressively faded */
-.pd-card:not(.pd-card--active) {
-  min-height: calc(100% + var(--card-offset) * 24px);
-  opacity: calc(0.6 - var(--card-offset) * 0.15);
+.pd-tab--active {
+  border-bottom-color: transparent;
 }
 
-.pd-card:not(.pd-card--active):hover {
-  opacity: 0.8;
+.pd-tab--active:hover {
+  border-bottom-color: transparent;
 }
 
-/* ─── Number — big decorative anchor ─── */
-.pd-number {
-  font-family: var(--font-serif);
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--color-text-decorative);
-  transition: color 0.3s ease;
-}
-
-.pd-card--active .pd-number {
+.pd-tab-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 500;
   color: var(--color-text-primary);
 }
 
-/* ─── Title — headline scale ─── */
+/* ─── Panel area ─── */
+.pd-panel-area {
+  border: 1px solid var(--color-border);
+  border-radius: 0 var(--radius-xl) var(--radius-xl) var(--radius-xl);
+  background: transparent;
+  padding: var(--space-3xl) var(--space-xxl);
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+}
+
+/* ─── Panel crossfade ─── */
+.pd-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-3xl) var(--space-xxl);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.pd-panel--active {
+  position: relative;
+  padding: 0;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ─── Panel inner: two-column grid ─── */
+.pd-panel-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* ─── Left: text content ─── */
+.pd-panel-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.pd-number {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-text-decorative);
+  opacity: 0.3;
+  user-select: none;
+}
+
 .pd-title {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
@@ -75,66 +107,26 @@
   color: var(--color-text-primary);
 }
 
-/* ─── Body — reveals on active card ─── */
-.pd-body-wrap {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  overflow: hidden;
-}
-
-.pd-card--active .pd-body-wrap {
-  grid-template-rows: 1fr;
-}
-
 .pd-body {
-  overflow: hidden;
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.75;
   color: var(--color-text-secondary);
-  max-width: 42rem;
-  padding-top: var(--space-md);
+  max-width: 38rem;
 }
 
-/* ─── Navigation ─── */
-.pd-nav {
+/* ─── Right: key visual ─── */
+.pd-panel-visual {
   display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-}
-
-.pd-nav-btn {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  background: transparent;
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  color: var(--color-text-primary);
-  cursor: pointer;
-  transition: background var(--transition-fast), border-color var(--transition-fast);
+  align-items: center;
 }
 
-.pd-nav-btn:hover {
-  background: var(--color-text-primary);
-  border-color: var(--color-text-primary);
-  color: var(--color-bg-warm);
-}
-
-.pd-nav-counter {
-  font-family: var(--font-sans);
-  font-size: var(--text-label);
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  letter-spacing: 0.05em;
-  min-width: 4ch;
-  text-align: center;
+.pd-visual-img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
 }
 
 /* ─── Footer ─── */
@@ -156,20 +148,46 @@
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .pd-deck {
-    min-height: 400px;
+  .pd-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: var(--space-xs);
   }
 
-  .pd-card {
-    width: calc(100% - 32px);
-    padding: var(--space-xl);
-    transform:
-      translateX(calc(var(--card-offset) * 16px))
-      translateY(calc(var(--card-offset) * 14px))
-      scale(calc(1 - var(--card-offset) * 0.03));
+  .pd-tabs::-webkit-scrollbar {
+    display: none;
   }
 
-  .pd-title {
-    font-size: var(--text-display);
+  .pd-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .pd-tab-label {
+    font-size: var(--text-label);
+  }
+
+  .pd-panel-area {
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    padding: var(--space-xxl) var(--space-lg);
+  }
+
+  .pd-panel-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-xxl);
+  }
+
+  .pd-panel-visual {
+    order: -1;
+  }
+
+  .pd-visual-img {
+    max-width: 260px;
+  }
+
+  .pd-number {
+    font-size: clamp(3rem, 10vw, 4rem);
   }
 }

@@ -77,9 +77,9 @@
 
 .pb-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: var(--text-display);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
 }
@@ -101,15 +101,13 @@
 
 .pb-body {
   font-family: var(--font-sans);
-  font-size: var(--text-label);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: 1.75;
   color: var(--color-text-secondary);
-  padding: 0 var(--space-xl) var(--space-xl);
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
 }
 
-.pb-card--open .pb-body {
-  color: var(--color-text-primary);
-}
+/* ─── Mobile body text ─── */
 
 /* ─── Footer ─── */
 .pb-footer {
@@ -136,5 +134,9 @@
 
   .pb-card--dimmed {
     opacity: 1;
+  }
+
+  .pb-title {
+    font-size: var(--text-headline);
   }
 }
