@@ -6,13 +6,6 @@ import './TheProblem.css'
 
 const visuals = [illustrationPlaceholder, illustrationPlaceholder, illustrationPlaceholder]
 
-/** Split body text: first sentence is the hook, rest is the detail. */
-function splitBody(text) {
-  const dot = text.indexOf('. ')
-  if (dot === -1) return [text, '']
-  return [text.slice(0, dot + 1), text.slice(dot + 2)]
-}
-
 export default function TheProblem() {
   const ref = useFadeIn()
   const [activeIndex, setActiveIndex] = useState(0)
@@ -33,14 +26,13 @@ export default function TheProblem() {
                 onClick={() => setActiveIndex(i)}
                 className={`problem-tab${i === activeIndex ? ' problem-tab--active' : ''}`}
               >
-                <span className="problem-tab-label">{s.title}</span>
+                <span className="problem-tab-label">{s.tab}</span>
               </button>
             ))}
           </div>
 
           <div className="problem-panel-area">
             {problemContent.situations.map((s, i) => {
-              const [hook, detail] = splitBody(s.body)
               return (
                 <div
                   key={s.id}
@@ -51,8 +43,8 @@ export default function TheProblem() {
                 >
                   <div className="problem-panel-content">
                     <div className="problem-panel-text">
-                      <p className="problem-hook">{hook}</p>
-                      {detail && <p className="problem-detail">{detail}</p>}
+                      <p className="problem-hook">{s.title}</p>
+                      <p className="problem-detail">{s.body}</p>
                       <div className="problem-actions">
                         <a href="#contact" className="btn btn-primary">{problemContent.cta}</a>
                         <a href="#how-i-work" className="link">Learn more</a>

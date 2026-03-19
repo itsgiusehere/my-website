@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Reviewed | Done | Profile picture, headline, subheadline, scroll CTA |
-| The Problem | Draft | Done | Direction C finalised. Tabs with accent-mist fill (accordion pattern). Hook sentence in serif + detail body per tab. Primary CTA + "Learn more" link inside each panel. Key visual placeholder in right column. Closing copy merged into each situation body — draft for review with Cooper and Tiziano. Variant files (A/B/D) deleted. |
+| The Problem | Reviewed | Done | Three differentiated use cases: high-stakes initiative, bar to raise, bold idea. Tab labels separated from titles (new `tab` field in content.js). Copy principle: never prescribe what the reader needs. Pending: Tiziano pass for voice. |
 | How I Work | Reviewed | Done | First accordion open by default. Differentiator copy moved after accordions as centered typographic divider with primary CTA + "See selected work" link. |
 | Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
 | Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
@@ -97,6 +97,18 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
   4. **Selected work** — 2–3 outcome-framed case studies
   5. **About** — who Giuseppe is, what he believes, personal not biographical
   6. **Contact** — all three CTAs (calendar, form, LinkedIn)
+
+## Content Improvements — Pending (Cooper, 2026-03-19)
+
+The Problem section has been rewritten with three differentiated use cases. The following narrative issues remain across Hero → How I Work:
+
+1. **Hero subheadline overlaps with The Problem.** The subheadline already names the audience, the situation ("everyone has a different picture"), and the value prop ("tangible vision to align around"). The Problem section now does this more specifically through three tabs — so the Hero subheadline may be doing too much. Consider tightening it to positioning only and letting The Problem carry the situational weight.
+
+2. **How I Work body copy echoes The Problem situations.** Vision Sprint opens with "You have fragments of an idea but no shared direction yet" — which restates Problem tab 3. Strategic Clarity opens with "Your organisation is going through change and needs everyone pointed in the same direction" — close to the old Problem tab 2. Now that The Problem tabs are sharper, the How I Work accordion bodies should focus purely on *what the engagement looks like*, not re-describe the situation.
+
+3. **The differentiator line is buried.** "Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design." This is the sharpest positioning copy on the page. It currently sits after the How I Work accordions as a typographic divider. Consider whether it deserves more prominence — possibly in the Hero or as the How I Work section intro.
+
+4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). Check How I Work accordion bodies and any remaining CTA copy against this rule.
 
 ## Open Questions
 
