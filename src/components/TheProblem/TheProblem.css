@@ -1,99 +1,78 @@
-/* ─── The Problem — Tabs with accent fill ─── */
+/* ─── The Problem — Sticky card stack ─── */
 
 .the-problem {
   background: transparent;
 }
 
-/* ─── Tab row ─── */
-.problem-tabs {
+/* ─── Stack container ─── */
+.problem-stack {
   display: flex;
-  gap: var(--space-sm);
-  position: relative;
-  z-index: 2;
-  margin-bottom: -1px;
+  flex-direction: column;
 }
 
-.problem-tab {
-  flex: 1;
+/* ─── Card ─── */
+.problem-card {
+  position: sticky;
+  top: var(--card-top, 0);
+  z-index: var(--card-index);
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+  transition: box-shadow var(--transition-base);
+}
+
+.problem-card:first-child {
+  box-shadow: none;
+}
+
+.problem-card:hover {
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Card header ─── */
+.problem-card-header {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  gap: var(--space-sm);
+  gap: var(--space-lg);
   padding: var(--space-xl) var(--space-xxl);
-  border: 1px solid var(--color-border);
-  border-bottom: none;
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  background: transparent;
-  cursor: pointer;
-  transition: background var(--transition-base), border-color var(--transition-base);
 }
 
-.problem-tab:hover {
-  border-color: transparent;
-  background: var(--color-accent-mist);
+.problem-card-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-label);
+  font-weight: 400;
+  color: var(--color-text-decorative);
+  letter-spacing: 0.02em;
 }
 
-.problem-tab--active {
-  border-color: transparent;
-  background: var(--color-accent-mist);
-}
-
-.problem-tab--active:hover {
-  border-color: transparent;
-}
-
-.problem-tab-label {
+.problem-card-label {
   font-family: var(--font-sans);
   font-size: var(--text-body);
   font-weight: 500;
   color: var(--color-text-primary);
 }
 
-/* ─── Panel area ─── */
-.problem-panel-area {
-  border: 1px solid transparent;
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  background: var(--color-accent-mist);
-  padding: var(--space-3xl) var(--space-xxl);
-  position: relative;
-  min-height: 12rem;
-  overflow: hidden;
+/* ─── Card body ─── */
+.problem-card-body {
+  padding: 0 var(--space-xxl) var(--space-3xl);
 }
 
-/* ─── Panel crossfade ─── */
-.problem-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: var(--space-3xl) var(--space-xxl);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-  pointer-events: none;
-}
-
-.problem-panel--active {
-  position: relative;
-  padding: 0;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ─── Panel content ─── */
-.problem-panel-content {
+.problem-card-content {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: var(--space-3xl);
   align-items: start;
 }
 
-.problem-panel-text {
+.problem-card-text {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
 }
 
-/* Hook — stepped down to not compete with bridge */
+/* Hook */
 .problem-hook {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
@@ -103,6 +82,7 @@
   color: var(--color-text-primary);
 }
 
+/* Detail */
 .problem-detail {
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -111,7 +91,7 @@
 }
 
 /* ─── Key visual ─── */
-.problem-panel-visual {
+.problem-card-visual {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,37 +106,20 @@
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .problem-tabs {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: var(--space-xs);
+  .problem-card-header {
+    padding: var(--space-lg);
   }
 
-  .problem-tabs::-webkit-scrollbar {
-    display: none;
+  .problem-card-body {
+    padding: 0 var(--space-lg) var(--space-xxl);
   }
 
-  .problem-tab {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: var(--space-md) var(--space-lg);
-  }
-
-  .problem-tab-label {
-    font-size: var(--text-label);
-  }
-
-  .problem-panel-area {
-    padding: var(--space-xxl) var(--space-lg);
-  }
-
-  .problem-panel-content {
+  .problem-card-content {
     grid-template-columns: 1fr;
-    gap: var(--space-xxl);
+    gap: var(--space-xl);
   }
 
-  .problem-panel-visual {
+  .problem-card-visual {
     order: -1;
   }
 
