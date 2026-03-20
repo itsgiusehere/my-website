@@ -57,15 +57,6 @@ export default function HowIWork() {
         </div>
       </div>
 
-      <div className="hiw-divider">
-        <p className="hiw-differentiator">
-          Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design.
-        </p>
-        <div className="hiw-divider-actions">
-          <a href="#contact" className="btn btn-primary">Get in touch</a>
-          <a href="#work" className="link">See selected work</a>
-        </div>
-      </div>
     </section>
   )
 }

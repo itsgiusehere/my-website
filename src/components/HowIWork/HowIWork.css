@@ -13,39 +13,6 @@
   gap: var(--space-3xl);
 }
 
-/* ─── Differentiator — typographic divider after accordions ─── */
-.hiw-divider {
-  margin-top: var(--space-3xl);
-  padding: var(--space-3xl) var(--gutter) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3xl);
-}
-
-.hiw-differentiator {
-  max-width: var(--max-width);
-  font-family: var(--font-serif);
-  font-size: var(--text-display);
-  font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  color: var(--color-text-primary);
-  text-align: center;
-}
-
-.hiw-divider-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-}
-
-@media (max-width: 768px) {
-  .hiw-differentiator {
-    font-size: var(--text-headline);
-  }
-}
-
 /* ─── Accordion ─── */
 .accordion {
   display: flex;

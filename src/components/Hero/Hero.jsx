@@ -16,7 +16,7 @@ export default function Hero() {
           <em>so your teams can move forward.</em>
         </h1>
         <p className="hero-subheadline">
-          Design leaders and CPOs bring me in as an <mark>independent strategic designer</mark> when everyone has a different picture of where a <mark>digital product</mark> or <mark>end to end experience</mark> is going. I synthesise across product, business, and user needs – and deliver a <mark>tangible vision</mark> to align around and build from.
+          AI makes building easy — and easily scattered. Direction is scarce. I zoom out to frame it, zoom in to make it tangible. The craft is in doing both, and bringing everyone along.
         </p>
       </div>
       <a href="#problem" className="hero-scroll" aria-label="Scroll to next section">

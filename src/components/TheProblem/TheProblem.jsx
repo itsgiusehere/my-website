@@ -45,10 +45,6 @@ export default function TheProblem() {
                     <div className="problem-panel-text">
                       <p className="problem-hook">{s.title}</p>
                       <p className="problem-detail">{s.body}</p>
-                      <div className="problem-actions">
-                        <a href="#contact" className="btn btn-primary">{problemContent.cta}</a>
-                        <a href="#how-i-work" className="link">Learn more</a>
-                      </div>
                     </div>
                     <div className="problem-panel-visual">
                       <img

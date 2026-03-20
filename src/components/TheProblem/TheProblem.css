@@ -115,14 +115,6 @@
   color: var(--color-text-secondary);
 }
 
-/* Actions row */
-.problem-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xl);
-  margin-top: var(--space-lg);
-}
-
 /* ─── Key visual ─── */
 .problem-panel-visual {
   display: flex;
