@@ -70,9 +70,10 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, subheadline, scroll CTA |
-| The Problem | Reviewed | Done | Three differentiated use cases: high-stakes initiative, bar to raise, bold idea. Tab labels separated from titles (new `tab` field in content.js). Copy principle: never prescribe what the reader needs. Pending: Tiziano pass for voice. |
-| How I Work | Reviewed | Done | First accordion open by default. Differentiator copy moved after accordions as centered typographic divider with primary CTA + "See selected work" link. |
+| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. |
+| The Problem | Reviewed | In progress | Sticky card stack layout (branch `problem-sticky-cards`). Single sticky frame with scroll-driven card entrances + upward drift. Active card gets accent fill, background cards show border. Accordion-mirrored type hierarchy (display-lg label, italic headline hook). No shadows. Iterating on scroll pacing and visual polish. `main` still has the tab layout. Pending: Tiziano pass for voice. |
+| Bridge | Reviewed | Done | New section between The Problem and How I Work. Old Hero subheadline repurposed as centered typographic statement + CTAs (Get in touch / Learn more). |
+| How I Work | Reviewed | Done | First accordion open by default. Differentiator divider removed (moved to Hero subheadline). Section now ends after accordions. |
 | Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
 | Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
 | About | Reviewed | Done | Personal voice, four beliefs |
@@ -84,19 +85,21 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 1. **Primary clients find this site before reaching out** — They discover Giuseppe via LinkedIn, referral, or search, then visit the site to validate whether to engage. The site is a conversion tool, not a discovery tool. — *hypothesis*
 2. **Outcome framing outperforms process framing** — Clients respond more to "what changed after the engagement" than "here is my four-phase process." — *hypothesis*
 3. **Personal voice builds trust faster than polished agency copy** — For a solo practitioner, the human behind the work is a differentiator. Generic positioning erodes it. — *hypothesis*
-4. **The middle-ground positioning is distinctive** — "Neither strategy consultant nor design agency" is a real gap clients recognise and actively seek to fill. — *validated (supported by positioning research)*
+4. **The positioning is about altitude range, not a middle ground** — The old triangulation (strategy consultant vs. design agency) broke down — "design agency" is too broad and inaccurate. The real differentiator is the ability to move fluidly across altitudes: framing the problem, defining outcomes, making direction tangible — and bringing people along through the process. Informed by direction.md thinking on visioning as process. — *validated (replaced the two-pole comparison during Cooper session 2026-03-20)*
 
 ## Decisions
 
 - **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
 - **Call to action:** All three options (contact form, calendar link, LinkedIn DM) will be available. Final hierarchy — which is primary, which are secondary — is TBD.
-- **Site structure:** Single page, scroll-based, six sections in this order:
-  1. **Hero** — name, one-line positioning, primary CTA
-  2. **The problem** — name the situation clients are in before hiring Giuseppe
-  3. **How I work** — three engagement modes as a choice, not a process
-  4. **Selected work** — 2–3 outcome-framed case studies
-  5. **About** — who Giuseppe is, what he believes, personal not biographical
-  6. **Contact** — all three CTAs (calendar, form, LinkedIn)
+- **Site structure:** Single page, scroll-based, seven sections in this order:
+  1. **Hero** — name, headline, differentiator subheadline, scroll CTA
+  2. **The problem** — name the situation clients are in before hiring Giuseppe (sticky card stack on `problem-sticky-cards` branch; tabs on `main`)
+  3. **Bridge** — descriptive positioning statement + CTAs (Get in touch / Learn more)
+  4. **How I work** — three engagement modes as a choice, not a process
+  5. **Selected work** — 2–3 outcome-framed case studies
+  6. **Testimonials** — client quotes
+  7. **About** — who Giuseppe is, what he believes, personal not biographical
+  8. **Contact** — all three CTAs (calendar, form, LinkedIn)
 
 ## Content Improvements — Pending (Cooper, 2026-03-19)
 
@@ -106,7 +109,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 
 2. **How I Work body copy echoes The Problem situations.** Vision Sprint opens with "You have fragments of an idea but no shared direction yet" — which restates Problem tab 3. Strategic Clarity opens with "Your organisation is going through change and needs everyone pointed in the same direction" — close to the old Problem tab 2. Now that The Problem tabs are sharper, the How I Work accordion bodies should focus purely on *what the engagement looks like*, not re-describe the situation.
 
-3. **The differentiator line is buried.** "Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design." This is the sharpest positioning copy on the page. It currently sits after the How I Work accordions as a typographic divider. Consider whether it deserves more prominence — possibly in the Hero or as the How I Work section intro.
+3. ~~**The differentiator line is buried.**~~ **Resolved (2026-03-20).** Old two-pole comparison scrapped — replaced with new differentiator line about altitude range and process. Moved to Hero subheadline. Old descriptive subheadline repurposed as a bridge section between The Problem and How I Work. Pending: Tiziano pass on new differentiator for voice.
 
 4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). Check How I Work accordion bodies and any remaining CTA copy against this rule.
 
