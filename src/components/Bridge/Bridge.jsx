@@ -8,7 +8,7 @@ export default function Bridge() {
     <section className="bridge" aria-label="Who I work with">
       <div ref={ref} className="bridge-inner fade-up">
         <p className="bridge-copy">
-          Design leaders and CPOs bring me in as an independent strategic designer when everyone has a different picture of where a digital product or end-to-end experience is going. I synthesise across product, business, and user needs — and deliver a tangible vision to align around and build from.
+          When everyone has a different picture of where a digital product or end-to-end experience is going, I synthesise across product, business, and user needs — and deliver a tangible vision to align around and build from.
         </p>
         <div className="bridge-actions">
           <a href="#contact" className="btn btn-primary">Get in touch</a>
