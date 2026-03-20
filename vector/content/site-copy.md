@@ -12,8 +12,10 @@ Giuseppe de Cesare
 **Headline:**
 I turn fragmented thinking into shared clarity — so your teams can move forward.
 
-**Subheadline:**
-Design leaders and CPOs bring me in when everyone has a different picture of where things are going. I synthesise across product, business, and user needs — and deliver something concrete enough to align around and build from.
+**Subheadline (new — differentiator):**
+AI makes building easy — and easily scattered. Direction is scarce. I zoom out to frame it, zoom in to make it tangible. The craft is in doing both, and bringing everyone along.
+
+*Pending Tiziano pass for voice.*
 
 **Primary CTA:** Get in touch
 
@@ -61,8 +63,18 @@ A complex initiative needs ongoing orchestration across functions — from conce
 ### Strategic Clarity — Project-based
 Your organisation is going through change and needs everyone pointed in the same direction. I design and facilitate the process that turns scattered perspectives into a shared narrative — something that sustains alignment after the engagement ends.
 
-**Differentiator line (below accordion):**
-Strategy consultants align on direction — but deliver abstractions. Design agencies execute — but need direction handed to them. I work in the middle: I align through tangible design.
+*Differentiator line removed — moved to Hero subheadline (see Section 1).*
+
+---
+
+## Bridge: Between The Problem and How I Work
+
+**Copy:**
+When everyone has a different picture of where a digital product or end-to-end experience is going, I synthesise across product, business, and user needs — and deliver a tangible vision to align around and build from.
+
+**CTAs:** Get in touch (primary, → #contact) · Learn more (link, → #how-i-work)
+
+**Style:** Centered typographic divider — reuse the visual pattern from the old .hiw-divider (serif, display size).
 
 ---
 

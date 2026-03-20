@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. |
-| The Problem | Reviewed | In progress | Sticky card stack layout (branch `problem-sticky-cards`). Single sticky frame with scroll-driven card entrances + upward drift. Active card gets accent fill, background cards show border. Accordion-mirrored type hierarchy (display-lg label, italic headline hook). No shadows. Iterating on scroll pacing and visual polish. `main` still has the tab layout. Pending: Tiziano pass for voice. |
+| The Problem | Reviewed | Done | Sticky card stack layout. Cards spread out vertically, compress into a stack on scroll. Equal speed across cards, constant gap maintained. Section label inside sticky frame — scrolls away with card stack. Active accent triggers only after previous card fully stacked. Merged to `main` (2026-03-20). Pending: Tiziano pass for voice. |
 | Bridge | Reviewed | Done | New section between The Problem and How I Work. Old Hero subheadline repurposed as centered typographic statement + CTAs (Get in touch / Learn more). |
 | How I Work | Reviewed | Done | First accordion open by default. Differentiator divider removed (moved to Hero subheadline). Section now ends after accordions. |
 | Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |

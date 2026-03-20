@@ -1,5 +1,4 @@
 # Positioning
-
 ---
 
 ## Core Proposition
@@ -49,13 +48,10 @@ Designing and facilitating the co-creation process to clarify and communicate st
 
 ## Differentiators
 
-| Strategy consultant | Design agency | Me |
-|---|---|---|
-| Aligns on direction | Executes on direction | Aligns on direction **through tangible design** |
-| Delivers a strategy document | Delivers pixel-perfect designs | Delivers something testable and buildable |
-| Works in abstractions | Works in execution details | Works in the middle — making abstract concrete |
+**Core differentiator:** I move fluidly across altitudes — from framing the problem and defining outcomes, to making it tangible through visions, narratives, and prototypes teams can build from. It's not sequential: making things tangible is how the framing sharpens. Most people operate at one altitude. I cover the full range, and I bring people along through the process. Underlying this is the ability to synthesise across domains (product, business, user needs, tech constraints) and translate that synthesis into tangible artefacts that unlock alignment.
 
-**Core differentiator:** I synthesise across domains (product, business, user needs, tech constraints) and translate that synthesis into tangible artefacts that unlock alignment. Most people do one or the other — I do both simultaneously.
+**Draft differentiator line:**
+> AI makes building easy — and easily scattered. Direction is scarce. I zoom out to frame it, zoom in to make it tangible. The craft is in doing both, and bringing everyone along.
 
 **Supporting lines:**
 1. **I speak product and business** — and design the concepts that bring them together.

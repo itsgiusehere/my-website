@@ -4,25 +4,26 @@
   background: transparent;
 }
 
-/* ─── Section label — sticky, sits behind cards ─── */
+/* ─── Section label — sticky, always above cards ─── */
+/* Label lives inside the sticky frame, positioned above card 1 */
 .problem-section-label {
-  position: sticky;
-  top: calc(30vh - 3rem);
-  z-index: 0;
-  will-change: transform;
+  position: absolute;
+  top: calc(-1.5em - var(--space-md));
+  left: 0;
+  z-index: 20;
 }
 
 /* ─── Scroll region — provides scroll distance for the sticky frame ─── */
 .problem-scroll-region {
-  height: 120vh;
+  height: 200vh;
   position: relative;
 }
 
-/* ─── Sticky frame — contains all cards, scrolls away as a unit ─── */
+/* ─── Sticky frame — contains label + cards, scrolls away as a unit ─── */
 .problem-sticky-frame {
   position: sticky;
-  top: 30vh;
-  height: calc(100vh - 30vh);
+  top: max(12vh, calc(var(--nav-height) + var(--space-md)));
+  height: calc(100vh - max(12vh, calc(var(--nav-height) + var(--space-md))));
   will-change: transform;
 }
 
@@ -39,23 +40,20 @@
   transition: background 300ms ease, border-color 300ms ease;
 }
 
-/* Card-specific: accent, z-index, peek position */
-.problem-card:nth-child(1) {
+/* Card-specific: accent, peek position */
+.problem-card:nth-of-type(1) {
   --card-accent: var(--color-accent-lavender);
-  z-index: 1;
   top: 0;
 }
 
-.problem-card:nth-child(2) {
+.problem-card:nth-of-type(2) {
   --card-accent: var(--color-accent-yellow);
-  z-index: 2;
-  top: 100px;
+  top: 60px;
 }
 
-.problem-card:nth-child(3) {
+.problem-card:nth-of-type(3) {
   --card-accent: var(--color-accent-teal);
-  z-index: 3;
-  top: 200px;
+  top: 120px;
 }
 
 /* Active state — only the card in focus gets accent fill */
@@ -66,7 +64,8 @@
 
 /* ─── Card body ─── */
 .problem-card-body {
-  padding: var(--space-xl) var(--space-xxl) var(--space-3xl);
+  position: relative;
+  padding: var(--space-lg) var(--space-xxl) var(--space-xxl);
 }
 
 /* Number — body text style */
@@ -77,7 +76,7 @@
   font-weight: 400;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 /* Label — accordion title style (display-lg serif) */
@@ -88,15 +87,12 @@
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
-/* ─── Content grid ─── */
+/* ─── Content ─── */
 .problem-card-content {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--space-3xl);
-  align-items: start;
+  max-width: 65%;
 }
 
 .problem-card-text {
@@ -126,11 +122,13 @@
   max-width: 42rem;
 }
 
-/* ─── Key visual ─── */
+/* ─── Key visual — absolutely positioned, vertically centered, overlaps title ─── */
 .problem-card-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  right: var(--space-xxl);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .problem-visual-img {
@@ -138,24 +136,21 @@
   max-width: 380px;
   height: auto;
   display: block;
+  opacity: 0.85;
 }
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .problem-section-label {
-    top: calc(20vh - 3rem);
-  }
-
   .problem-sticky-frame {
-    top: 20vh;
-    height: calc(100vh - 20vh);
+    top: max(10vh, calc(var(--nav-height) + var(--space-md)));
+    height: calc(100vh - max(10vh, calc(var(--nav-height) + var(--space-md))));
   }
 
-  .problem-card:nth-child(2) { top: 80px; }
-  .problem-card:nth-child(3) { top: 160px; }
+  .problem-card:nth-of-type(2) { top: 50px; }
+  .problem-card:nth-of-type(3) { top: 100px; }
 
   .problem-card-body {
-    padding: var(--space-lg) var(--space-lg) var(--space-xxl);
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
   }
 
   .problem-card-label {
@@ -164,16 +159,18 @@
   }
 
   .problem-card-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
+    max-width: 100%;
   }
 
   .problem-card-visual {
-    order: -1;
+    position: static;
+    transform: none;
+    margin-top: var(--space-lg);
   }
 
   .problem-visual-img {
-    max-width: 200px;
+    max-width: 160px;
+    opacity: 1;
   }
 
   .problem-hook {
