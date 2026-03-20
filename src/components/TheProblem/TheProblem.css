@@ -4,61 +4,94 @@
   background: transparent;
 }
 
-/* ─── Stack container ─── */
-.problem-stack {
-  display: flex;
-  flex-direction: column;
+/* ─── Section label — sticky, sits behind cards ─── */
+.problem-section-label {
+  position: sticky;
+  top: calc(30vh - 3rem);
+  z-index: 0;
+  will-change: transform;
+}
+
+/* ─── Scroll region — provides scroll distance for the sticky frame ─── */
+.problem-scroll-region {
+  height: 120vh;
+  position: relative;
+}
+
+/* ─── Sticky frame — contains all cards, scrolls away as a unit ─── */
+.problem-sticky-frame {
+  position: sticky;
+  top: 30vh;
+  height: calc(100vh - 30vh);
+  will-change: transform;
 }
 
 /* ─── Card ─── */
 .problem-card {
-  position: sticky;
-  top: var(--card-top, 0);
-  z-index: var(--card-index);
+  position: absolute;
+  left: 0;
+  right: 0;
   background: var(--color-bg-warm);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
-  transition: box-shadow var(--transition-base);
+  will-change: transform, opacity;
+  transition: background 300ms ease, border-color 300ms ease;
 }
 
-.problem-card:first-child {
-  box-shadow: none;
+/* Card-specific: accent, z-index, peek position */
+.problem-card:nth-child(1) {
+  --card-accent: var(--color-accent-lavender);
+  z-index: 1;
+  top: 0;
 }
 
-.problem-card:hover {
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+.problem-card:nth-child(2) {
+  --card-accent: var(--color-accent-yellow);
+  z-index: 2;
+  top: 100px;
 }
 
-/* ─── Card header ─── */
-.problem-card-header {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-lg);
-  padding: var(--space-xl) var(--space-xxl);
+.problem-card:nth-child(3) {
+  --card-accent: var(--color-accent-teal);
+  z-index: 3;
+  top: 200px;
 }
 
-.problem-card-number {
-  font-family: var(--font-serif);
-  font-size: var(--text-label);
-  font-weight: 400;
-  color: var(--color-text-decorative);
-  letter-spacing: 0.02em;
-}
-
-.problem-card-label {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  font-weight: 500;
-  color: var(--color-text-primary);
+/* Active state — only the card in focus gets accent fill */
+.problem-card--active {
+  background: var(--card-accent);
+  border-color: transparent;
 }
 
 /* ─── Card body ─── */
 .problem-card-body {
-  padding: 0 var(--space-xxl) var(--space-3xl);
+  padding: var(--space-xl) var(--space-xxl) var(--space-3xl);
 }
 
+/* Number — body text style */
+.problem-card-number {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Label — accordion title style (display-lg serif) */
+.problem-card-label {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-lg);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── Content grid ─── */
 .problem-card-content {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -69,17 +102,19 @@
 .problem-card-text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
-/* Hook */
+/* Hook — accordion statement style (italic serif) */
 .problem-hook {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
+  font-style: italic;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
+  max-width: 28em;
 }
 
 /* Detail */
@@ -88,6 +123,7 @@
   font-size: var(--text-body);
   line-height: 1.75;
   color: var(--color-text-secondary);
+  max-width: 42rem;
 }
 
 /* ─── Key visual ─── */
@@ -106,12 +142,25 @@
 
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
-  .problem-card-header {
-    padding: var(--space-lg);
+  .problem-section-label {
+    top: calc(20vh - 3rem);
   }
 
+  .problem-sticky-frame {
+    top: 20vh;
+    height: calc(100vh - 20vh);
+  }
+
+  .problem-card:nth-child(2) { top: 80px; }
+  .problem-card:nth-child(3) { top: 160px; }
+
   .problem-card-body {
-    padding: 0 var(--space-lg) var(--space-xxl);
+    padding: var(--space-lg) var(--space-lg) var(--space-xxl);
+  }
+
+  .problem-card-label {
+    font-size: var(--text-display);
+    margin-bottom: var(--space-lg);
   }
 
   .problem-card-content {
@@ -124,10 +173,10 @@
   }
 
   .problem-visual-img {
-    max-width: 260px;
+    max-width: 200px;
   }
 
   .problem-hook {
-    font-size: var(--text-headline);
+    font-size: var(--text-body);
   }
 }
