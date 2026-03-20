@@ -65,8 +65,8 @@
 
 .accordion-chevron {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
   align-self: center;
 }
@@ -83,7 +83,7 @@
 
 /* horizontal bar */
 .accordion-chevron::before {
-  width: 24px;
+  width: 1.5rem;
   height: 1px;
   transform: translate(-50%, -50%);
 }
@@ -91,7 +91,7 @@
 /* vertical bar */
 .accordion-chevron::after {
   width: 1px;
-  height: 24px;
+  height: 1.5rem;
   transform: translate(-50%, -50%);
 }
 
@@ -170,7 +170,7 @@
 }
 
 .accordion-illustration {
-  width: 360px;
+  width: 22.5rem;
   height: auto;
 }
 
@@ -185,6 +185,6 @@
   }
 
   .accordion-illustration {
-    width: 140px;
+    width: 8.75rem;
   }
 }

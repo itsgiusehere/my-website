@@ -93,7 +93,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 - **Call to action:** All three options (contact form, calendar link, LinkedIn DM) will be available. Final hierarchy — which is primary, which are secondary — is TBD.
 - **Site structure:** Single page, scroll-based, seven sections in this order:
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
-  2. **The problem** — name the situation clients are in before hiring Giuseppe (sticky card stack on `problem-sticky-cards` branch; tabs on `main`)
+  2. **The problem** — name the situation clients are in before hiring Giuseppe (sticky card stack)
   3. **Bridge** — descriptive positioning statement + CTAs (Get in touch / Learn more)
   4. **How I work** — three engagement modes as a choice, not a process
   5. **Selected work** — 2–3 outcome-framed case studies
@@ -140,6 +140,7 @@ See ARCHITECTURE.md for technical implementation details.
 - **Hard:** No backend at launch. Static or near-static. Add only when a feature clearly requires it.
 - **Soft:** Personal preference for restraint — no animations for the sake of it, no heavy frameworks, no design trends that age poorly.
 - **Soft:** The site should be legible and fast on mobile. Most decision-makers read on their phones first.
+- **Hard:** Fluid scaling via rem-based spacing tokens and a viewport-responsive root font-size (`clamp(14.5px, 0.27vw + 10.6px, 16px)`). All spacing must use tokens or rem — no hardcoded px except borders, radii, shadows, nav-height, and media query breakpoints.
 
 ---
 

@@ -21,7 +21,7 @@
 
 /* ─── Cards ─── */
 .work-card {
-  flex: 0 0 clamp(280px, 70vw, 420px);
+  flex: 0 0 clamp(17.5rem, 70vw, 26.25rem);
   scroll-snap-align: start;
   background: var(--color-bg-warm);
   border-radius: var(--radius-card);
@@ -106,8 +106,8 @@
 }
 
 .carousel-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: var(--radius-full);
   background: var(--color-border);
   border: none;
@@ -118,5 +118,5 @@
 
 .carousel-dot--active {
   background: var(--color-text-primary);
-  width: 20px;
+  width: 1.25rem;
 }

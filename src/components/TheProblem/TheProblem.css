@@ -48,12 +48,12 @@
 
 .problem-card:nth-of-type(2) {
   --card-accent: var(--color-accent-yellow);
-  top: 60px;
+  top: 3.75rem;
 }
 
 .problem-card:nth-of-type(3) {
   --card-accent: var(--color-accent-teal);
-  top: 120px;
+  top: 7.5rem;
 }
 
 /* Active state — only the card in focus gets accent fill */
@@ -133,7 +133,7 @@
 
 .problem-visual-img {
   width: 100%;
-  max-width: 380px;
+  max-width: 23.75rem;
   height: auto;
   display: block;
   opacity: 0.85;
@@ -146,8 +146,8 @@
     height: calc(100vh - max(10vh, calc(var(--nav-height) + var(--space-md))));
   }
 
-  .problem-card:nth-of-type(2) { top: 50px; }
-  .problem-card:nth-of-type(3) { top: 100px; }
+  .problem-card:nth-of-type(2) { top: 3.125rem; }
+  .problem-card:nth-of-type(3) { top: 6.25rem; }
 
   .problem-card-body {
     padding: var(--space-md) var(--space-lg) var(--space-lg);
@@ -169,7 +169,7 @@
   }
 
   .problem-visual-img {
-    max-width: 160px;
+    max-width: 10rem;
     opacity: 1;
   }
 

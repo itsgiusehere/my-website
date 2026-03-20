@@ -34,13 +34,17 @@ export default function TheProblem() {
       if (!region || !frame) { ticking = false; return }
 
       const vh = window.innerHeight
-      const stickyTop = Math.max(vh * 0.12, NAV_HEIGHT + 16)
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize)
+      const stickyTop = Math.max(vh * 0.12, NAV_HEIGHT + rem)
       const rect = region.getBoundingClientRect()
       const stickyScroll = Math.max(0, stickyTop - rect.top)
       const entranceDist = vh * ENTRANCE_VH
       const cardHeight = cardRefs.current[0]?.offsetHeight || vh * 0.65
-      const peekGap = 30
-      const cardTops = [0, 60, 120]
+      const peekGap = rem * 1.875
+      /* Read card CSS top values from the DOM so they stay in sync with rem-based CSS */
+      const cardTops = cardRefs.current.map(card =>
+        card ? parseFloat(getComputedStyle(card).top) || 0 : 0
+      )
 
       /* Per-card slide distance: from spread-out position to stacked position.
          Spread positions: card 1 at 0, then each card below the previous + gap.
