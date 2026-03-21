@@ -70,15 +70,15 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. |
-| The Problem | Reviewed | Done | Sticky card stack layout. Cards spread out vertically, compress into a stack on scroll. Equal speed across cards, constant gap maintained. Section label inside sticky frame — scrolls away with card stack. Active accent triggers only after previous card fully stacked. Merged to `main` (2026-03-20). Pending: Tiziano pass for voice. |
-| Bridge | Reviewed | Done | New section between The Problem and How I Work. Old Hero subheadline repurposed as centered typographic statement + CTAs (Get in touch / Learn more). |
-| How I Work | Reviewed | Done | First accordion open by default. Differentiator divider removed (moved to Hero subheadline). Section now ends after accordions. |
-| Selected Work | Reviewed | Done | Four outcome-framed case studies; images are placeholders |
-| Testimonials | Reviewed | Done | Seven testimonials; sits between Selected Work and About |
-| About | Reviewed | Done | Personal voice, four beliefs |
-| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD |
-| Nav | Reviewed | Done | CTA switched to secondary (outline). Links set to font-weight 500. Shared `.link` class extracted to App.css. |
+| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. Needs responsive pass. |
+| The Problem | Reviewed | Done | Sticky card stack layout. Large-screen refinements: bigger card padding, wider stacked tops, increased spread gap at 1440px+. Needs responsive pass. Pending: Tiziano pass for voice. |
+| Bridge | Reviewed | Done | Centered typographic statement + CTAs. Slower fade-in entrance (1.2s). Balanced spacing above/below at 1440px+. Needs responsive pass. |
+| How I Work | Reviewed | Done | First accordion starts collapsed, auto-expands on scroll into view (600ms). Needs responsive pass. |
+| Selected Work | Reviewed | Draft | Four outcome-framed case studies; images are placeholders. Content and design need further work. Needs responsive pass. |
+| Testimonials | Reviewed | In progress | Bento grid with featured quote (lavender accent, italic serif). Non-featured quotes in body text style. Profile photos supported but not yet added. Needs responsive pass. |
+| About | Reviewed | Draft | Personal voice, four beliefs. Content and design need further work. Needs responsive pass. |
+| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Needs responsive pass. |
+| Nav | Reviewed | Done | Full-width layout. Background transitions with page colour (centralised bg-white observer in App.jsx). Needs responsive pass. |
 
 ## Key Assumptions (Seed These Early)
 

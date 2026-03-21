@@ -156,7 +156,7 @@
 .accordion-body {
   font-family: var(--font-sans);
   font-size: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--color-text-secondary);
   max-width: 42rem;
 }
