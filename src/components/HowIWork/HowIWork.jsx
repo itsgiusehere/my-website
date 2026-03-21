@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
@@ -17,24 +17,6 @@ export default function HowIWork() {
   const [activeId, setActiveId] = useState(null)
   const hasAutoOpened = useRef(false)
   const ref = useFadeIn()
-
-  useLayoutEffect(() => {
-    const section = document.getElementById('how-i-work')
-    if (!section) return
-    const rect = section.getBoundingClientRect()
-    document.body.classList.toggle('bg-white', rect.top < window.innerHeight && rect.bottom > 0)
-  }, [])
-
-  useEffect(() => {
-    const section = document.getElementById('how-i-work')
-    if (!section) return
-    const observer = new IntersectionObserver(
-      ([entry]) => document.body.classList.toggle('bg-white', entry.isIntersecting),
-      { threshold: 0.1 }
-    )
-    observer.observe(section)
-    return () => observer.disconnect()
-  }, [])
 
   useEffect(() => {
     const content = document.querySelector('.hiw-content')

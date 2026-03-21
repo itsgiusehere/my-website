@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { submitContactForm } from '../../../services/contact.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import './Contact.css'
@@ -29,16 +29,6 @@ export default function Contact() {
   }
 
   const ref = useFadeIn()
-
-  useEffect(() => {
-    const section = document.getElementById('contact')
-    const observer = new IntersectionObserver(
-      ([entry]) => document.body.classList.toggle('bg-white', entry.isIntersecting),
-      { threshold: 0.1 }
-    )
-    if (section) observer.observe(section)
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <section className="contact" id="contact" aria-labelledby="contact-headline">

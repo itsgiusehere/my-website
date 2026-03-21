@@ -8,11 +8,10 @@
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   border-bottom: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  transition: background 0.6s ease, border-color 0.6s ease;
 }
 
 .nav-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
   padding: var(--space-sm) var(--gutter);
   height: var(--nav-height);
   display: flex;
@@ -35,6 +34,12 @@
 .nav-cta {
   font-size: var(--text-body);
   padding: var(--space-sm) var(--space-lg);
+}
+
+/* White background state — synced with body.bg-white */
+body.bg-white .nav {
+  background: color-mix(in srgb, var(--color-bg-white) 88%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--color-border) 30%, transparent);
 }
 
 /* Mobile: hide links, show only CTA */

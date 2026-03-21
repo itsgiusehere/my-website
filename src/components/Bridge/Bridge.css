@@ -29,6 +29,11 @@
   gap: var(--space-xl);
 }
 
+.bridge-inner.fade-up {
+  transform: translateY(2.5rem);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
 @media (min-width: 1440px) {
   .bridge {
     padding-top: var(--space-xxl);
