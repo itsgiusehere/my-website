@@ -40,7 +40,7 @@ export default function TheProblem() {
       const stickyScroll = Math.max(0, stickyTop - rect.top)
       const entranceDist = vh * ENTRANCE_VH
       const cardHeight = cardRefs.current[0]?.offsetHeight || vh * 0.65
-      const peekGap = rem * 1.875
+      const peekGap = rem * (window.innerWidth >= 1440 ? 5 : 1.875)
       /* Read card CSS top values from the DOM so they stay in sync with rem-based CSS */
       const cardTops = cardRefs.current.map(card =>
         card ? parseFloat(getComputedStyle(card).top) || 0 : 0

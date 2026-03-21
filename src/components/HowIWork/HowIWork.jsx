@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
@@ -14,7 +14,8 @@ const ILLUSTRATIONS = {
 }
 
 export default function HowIWork() {
-  const [activeId, setActiveId] = useState(engagementModes[0]?.id ?? null)
+  const [activeId, setActiveId] = useState(null)
+  const hasAutoOpened = useRef(false)
   const ref = useFadeIn()
 
   useLayoutEffect(() => {
@@ -32,6 +33,25 @@ export default function HowIWork() {
       { threshold: 0.1 }
     )
     observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const content = document.querySelector('.hiw-content')
+    if (!content) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAutoOpened.current) {
+          hasAutoOpened.current = true
+          const item = document.querySelector('.accordion-item')
+          item?.style.setProperty('--auto-open-duration', '600ms')
+          setActiveId(engagementModes[0]?.id ?? null)
+          setTimeout(() => item?.style.removeProperty('--auto-open-duration'), 650)
+        }
+      },
+      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+    )
+    observer.observe(content)
     return () => observer.disconnect()
   }, [])
 

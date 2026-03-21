@@ -104,7 +104,7 @@
 .accordion-panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows var(--transition-base);
+  transition: grid-template-rows var(--auto-open-duration, var(--transition-base));
 }
 
 .accordion-item--open .accordion-panel {

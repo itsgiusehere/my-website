@@ -139,6 +139,20 @@
   opacity: 0.85;
 }
 
+/* ─── Large screens ─── */
+@media (min-width: 1440px) {
+  .the-problem {
+    padding-bottom: var(--space-xxl);
+  }
+
+  .problem-card-body {
+    padding: var(--space-xxl) var(--space-xxl) var(--space-3xl);
+  }
+
+  .problem-card:nth-of-type(2) { top: 5rem; }
+  .problem-card:nth-of-type(3) { top: 10rem; }
+}
+
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
   .problem-sticky-frame {

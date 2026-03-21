@@ -29,6 +29,13 @@
   gap: var(--space-xl);
 }
 
+@media (min-width: 1440px) {
+  .bridge {
+    padding-top: var(--space-xxl);
+    padding-bottom: calc(var(--space-section) * 2);
+  }
+}
+
 @media (max-width: 768px) {
   .bridge-copy {
     font-size: var(--text-headline);
