@@ -78,7 +78,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Testimonials | Reviewed | In progress | Bento grid with featured quote (lavender accent, italic serif). Non-featured quotes in body text style. Profile photos supported but not yet added. Needs responsive pass. |
 | About | Reviewed | Draft | Personal voice, four beliefs. Content and design need further work. Needs responsive pass. |
 | Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Responsive: done (1024px tighter gap, 768px — single column, full-width buttons, scaled headline). |
-| Nav | Reviewed | Done | Full-width layout. Background transitions with page colour (centralised bg-white observer in App.jsx). Responsive: done (1024px tighter link spacing, 640px — links hidden, smaller CTA button). |
+| Nav | Reviewed | Done | Full-width layout. Background transitions with page colour (centralised bg-white observer in App.jsx). Responsive: done (1024px tighter link spacing). Mobile: hamburger menu (3-line → X animation) with full-screen drawer, hero-scale serif links, btn-primary CTA, staggered fade-in, body scroll lock, Escape dismiss. Drawer outside `<nav>` to avoid WebKit backdrop-filter containing block. |
 
 ## Key Assumptions (Seed These Early)
 
