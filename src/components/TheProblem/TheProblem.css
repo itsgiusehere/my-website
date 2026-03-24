@@ -198,14 +198,11 @@
 
   .problem-card-body {
     padding: var(--space-xl) var(--space-lg) var(--space-xxl);
-    min-height: 70svh;
-    display: flex;
-    flex-direction: column;
   }
 
   .problem-card-number {
     font-size: var(--text-label);
-    margin-bottom: auto;
+    margin-bottom: var(--space-md);
   }
 
   /* Visual: flows inline, small and quiet */
@@ -220,11 +217,11 @@
     opacity: 1;
   }
 
-  /* Title dominates */
+  /* Title dominates — matches hero headline */
   .problem-card-label {
-    font-size: clamp(2.75rem, 12vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-size: clamp(3.25rem, 14vw, 7rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
     margin-bottom: var(--space-lg);
   }
 
@@ -252,6 +249,6 @@
   }
 
   .problem-card-label {
-    font-size: clamp(2.25rem, 11vw, 3.5rem);
+    font-size: clamp(2.75rem, 13vw, 4.5rem);
   }
 }
