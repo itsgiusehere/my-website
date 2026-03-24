@@ -57,7 +57,8 @@
 }
 
 /* Active state — only the card in focus gets accent fill */
-.problem-card--active {
+.problem-card[data-active],
+.problem-card--expanded {
   background: var(--card-accent);
   border-color: transparent;
 }
@@ -139,6 +140,11 @@
   opacity: 0.85;
 }
 
+/* ─── Read more toggle — hidden on desktop ─── */
+.problem-more-toggle {
+  display: none;
+}
+
 /* ─── Large screens ─── */
 @media (min-width: 1440px) {
   .the-problem {
@@ -191,6 +197,7 @@
   .problem-card {
     position: static;
     margin-bottom: var(--space-md);
+    border-color: transparent;
   }
 
   .problem-card:nth-of-type(2) { top: auto; }
@@ -236,9 +243,39 @@
     max-width: 100%;
   }
 
-  /* Hide detail on mobile — title + hook carry it */
+  /* Detail — smooth expand/collapse */
+  .problem-detail-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 400ms ease;
+  }
+
+  .problem-card--body-open .problem-detail-wrapper {
+    grid-template-rows: 1fr;
+  }
+
+  .problem-detail-inner {
+    overflow: hidden;
+  }
+
   .problem-detail {
-    display: none;
+    padding-top: var(--space-md);
+  }
+
+  .problem-more-toggle {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
 }
 

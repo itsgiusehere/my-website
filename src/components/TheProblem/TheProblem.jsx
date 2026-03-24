@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import { problemContent } from '../../../core/content.js'
 import illustrationPlaceholder from '../../assets/illustration-problem.png'
@@ -11,6 +11,59 @@ const NAV_HEIGHT = 60
 const ENTRANCE_VH = 0.5
 
 const clamp01 = v => Math.max(0, Math.min(1, v))
+
+function ProblemCard({ s, i, visual, cardRef }) {
+  const [expanded, setExpanded] = useState(false)
+  const [collapsing, setCollapsing] = useState(false)
+  const toggle = () => {
+    if (expanded) {
+      setCollapsing(true)
+      setExpanded(false)
+      setTimeout(() => setCollapsing(false), 420)
+    } else {
+      setExpanded(true)
+    }
+  }
+  const showAccent = expanded || collapsing
+
+  return (
+    <div
+      key={s.id}
+      ref={cardRef}
+      data-active={i === 0 ? '' : undefined}
+      className={`problem-card${showAccent ? ' problem-card--expanded' : ''}${expanded ? ' problem-card--body-open' : ''}`}
+    >
+      <div className="problem-card-body">
+        <span className="problem-card-number">{s.number}</span>
+        <div className="problem-card-visual">
+          <img
+            src={visual}
+            alt=""
+            aria-hidden="true"
+            className="problem-visual-img"
+          />
+        </div>
+        <p className="problem-card-label">{s.tab}</p>
+        <div className="problem-card-content">
+          <div className="problem-card-text">
+            <p className="problem-hook">{s.title}</p>
+            <div className="problem-detail-wrapper">
+              <div className="problem-detail-inner">
+                <p className="problem-detail">{s.body}</p>
+              </div>
+            </div>
+            <button
+              className="problem-more-toggle"
+              onClick={toggle}
+            >
+              {expanded ? 'Read less' : 'Read more'}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function TheProblem() {
   const fadeRef = useFadeIn()
@@ -62,7 +115,8 @@ export default function TheProblem() {
         if (newActive !== activeRef.current) {
           cardRefs.current.forEach((card, i) => {
             if (!card) return
-            card.classList.toggle('problem-card--active', i === newActive)
+            if (i === newActive) card.setAttribute('data-active', '')
+            else card.removeAttribute('data-active')
           })
           activeRef.current = newActive
         }
@@ -96,7 +150,8 @@ export default function TheProblem() {
         if (newActive !== activeRef.current) {
           cardRefs.current.forEach((card, i) => {
             if (!card) return
-            card.classList.toggle('problem-card--active', i === newActive)
+            if (i === newActive) card.setAttribute('data-active', '')
+            else card.removeAttribute('data-active')
           })
           activeRef.current = newActive
         }
@@ -124,30 +179,13 @@ export default function TheProblem() {
           <div ref={setFrameRef} className="problem-sticky-frame fade-up">
             <p className="section-label problem-section-label">Where things usually start</p>
             {problemContent.situations.map((s, i) => (
-              <div
+              <ProblemCard
                 key={s.id}
-                ref={el => cardRefs.current[i] = el}
-                className={`problem-card${i === 0 ? ' problem-card--active' : ''}`}
-              >
-                <div className="problem-card-body">
-                  <span className="problem-card-number">{s.number}</span>
-                  <div className="problem-card-visual">
-                    <img
-                      src={visuals[i]}
-                      alt=""
-                      aria-hidden="true"
-                      className="problem-visual-img"
-                    />
-                  </div>
-                  <p className="problem-card-label">{s.tab}</p>
-                  <div className="problem-card-content">
-                    <div className="problem-card-text">
-                      <p className="problem-hook">{s.title}</p>
-                      <p className="problem-detail">{s.body}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                s={s}
+                i={i}
+                visual={visuals[i]}
+                cardRef={el => cardRefs.current[i] = el}
+              />
             ))}
           </div>
         </div>
