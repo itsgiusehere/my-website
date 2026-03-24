@@ -42,7 +42,21 @@ body.bg-white .nav {
   border-bottom-color: color-mix(in srgb, var(--color-border) 30%, transparent);
 }
 
-/* Mobile: hide links, show only CTA */
+/* Tablet: tighten link spacing */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: var(--space-lg);
+  }
+}
+
+/* Mobile: hide entire nav */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Small screens: hide links, show only CTA (tablet fallback) */
 @media (max-width: 640px) {
   .nav-links {
     gap: var(--space-md);
@@ -50,5 +64,10 @@ body.bg-white .nav {
 
   .nav-link {
     display: none;
+  }
+
+  .nav-cta {
+    font-size: var(--text-label);
+    padding: var(--space-sm) var(--space-md);
   }
 }

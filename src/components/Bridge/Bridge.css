@@ -41,8 +41,34 @@
   }
 }
 
+/* ─── Mobile ─── */
 @media (max-width: 768px) {
+  .bridge {
+    padding: var(--space-3xl) 0;
+  }
+
+  .bridge-inner {
+    gap: var(--space-xxl);
+  }
+
   .bridge-copy {
     font-size: var(--text-headline);
+    text-align: left;
+  }
+
+  .bridge-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .bridge-actions .btn {
+    text-align: center;
+  }
+
+  .bridge-actions .link {
+    text-align: center;
+    padding: var(--space-md) 0;
   }
 }

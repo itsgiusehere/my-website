@@ -110,10 +110,31 @@
   line-height: 1.5;
 }
 
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .contact-inner {
+    gap: var(--space-xxl);
+  }
+}
+
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
   .contact-inner {
     grid-template-columns: 1fr;
     gap: var(--space-xxl);
+  }
+
+  .contact-headline {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .contact-form .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-linkedin {
+    width: 100%;
+    text-align: center;
   }
 }

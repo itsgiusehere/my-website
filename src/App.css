@@ -175,6 +175,17 @@ a {
 .hero-animate > *:nth-child(4) { animation-delay: 0.55s; }
 .hero-animate > *:nth-child(5) { animation-delay: 0.65s; }
 
+/* ─── Responsive section spacing ─── */
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .section-label {
+    margin-bottom: var(--space-lg);
+  }
+}
+
 /* ─── Error boundary ─── */
 .error-boundary {
   display: flex;

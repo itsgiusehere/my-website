@@ -153,33 +153,62 @@
   .problem-card:nth-of-type(3) { top: 10rem; }
 }
 
-/* ─── Mobile ─── */
-@media (max-width: 768px) {
-  .problem-sticky-frame {
-    top: max(10vh, calc(var(--nav-height) + var(--space-md)));
-    height: calc(100vh - max(10vh, calc(var(--nav-height) + var(--space-md))));
+/* ─── Tablet ─── */
+@media (max-width: 1024px) {
+  .problem-card-content {
+    max-width: 80%;
   }
 
-  .problem-card:nth-of-type(2) { top: 3.125rem; }
-  .problem-card:nth-of-type(3) { top: 6.25rem; }
+  .problem-card-label {
+    font-size: var(--text-display);
+  }
+
+  .problem-card-visual {
+    right: var(--space-lg);
+  }
+
+  .problem-visual-img {
+    max-width: 16rem;
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .problem-scroll-region {
+    height: auto;
+  }
+
+  .problem-sticky-frame {
+    position: static;
+    height: auto;
+  }
+
+  .problem-card {
+    position: static;
+    margin-bottom: var(--space-lg);
+  }
+
+  .problem-card:nth-of-type(2) { top: auto; }
+  .problem-card:nth-of-type(3) { top: auto; }
 
   .problem-card-body {
     padding: var(--space-md) var(--space-lg) var(--space-lg);
   }
 
   .problem-card-label {
-    font-size: var(--text-display);
-    margin-bottom: var(--space-lg);
+    font-size: var(--text-display-lg);
+    margin-bottom: var(--space-md);
   }
 
   .problem-card-content {
     max-width: 100%;
   }
 
+  /* Visual: flows inline between number and title on mobile */
   .problem-card-visual {
     position: static;
     transform: none;
-    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   .problem-visual-img {
@@ -187,7 +216,20 @@
     opacity: 1;
   }
 
+  /* Hide hook on mobile — title carries the message */
   .problem-hook {
-    font-size: var(--text-body);
+    display: none;
+  }
+}
+
+/* ─── Small mobile ─── */
+@media (max-width: 480px) {
+  .problem-card-body {
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+  }
+
+  .problem-card-number {
+    font-size: var(--text-label);
+    margin-bottom: var(--space-sm);
   }
 }

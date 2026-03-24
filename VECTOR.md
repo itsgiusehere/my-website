@@ -70,15 +70,15 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. Needs responsive pass. |
-| The Problem | Reviewed | Done | Sticky card stack layout. Large-screen refinements: bigger card padding, wider stacked tops, increased spread gap at 1440px+. Needs responsive pass. Pending: Tiziano pass for voice. |
-| Bridge | Reviewed | Done | Centered typographic statement + CTAs. Slower fade-in entrance (1.2s). Balanced spacing above/below at 1440px+. Needs responsive pass. |
-| How I Work | Reviewed | Done | First accordion starts collapsed, auto-expands on scroll into view (600ms). Needs responsive pass. |
+| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. Responsive: done (768px, 480px breakpoints — tighter spacing, smaller avatar, headline clamp). |
+| The Problem | Reviewed | Done | Sticky card stack layout (desktop). Large-screen refinements at 1440px+. Responsive: done (1024px tablet, 768px mobile, 480px small mobile). Mobile: static-flow cards (no sticky/absolute), accent cycles on scroll, hook hidden, illustration between number and title, display-lg serif titles. Pending: Tiziano pass for voice. |
+| Bridge | Reviewed | Done | Centered typographic statement + CTAs. Slower fade-in entrance (1.2s). Balanced spacing at 1440px+. Responsive: done (768px — left-aligned copy, stacked full-width CTAs). |
+| How I Work | Reviewed | Done | First accordion starts collapsed, auto-expands on scroll into view (600ms). Responsive: done (1024px tablet title scaling, 768px — reduced trigger/panel padding, headline-size titles, smaller chevron). |
 | Selected Work | Reviewed | Draft | Four outcome-framed case studies; images are placeholders. Content and design need further work. Needs responsive pass. |
 | Testimonials | Reviewed | In progress | Bento grid with featured quote (lavender accent, italic serif). Non-featured quotes in body text style. Profile photos supported but not yet added. Needs responsive pass. |
 | About | Reviewed | Draft | Personal voice, four beliefs. Content and design need further work. Needs responsive pass. |
-| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Needs responsive pass. |
-| Nav | Reviewed | Done | Full-width layout. Background transitions with page colour (centralised bg-white observer in App.jsx). Needs responsive pass. |
+| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Responsive: done (1024px tighter gap, 768px — single column, full-width buttons, scaled headline). |
+| Nav | Reviewed | Done | Full-width layout. Background transitions with page colour (centralised bg-white observer in App.jsx). Responsive: done (1024px tighter link spacing, 640px — links hidden, smaller CTA button). |
 
 ## Key Assumptions (Seed These Early)
 
