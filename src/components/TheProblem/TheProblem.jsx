@@ -18,7 +18,6 @@ export default function TheProblem() {
   const regionRef = useRef(null)
   const cardRefs = useRef([])
   const activeRef = useRef(0)
-
   /* Combine fadeRef and frameRef on the same element */
   const setFrameRef = (el) => {
     frameRef.current = el
