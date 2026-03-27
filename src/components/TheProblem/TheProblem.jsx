@@ -177,7 +177,7 @@ export default function TheProblem() {
       <div className="section-wrapper">
         <div ref={regionRef} className="problem-scroll-region">
           <div ref={setFrameRef} className="problem-sticky-frame fade-up">
-            <p className="section-label problem-section-label">Where things usually start</p>
+            <p className="section-label problem-section-label">Challenges I help leaders with</p>
             {problemContent.situations.map((s, i) => (
               <ProblemCard
                 key={s.id}

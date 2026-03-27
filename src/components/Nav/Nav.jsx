@@ -2,9 +2,9 @@ import { useState, useEffect, useCallback } from 'react'
 import './Nav.css'
 
 const links = [
-  { label: 'How I work', href: '#how-i-work' },
+  { label: 'How I help', href: '#how-i-help' },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'About', href: '#about' },
+  { label: 'About me', href: '#about' },
 ]
 
 export default function Nav() {

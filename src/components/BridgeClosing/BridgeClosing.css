@@ -1,0 +1,54 @@
+/* ─── Bridge Closing — typographic divider after Testimonials ─── */
+
+.bridge-closing {
+  padding: var(--space-section) 0;
+}
+
+.bridge-closing-inner {
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.bridge-closing-copy {
+  max-width: var(--max-width);
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.bridge-closing-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.bridge-closing-inner.fade-up {
+  transform: translateY(2.5rem);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .bridge-closing-copy {
+    font-size: var(--text-headline);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    text-align: left;
+  }
+
+  .bridge-closing-actions {
+    align-self: stretch;
+  }
+
+  .bridge-closing-actions .btn {
+    text-align: center;
+    width: 100%;
+  }
+}

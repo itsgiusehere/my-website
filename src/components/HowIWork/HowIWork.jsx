@@ -47,9 +47,9 @@ export default function HowIWork() {
   }))
 
   return (
-    <section className="how-i-work" id="how-i-work" aria-labelledby="hiw-label">
+    <section className="how-i-work" id="how-i-help" aria-labelledby="hiw-label">
       <div className="section-wrapper hiw-inner">
-        <p className="section-label" id="hiw-label">How I work</p>
+        <p className="section-label" id="hiw-label">How I help</p>
         <div ref={ref} className="hiw-content fade-up">
           <Accordion
             items={itemsWithIllustrations}

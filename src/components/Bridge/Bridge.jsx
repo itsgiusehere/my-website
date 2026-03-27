@@ -12,7 +12,7 @@ export default function Bridge() {
         </p>
         <div className="bridge-actions">
           <a href="#contact" className="btn btn-primary">Get in touch</a>
-          <a href="#how-i-work" className="link">Learn more</a>
+          <a href="#how-i-help" className="link">Learn more</a>
         </div>
       </div>
     </section>
