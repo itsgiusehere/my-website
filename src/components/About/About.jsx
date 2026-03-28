@@ -1,4 +1,5 @@
 import { useFadeIn } from '../../hooks/useFadeIn.js'
+import profilePicture from '../../assets/profile-picture-complete.JPG'
 import './About.css'
 
 const beliefs = [
@@ -17,25 +18,37 @@ const beliefs = [
 ]
 
 export default function About() {
-  const ref = useFadeIn()
+  const introRef = useFadeIn()
+  const beliefsRef = useFadeIn()
 
   return (
     <section className="about" id="about" aria-labelledby="about-label">
-      <div className="section-wrapper about-inner">
+      <div className="section-wrapper about-outer">
         <p className="section-label" id="about-label">About me</p>
-        <div ref={ref} className="about-body fade-up">
-          <div className="about-bio">
-            <p>15+ years spanning design, strategy, and product — from shaping experiences to deciding what to build to setting the direction that teams align around. Based in Berlin, working globally, across industries from logistics to fintech to manufacturing. A generalist who's been deep in enough disciplines to navigate the ambiguous situations where you don't need a specialist — you need someone who can see across the whole picture.</p>
+
+        <div ref={introRef} className="about-intro fade-up">
+          <div className="about-photo-wrap">
+            <img
+              src={profilePicture}
+              alt="Giuseppe de Cesare"
+              className="about-photo"
+              loading="lazy"
+            />
           </div>
-          <ul className="about-beliefs" role="list">
-            {beliefs.map((belief, i) => (
-              <li key={i} className="about-belief">
-                <h3 className="about-belief-title">{belief.title}</h3>
-                <p className="about-belief-body">{belief.body}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="about-bio">
+            <p>15+ years spanning design, strategy, and product — from shaping experiences to deciding what to build to setting the direction that teams align around. Based in Berlin, working globally, across industries from logistics to fintech to manufacturing.</p>
+            <p>A generalist who's been deep in enough disciplines to navigate the ambiguous situations where you don't need a specialist — you need someone who can see across the whole picture.</p>
+          </div>
         </div>
+
+        <ul ref={beliefsRef} className="about-beliefs fade-up" role="list">
+          {beliefs.map((belief, i) => (
+            <li key={i} className="about-belief">
+              <h3 className="about-belief-title">{belief.title}</h3>
+              <p className="about-belief-body">{belief.body}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

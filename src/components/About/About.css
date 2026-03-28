@@ -4,54 +4,70 @@
   background: transparent;
 }
 
-.about-inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xxl);
-  max-width: var(--content-width);
-}
-
-.about-body {
+.about-outer {
   display: flex;
   flex-direction: column;
   gap: var(--space-3xl);
 }
 
-/* ─── Bio ─── */
-.about-bio p {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+/* ─── Intro — photo + bio ─── */
+.about-intro {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-3xl);
+  align-items: start;
 }
 
-.about-bio-placeholder {
-  font-style: italic;
-  color: var(--color-text-secondary);
-  opacity: 0.6;
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-top: var(--space-md);
+}
+
+.about-bio p {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
 }
 
 /* ─── Beliefs ─── */
 .about-beliefs {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
 }
 
 .about-belief {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  padding: var(--space-xl) 0;
-  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
 }
 
 .about-belief-title {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  font-weight: 500;
-  line-height: 1.3;
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-weight: 400;
+  line-height: 1.2;
   color: var(--color-text-primary);
 }
 
@@ -60,4 +76,59 @@
   font-size: var(--text-body);
   line-height: 1.6;
   color: var(--color-text-secondary);
+}
+
+/* ─── Tablet — 1024px ─── */
+@media (max-width: 1024px) {
+  .about-intro {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-xxl);
+  }
+}
+
+/* ─── Mobile — 768px ─── */
+@media (max-width: 768px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-xxl);
+  }
+
+  .about-photo {
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
+  }
+
+  .about-bio {
+    padding-top: 0;
+  }
+
+  .about-bio p {
+    font-size: clamp(1.375rem, 5vw, var(--text-headline));
+    line-height: 1.3;
+  }
+
+  .about-beliefs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-belief {
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about-belief:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-belief-title {
+    font-size: clamp(1.25rem, 4vw, var(--text-headline));
+  }
+}
+
+/* ─── Small mobile — 480px ─── */
+@media (max-width: 480px) {
+  .about-bio p {
+    font-size: 1.375rem;
+  }
 }
