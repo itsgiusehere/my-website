@@ -113,18 +113,27 @@ The Problem section has been rewritten with three differentiated use cases. The 
 
 4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). Check How I Work accordion bodies and any remaining CTA copy against this rule.
 
-## Pending Tasks
+## Pre-Launch Todos
 
-- **Problem → How I Help spacing**: excessive gap between the two sections caused by the 200vh scroll region tail + section padding. Needs careful tuning of scroll region height without breaking sticky card stacking pacing.
+- [ ] **Self-host fonts (GDPR)**: replace Google Fonts with self-hosted alternative. Lead: fontshare.com
+- [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
+- [ ] **Review nav items**: ensure menu items match website sections; review section names
+- [ ] **Problem card illustrations**: create illustrations for the 3 challenge cards
+- [ ] **Principles illustrations** *(optional)*: create illustrations for the 3 principles
+- [ ] **Testimonials selection**: review which testimonials to show on the website
+- [ ] **Testimonial profile pictures**: add profile photos to testimonial cards
+- [ ] **Copy review with Tiziano**: review copy of the whole website
+- [ ] **robots.txt**: create robots.txt file
+- [ ] **Favicon**: create favicon
+- [ ] **Social preview**: create OG/meta preview for social networks
+- [ ] **Calendly link**: add real Calendly URL to Contact section (currently placeholder)
+- [ ] **iPad responsive**: review iPad portrait and landscape viewports
+- [ ] **Problem → How I Help spacing**: tune 200vh scroll region height without breaking sticky card pacing
 
 ## Open Questions
 
 - What does a client need to see to move from "interesting" to "I want to reach out"?
 - How much of Giuseppe's personal POV and beliefs should surface on the site — and where?
-- Which CTA should be the primary prompt? Calendar link (low friction, high intent signal), contact form (more context, slightly more effort), or LinkedIn (familiar but off-site)?
-- Calendar link: not yet added to Contact section — decide on tool (Cal.com, Calendly, etc.) and add.
-- Case study images: currently placeholders — decide whether to use real visuals, illustrations, or keep text-only cards.
-- Testimonials section: added during build, not in original six-section plan — confirm it stays and where it sits in the flow.
 
 ---
 
