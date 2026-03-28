@@ -18,15 +18,26 @@ const beliefs = [
 ]
 
 export default function About() {
-  const introRef = useFadeIn()
   const beliefsRef = useFadeIn()
+  const bioRef = useFadeIn()
 
   return (
     <section className="about" id="about" aria-labelledby="about-label">
       <div className="section-wrapper about-outer">
         <p className="section-label" id="about-label">About me</p>
 
-        <div ref={introRef} className="about-intro fade-up">
+        <p className="about-intro">I take ownership so you don't have to chase progress. I stay three steps ahead so you save time. And I see things through to results — so you can focus on what matters knowing it's in good hands.</p>
+
+        <ul ref={beliefsRef} className="about-beliefs fade-up" role="list">
+          {beliefs.map((belief, i) => (
+            <li key={i} className="about-belief">
+              <h3 className="about-belief-title">{belief.title}</h3>
+              <p className="about-belief-body">{belief.body}</p>
+            </li>
+          ))}
+        </ul>
+
+        <div ref={bioRef} className="about-bio-section fade-up">
           <div className="about-photo-wrap">
             <img
               src={profilePicture}
@@ -40,15 +51,6 @@ export default function About() {
             <p>A generalist who's been deep in enough disciplines to navigate the ambiguous situations where you don't need a specialist — you need someone who can see across the whole picture.</p>
           </div>
         </div>
-
-        <ul ref={beliefsRef} className="about-beliefs fade-up" role="list">
-          {beliefs.map((belief, i) => (
-            <li key={i} className="about-belief">
-              <h3 className="about-belief-title">{belief.title}</h3>
-              <p className="about-belief-body">{belief.body}</p>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   )

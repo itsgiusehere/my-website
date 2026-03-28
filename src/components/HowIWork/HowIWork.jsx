@@ -50,6 +50,7 @@ export default function HowIWork() {
     <section className="how-i-work" id="how-i-help" aria-labelledby="hiw-label">
       <div className="section-wrapper hiw-inner">
         <p className="section-label" id="hiw-label">How I help</p>
+        <p className="hiw-intro">When everyone has a different picture of where a digital product or end-to-end experience is going, I synthesise across product, business, and user needs — and deliver a tangible vision to align around and build from.</p>
         <div ref={ref} className="hiw-content fade-up">
           <Accordion
             items={itemsWithIllustrations}

@@ -3,11 +3,9 @@ import './App.css'
 import Nav from './components/Nav/Nav'
 import Hero from './components/Hero/Hero'
 import TheProblem from './components/TheProblem/TheProblem'
-import Bridge from './components/Bridge/Bridge'
 import HowIWork from './components/HowIWork/HowIWork'
 import SelectedWork from './components/SelectedWork/SelectedWork'
 import Testimonials from './components/Testimonials/Testimonials'
-import BridgeClosing from './components/BridgeClosing/BridgeClosing'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
@@ -53,11 +51,9 @@ export default function App() {
       <main>
         <Hero />
         <TheProblem />
-        <Bridge />
         <HowIWork />
         <SelectedWork />
         <Testimonials />
-        <BridgeClosing />
         <About />
         <Contact />
       </main>

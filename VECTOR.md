@@ -70,16 +70,14 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, new differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Old descriptive subheadline moved to Bridge. Responsive: done (768px, 480px breakpoints — tighter spacing, smaller avatar, headline clamp). |
-| Challenges I help leaders with | Reviewed | Done | Renamed from "The Problem". Sticky card stack layout (desktop). Large-screen refinements at 1440px+. Responsive: done (1024px tablet, 768px mobile, 480px small mobile). Mobile: static-flow cards, accent cycles on scroll via data-active attribute, borderless cards, display-lg serif titles, illustration between number and title, Read more/less toggle for detail text (smooth grid-template-rows animation), expanded cards keep accent during collapse. Pending: Tiziano pass for voice. |
-| Bridge | Reviewed | Done | Centered typographic statement + CTAs. Slower fade-in entrance (1.2s). Balanced spacing at 1440px+. Responsive: done (768px — left-aligned copy, stacked full-width CTAs). |
-| How I help | Reviewed | Done | Renamed from "How I Work". ID updated to `#how-i-help`. First accordion starts collapsed, auto-expands on scroll into view (600ms). Responsive: done (1024px tablet title scaling, 768px mobile). Mobile: cards not accordions — all panels open, chevron hidden, trigger non-interactive. Display-lg serif titles matching hero/problem scale (clamp), hook at --text-headline italic, illustration at 14rem moved to top via order, accent cycles on scroll via data-active attribute, borderless cards. Read more/less toggle for body text (smooth grid-template-rows animation), expanded cards keep accent during collapse. |
+| Hero | Reviewed | Done | Profile picture, headline, differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Responsive: done (768px, 480px breakpoints). |
+| Challenges I help leaders with | Reviewed | Done | Sticky card stack layout (desktop). Large-screen refinements at 1440px+. Responsive: done (1024px, 768px, 480px). Mobile: static-flow cards, accent cycles via data-active, borderless cards, Read more/less toggle. Pending: Tiziano pass for voice. |
+| How I help | Reviewed | Done | Absorbed Bridge positioning statement as intro (serif display, no CTAs). Engagement modes as accordions, auto-expand first on scroll. Responsive: done. Mobile: cards not accordions, Read more/less toggle. |
 | Selected Work | Reviewed | Draft | Four outcome-framed case studies; images are placeholders. Content and design need further work. Needs responsive pass. |
-| What clients say | Reviewed | Done | Renamed from "Testimonials". Featured testimonial as editorial pull-quote (large serif italic, decorative quotation mark, no card/bg). White-bg cards in 3-col grid. Responsive: 1024px 2-col, 768px 1-col (featured becomes normal card). Mobile: 3 visible, rest behind Show more/less toggle (grid-template-rows + opacity fade). |
-| Bridge (closing) | Reviewed | Done | New section after Testimonials. Same typographic pattern as first Bridge (centered serif display + CTA). Copy: ownership, anticipation, results. Single "Get in touch" CTA. Responsive: mobile left-aligned, full-width button. |
-| About me | Reviewed | In progress | Renamed from "About". Rewritten with bio placeholder (Giuseppe to provide) and three titled beliefs (Not just user-centred, Validate only what matters, Always a recommendation). Beliefs as bordered list with title + body. Needs responsive pass. |
-| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Responsive: done (1024px tighter gap, 768px — single column, full-width buttons, scaled headline). |
-| Nav | Reviewed | Done | Full-width layout. Links updated: "How I help" (#how-i-help), "Testimonials" (#testimonials), "About me" (#about). Background transitions with page colour (centralised bg-white observer in App.jsx). Responsive: done (1024px tighter link spacing). Mobile: hamburger menu (3-line → X animation) with full-screen drawer, hero-scale serif links, btn-primary CTA, staggered fade-in, body scroll lock, Escape dismiss. Drawer outside `<nav>` to avoid WebKit backdrop-filter containing block. |
+| What clients say | Reviewed | Done | Featured testimonial as editorial pull-quote. White-bg cards in 3-col grid. Responsive: 1024px 2-col, 768px 1-col. Mobile: 3 visible, rest behind Show more/less toggle. |
+| About me | Reviewed | Done | Absorbed closing Bridge as intro (ownership/results statement, serif display, no CTA). Three titled beliefs in 3-col grid. Photo + bio below (2-col, Cardo serif at headline scale). Responsive: 1024px narrower photo, 768px stacked, 480px tighter type. |
+| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Responsive: done (1024px, 768px). |
+| Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
 
 ## Key Assumptions (Seed These Early)
 
@@ -92,16 +90,14 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 - **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
 - **Call to action:** All three options (contact form, calendar link, LinkedIn DM) will be available. Final hierarchy — which is primary, which are secondary — is TBD.
-- **Site structure:** Single page, scroll-based, nine sections in this order:
+- **Site structure:** Single page, scroll-based, seven sections in this order:
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
   2. **Challenges I help leaders with** — name the situation clients are in before hiring Giuseppe (sticky card stack)
-  3. **Bridge** — descriptive positioning statement + CTAs (Get in touch / Learn more)
-  4. **How I help** — three engagement modes as a choice, not a process
-  5. **Selected work** — 2–3 outcome-framed case studies
-  6. **What clients say** — client quotes (featured pull-quote + card grid)
-  7. **Bridge (closing)** — ownership/anticipation/results statement + Get in touch CTA
-  8. **About me** — bio + three titled beliefs, personal not biographical
-  9. **Contact** — all three CTAs (calendar, form, LinkedIn)
+  3. **How I help** — positioning intro (absorbed from Bridge) + three engagement modes
+  4. **Selected work** — 2–3 outcome-framed case studies
+  5. **What clients say** — client quotes (featured pull-quote + card grid)
+  6. **About me** — qualities intro (absorbed from closing Bridge) + three beliefs + photo + bio
+  7. **Contact** — all three CTAs (calendar, form, LinkedIn)
 
 ## Content Improvements — Pending (Cooper, 2026-03-19)
 
