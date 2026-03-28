@@ -70,13 +70,14 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Responsive: done (768px, 480px breakpoints). |
-| Challenges I help leaders with | Reviewed | Done | Sticky card stack layout (desktop). Large-screen refinements at 1440px+. Responsive: done (1024px, 768px, 480px). Mobile: static-flow cards, accent cycles via data-active, borderless cards, Read more/less toggle. Pending: Tiziano pass for voice. |
-| How I help | Reviewed | Done | Absorbed Bridge positioning statement as intro (serif display, no CTAs). Engagement modes as accordions, auto-expand first on scroll. Responsive: done. Mobile: cards not accordions, Read more/less toggle. |
-| Selected Work | Reviewed | Draft | Four outcome-framed case studies; images are placeholders. Content and design need further work. Needs responsive pass. |
-| What clients say | Reviewed | Done | Featured testimonial as editorial pull-quote. White-bg cards in 3-col grid. Responsive: 1024px 2-col, 768px 1-col. Mobile: 3 visible, rest behind Show more/less toggle. |
-| About me | Reviewed | Done | Absorbed closing Bridge as intro (ownership/results statement, serif display, no CTA). Three titled beliefs in 3-col grid. Photo + bio below (2-col, Cardo serif at headline scale). Responsive: 1024px narrower photo, 768px stacked, 480px tighter type. |
-| Contact | Reviewed | Done | Contact form (functional) + LinkedIn link; calendar link TBD. Responsive: done (1024px, 768px). |
+| Hero | Reviewed | Done | Profile picture, headline, differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Responsive: done. |
+| Challenges I help leaders with | Reviewed | Done | Sticky card stack layout. Responsive: done. Section divider with border-top on label. Pending: Tiziano pass for voice. |
+| How I help | Reviewed | Done | Positioning intro (serif display). Accordions with extra top margin for visual mass. Section divider. Responsive: done. |
+| How I work | Reviewed | Done | New section (was principles in About). Ownership statement intro + 3 principles with SVG icons (DM Sans bold titles). Section divider. Responsive: done. |
+| Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
+| What clients say | Reviewed | Done | Featured pull-quote + white-bg card grid. White nav bg. Section divider. Responsive: done. Mobile: 3 visible, rest behind Show more/less. |
+| About me | Reviewed | Done | Photo + bio (Cardo serif headline on desktop, DM Sans body on mobile). Section divider. Responsive: done. |
+| Contact | Reviewed | Done | Serif display intro, Book a chat (Calendly btn), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
 | Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
 
 ## Key Assumptions (Seed These Early)
@@ -89,15 +90,16 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 ## Decisions
 
 - **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
-- **Call to action:** All three options (contact form, calendar link, LinkedIn DM) will be available. Final hierarchy — which is primary, which are secondary — is TBD.
-- **Site structure:** Single page, scroll-based, seven sections in this order:
+- **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Calendly URL is placeholder — needs real link.
+- **Site structure:** Single page, scroll-based, eight sections (Selected Work hidden):
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
-  2. **Challenges I help leaders with** — name the situation clients are in before hiring Giuseppe (sticky card stack)
-  3. **How I help** — positioning intro (absorbed from Bridge) + three engagement modes
-  4. **Selected work** — 2–3 outcome-framed case studies
-  5. **What clients say** — client quotes (featured pull-quote + card grid)
-  6. **About me** — qualities intro (absorbed from closing Bridge) + three beliefs + photo + bio
-  7. **Contact** — all three CTAs (calendar, form, LinkedIn)
+  2. **Challenges I help leaders with** — sticky card stack
+  3. **How I help** — positioning intro + three engagement modes (accordions)
+  4. **How I work** — ownership intro + three principles with icons
+  5. ~~**Selected work**~~ — hidden, content on `selected-work` branch
+  6. **What clients say** — featured pull-quote + card grid
+  7. **About me** — photo + bio
+  8. **Contact** — intro + Calendly, LinkedIn, email (no form)
 
 ## Content Improvements — Pending (Cooper, 2026-03-19)
 
@@ -110,6 +112,10 @@ The Problem section has been rewritten with three differentiated use cases. The 
 3. ~~**The differentiator line is buried.**~~ **Resolved (2026-03-20).** Old two-pole comparison scrapped — replaced with new differentiator line about altitude range and process. Moved to Hero subheadline. Old descriptive subheadline repurposed as a bridge section between The Problem and How I Work. Pending: Tiziano pass on new differentiator for voice.
 
 4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). Check How I Work accordion bodies and any remaining CTA copy against this rule.
+
+## Pending Tasks
+
+- **Problem → How I Help spacing**: excessive gap between the two sections caused by the 200vh scroll region tail + section padding. Needs careful tuning of scroll region height without breaking sticky card stacking pacing.
 
 ## Open Questions
 

@@ -11,6 +11,9 @@
   top: calc(-1.5em - var(--space-3xl));
   left: 0;
   z-index: 20;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
+  width: 100%;
 }
 
 /* ─── Scroll region — provides scroll distance for the sticky frame ─── */

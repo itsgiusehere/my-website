@@ -4,13 +4,14 @@ import Nav from './components/Nav/Nav'
 import Hero from './components/Hero/Hero'
 import TheProblem from './components/TheProblem/TheProblem'
 import HowIWork from './components/HowIWork/HowIWork'
+import Principles from './components/Principles/Principles'
 import SelectedWork from './components/SelectedWork/SelectedWork'
 import Testimonials from './components/Testimonials/Testimonials'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
 /* White-background sections */
-const WHITE_SECTIONS = new Set(['how-i-help', 'work', 'contact'])
+const WHITE_SECTIONS = new Set(['how-i-help', 'testimonials'])
 
 function useBgSync() {
   useEffect(() => {
@@ -52,7 +53,8 @@ export default function App() {
         <Hero />
         <TheProblem />
         <HowIWork />
-        <SelectedWork />
+        <Principles />
+        {/* <SelectedWork /> */}
         <Testimonials />
         <About />
         <Contact />
