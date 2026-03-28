@@ -127,6 +127,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [ ] **Favicon**: create favicon
 - [ ] **Social preview**: create OG/meta preview for social networks
 - [ ] **Calendly link**: add real Calendly URL to Contact section (currently placeholder)
+- [ ] **CV link in bio**: add link to CV/resume in the About me section
 - [ ] **iPad responsive**: review iPad portrait and landscape viewports
 - [ ] **Problem → How I Help spacing**: tune 200vh scroll region height without breaking sticky card pacing
 
