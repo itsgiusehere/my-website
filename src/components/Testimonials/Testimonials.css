@@ -4,12 +4,16 @@
   background: transparent;
 }
 
+.testimonials .section-label {
+  margin-bottom: var(--space-3xl);
+}
+
 /* ─── Featured — editorial pull-quote ─── */
 .testimonial-featured {
   text-align: left;
   max-width: 72rem;
   margin: 0 0 var(--space-section);
-  padding: var(--space-xxl) 0;
+  padding: 0 0 var(--space-xxl);
 }
 
 .testimonial-featured-quote {
@@ -25,7 +29,7 @@
   font-size: clamp(3rem, 5vw, 4.5rem);
   line-height: 1;
   color: var(--color-text-decorative);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0;
 }
 
 .testimonial-featured-quote p {
@@ -166,6 +170,10 @@
 
 /* ─── Mobile — 768px ─── */
 @media (max-width: 768px) {
+  .testimonials .section-label {
+    margin-bottom: var(--space-xxl);
+  }
+
   /* Featured becomes a normal card */
   .testimonial-featured {
     max-width: none;
