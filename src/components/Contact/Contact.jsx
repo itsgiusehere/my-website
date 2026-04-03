@@ -33,7 +33,8 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4.5 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3 8h3v9H3V8Zm5.5 0H11v1.2h.04C11.5 8.5 12.6 8 13.9 8c3 0 3.6 2 3.6 4.5V17h-3v-4c0-1 0-2.2-1.3-2.2S12 12 12 13v4H8.5V8Z" fill="currentColor"/>
+                <rect x="0.5" y="0.5" width="19" height="19" rx="3" stroke="currentColor" strokeWidth="1" />
+                <path d="M6.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM5.5 9h2v6h-2V9Zm3.5 0h2v.8h.03c.3-.5 1-1.1 2.1-1.1 2.2 0 2.6 1.5 2.6 3.4V15h-2v-2.8c0-.7 0-1.6-1-1.6s-1.1.8-1.1 1.5V15h-2V9Z" fill="currentColor"/>
               </svg>
               <span>Connect on LinkedIn</span>
             </a>

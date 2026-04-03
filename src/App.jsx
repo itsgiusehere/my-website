@@ -11,7 +11,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
 /* White-background sections */
-const WHITE_SECTIONS = new Set(['how-i-help'])
+const WHITE_SECTIONS = new Set(['how-i-help', 'about', 'principles', 'contact'])
 
 function useBgSync() {
   useEffect(() => {

@@ -115,6 +115,8 @@ The Problem section has been rewritten with three differentiated use cases. The 
 
 ## Pre-Launch Todos
 
+**Next session: prioritise all items into MUST / SHOULD / COULD for launch.**
+
 - [ ] **Self-host fonts (GDPR)**: replace Google Fonts with self-hosted alternative. Lead: fontshare.com
 - [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
 - [ ] **Review nav items**: ensure menu items match website sections; review section names
@@ -129,7 +131,8 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [ ] **Calendly link**: add real Calendly URL to Contact section (currently placeholder)
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
 - [ ] **iPad responsive**: review iPad portrait and landscape viewports
-- [ ] **Problem → How I Help spacing**: tune 200vh scroll region height without breaking sticky card pacing
+- [ ] **Client logo strip**: add rotating/scrolling strip of client logos in Hero section (Giuseppe to provide logos)
+- [x] **Problem → How I Help spacing**: dynamic JS scroll region sizing based on frame/card height
 
 ## Open Questions
 
