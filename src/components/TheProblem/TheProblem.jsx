@@ -167,9 +167,27 @@ export default function TheProblem() {
       }
     }
 
+    function sizeRegion() {
+      const region = regionRef.current
+      const frame = frameRef.current
+      if (!region || !frame || window.innerWidth <= 768) return
+      const vh = window.innerHeight
+      const totalCards = cardRefs.current.length
+      const lastCardScroll = (totalCards - 1) * vh * ENTRANCE_VH
+      const frameHeight = frame.offsetHeight
+      const cardHeight = cardRefs.current[0]?.offsetHeight || vh * 0.65
+      const gapBelowCard = frameHeight - cardHeight
+      region.style.height = `${frameHeight + lastCardScroll - gapBelowCard}px`
+    }
+
+    sizeRegion()
+    window.addEventListener('resize', sizeRegion)
     window.addEventListener('scroll', onScroll, { passive: true })
     update()
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', sizeRegion)
+    }
   }, [])
 
   return (

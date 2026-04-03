@@ -2,6 +2,7 @@
 
 .the-problem {
   background: transparent;
+  padding-bottom: 0;
 }
 
 /* ─── Section label — sticky, always above cards ─── */
@@ -18,7 +19,7 @@
 
 /* ─── Scroll region — provides scroll distance for the sticky frame ─── */
 .problem-scroll-region {
-  height: 200vh;
+  height: 200vh; /* fallback, overridden by JS */
   position: relative;
 }
 
@@ -151,7 +152,7 @@
 /* ─── Large screens ─── */
 @media (min-width: 1440px) {
   .the-problem {
-    padding-bottom: var(--space-xxl);
+    padding-bottom: 0;
   }
 
   .problem-card-body {

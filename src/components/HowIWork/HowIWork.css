@@ -34,7 +34,7 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 .accordion-item {
