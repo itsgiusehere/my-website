@@ -11,35 +11,35 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 
 /* White-background sections */
-const WHITE_SECTIONS = new Set(['how-i-help', 'testimonials'])
+const WHITE_SECTIONS = new Set(['how-i-help'])
 
 function useBgSync() {
   useEffect(() => {
     const allSections = document.querySelectorAll('main > section')
     if (!allSections.length) return
 
-    const visible = new Set()
+    let ticking = false
 
-    const observer = new IntersectionObserver(
-      () => {
-        /* Find the last section whose top has entered the viewport —
-           that's the one "peeking in" and should set the bg colour */
-        let latest = null
-        let latestTop = -Infinity
-        allSections.forEach(s => {
-          const top = s.getBoundingClientRect().top
-          if (top < window.innerHeight && top > latestTop) {
-            latestTop = top
-            latest = s.id
-          }
-        })
-        document.body.classList.toggle('bg-white', latest != null && WHITE_SECTIONS.has(latest))
-      },
-      { threshold: 0 }
-    )
+    function update() {
+      const threshold = window.innerHeight * 0.5
+      let current = null
+      allSections.forEach(s => {
+        if (s.getBoundingClientRect().top < threshold) current = s.id
+      })
+      document.body.classList.toggle('bg-white', current != null && WHITE_SECTIONS.has(current))
+      ticking = false
+    }
 
-    allSections.forEach(s => observer.observe(s))
-    return () => observer.disconnect()
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    update()
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 }
 
@@ -53,10 +53,10 @@ export default function App() {
         <Hero />
         <TheProblem />
         <HowIWork />
-        <Principles />
         {/* <SelectedWork /> */}
         <Testimonials />
         <About />
+        <Principles />
         <Contact />
       </main>
     </>

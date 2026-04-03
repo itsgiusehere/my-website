@@ -7,7 +7,7 @@
 .about-outer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3xl);
+  gap: var(--space-xl);
 }
 
 .about-outer > .section-label {
@@ -61,7 +61,7 @@
 /* ─── Mobile — 768px ─── */
 @media (max-width: 768px) {
   .about-outer {
-    gap: var(--space-xxl);
+    gap: var(--space-lg);
   }
 
   .about-bio {
