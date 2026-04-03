@@ -59,6 +59,7 @@ html {
   /* Layout widths */
   --max-width: 93.75rem;
   --content-width: 47.5rem;
+  --content-width-lg: 62.5rem;
   --gutter: clamp(1.25rem, 5vw, 3rem);
 
   /* Transitions */
