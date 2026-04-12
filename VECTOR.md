@@ -71,13 +71,13 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Reviewed | Done | Profile picture, headline, differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Responsive: done. |
-| Challenges I help leaders with | Reviewed | Done | Sticky card stack layout. Responsive: done. Section divider with border-top on label. Pending: Tiziano pass for voice. |
 | How I help | Reviewed | Done | Positioning intro (serif display). Accordions with extra top margin for visual mass. Section divider. Responsive: done. |
+| Challenges I help leaders with | Reviewed | Done | Moved after How I Help. 3 custom illustrations (diamond motif). Sticky card stack. Responsive: done. Pending: Tiziano pass for voice. |
 | How I work | Reviewed | Done | New section (was principles in About). Ownership statement intro + 3 principles with SVG icons (DM Sans bold titles). Section divider. Responsive: done. |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
 | What clients say | Reviewed | Done | Featured pull-quote + white-bg card grid. White nav bg. Section divider. Responsive: done. Mobile: 3 visible, rest behind Show more/less. |
 | About me | Reviewed | Done | Photo + bio (Cardo serif headline on desktop, DM Sans body on mobile). Section divider. Responsive: done. |
-| Contact | Reviewed | Done | Serif display intro, Book a chat (Calendly btn), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
+| Contact | Reviewed | Done | Serif display intro, Book a chat (real Calendly URL), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
 | Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
 
 ## Key Assumptions (Seed These Early)
@@ -90,11 +90,11 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 ## Decisions
 
 - **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
-- **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Calendly URL is placeholder — needs real link.
+- **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Real Calendly URL wired.
 - **Site structure:** Single page, scroll-based, eight sections (Selected Work hidden):
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
-  2. **Challenges I help leaders with** — sticky card stack
-  3. **How I help** — positioning intro + three engagement modes (accordions)
+  2. **How I help** — positioning intro + three engagement modes (accordions)
+  3. **Challenges I help leaders with** — sticky card stack with custom illustrations
   4. **How I work** — ownership intro + three principles with icons
   5. ~~**Selected work**~~ — hidden, content on `selected-work` branch
   6. **What clients say** — featured pull-quote + card grid
