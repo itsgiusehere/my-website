@@ -143,6 +143,13 @@ The Problem section has been rewritten with three differentiated use cases. The 
 **Public launch (after silent publish):**
 - [ ] **Open robots.txt**: change `Disallow: /` to `Allow: /` in `src/public/robots.txt` so search engines can index the site
 
+**Post-launch:**
+- [ ] **Enrich How I Work section**: expand with additional dimensions of how Giuseppe operates inside engagements. Raw themes to develop with Cooper/Tiziano:
+  1. **Strategic stakeholder unlocking** — always maps who to talk to, who to involve, how to make progress by earning trust of key stakeholders. Strategic mindset by default.
+  2. **Levelling up the team** — improves rituals, ways of working, and team functioning as a natural byproduct of the engagement.
+  3. **High drive and standards** — brings energy and a push for great results that lifts team morale.
+  4. **Easy to work with** — embeds quickly, works in service of the team, just a good person to have around.
+
 ## Open Questions
 
 - What does a client need to see to move from "interesting" to "I want to reach out"?
