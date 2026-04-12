@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import { problemContent } from '../../../core/content.js'
-import illustrationPlaceholder from '../../assets/illustration-problem.png'
+import illustrationProblem1 from '../../assets/illustration-problem-1.png'
+import illustrationProblem2 from '../../assets/illustration-problem-2.png'
+import illustrationProblem3 from '../../assets/illustration-problem-3.png'
 import './TheProblem.css'
 
-const visuals = [illustrationPlaceholder, illustrationPlaceholder, illustrationPlaceholder]
+const visuals = [illustrationProblem1, illustrationProblem2, illustrationProblem3]
 
 /* Scroll geometry — keep in sync with CSS */
 const NAV_HEIGHT = 60

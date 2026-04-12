@@ -115,23 +115,28 @@ The Problem section has been rewritten with three differentiated use cases. The 
 
 ## Pre-Launch Todos
 
-**Next session: prioritise all items into MUST / SHOULD / COULD for launch.**
+**Launch definition:** silent publish — site publicly reachable, URL not shared anywhere at launch.
 
+**MUST (blocks launch):**
 - [ ] **Self-host fonts (GDPR)**: replace Google Fonts with self-hosted alternative. Lead: fontshare.com
+- [ ] **Calendly link**: add real Calendly URL to Contact section (primary CTA — currently placeholder)
+- [ ] **Favicon**: create favicon
+- [ ] **robots.txt**: create robots.txt with `Disallow: /` to keep silent publish silent until ready
+- [x] **Problem card illustrations**: all 3 cards have custom illustrations (diamond in rock, fragmented faces, sketch on paper). Wired in `TheProblem.jsx`.
+- [ ] **iPad responsive**: review iPad portrait and landscape viewports
+
+**SHOULD / COULD (to be triaged next session):**
 - [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
 - [ ] **Review nav items**: ensure menu items match website sections; review section names
-- [ ] **Problem card illustrations**: create illustrations for the 3 challenge cards
 - [ ] **Principles illustrations** *(optional)*: create illustrations for the 3 principles
 - [ ] **Testimonials selection**: review which testimonials to show on the website
 - [ ] **Testimonial profile pictures**: add profile photos to testimonial cards
 - [ ] **Copy review with Tiziano**: review copy of the whole website
-- [ ] **robots.txt**: create robots.txt file
-- [ ] **Favicon**: create favicon
 - [ ] **Social preview**: create OG/meta preview for social networks
-- [ ] **Calendly link**: add real Calendly URL to Contact section (currently placeholder)
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
-- [ ] **iPad responsive**: review iPad portrait and landscape viewports
 - [ ] **Client logo strip**: add rotating/scrolling strip of client logos in Hero section (Giuseppe to provide logos)
+
+**Done:**
 - [x] **Problem → How I Help spacing**: dynamic JS scroll region sizing based on frame/card height
 
 ## Open Questions
