@@ -2,6 +2,47 @@
    Design System Tokens — Giuseppe de Cesare
    ───────────────────────────────────────────── */
 
+/* Self-hosted fonts (GDPR — no Google Fonts requests) */
+@font-face {
+  font-family: 'Cardo';
+  src: url('../src/assets/fonts/cardo-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cardo';
+  src: url('../src/assets/fonts/cardo-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cardo';
+  src: url('../src/assets/fonts/cardo-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../src/assets/fonts/dm-sans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../src/assets/fonts/dm-sans-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Fluid root font-size: ~14.5px at 1440px, 16px at 2000px+ */
 html {
   font-size: clamp(14.5px, 0.27vw + 10.6px, 16px);

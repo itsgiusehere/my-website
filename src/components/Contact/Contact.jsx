@@ -14,7 +14,7 @@ export default function Contact() {
 
           <div className="contact-links">
             <a
-              href="https://calendly.com/giuseppedecesare"
+              href="https://calendly.com/hello-hl_r/coffee-chat"
               className="btn contact-cta"
               target="_blank"
               rel="noopener noreferrer"

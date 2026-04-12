@@ -118,26 +118,30 @@ The Problem section has been rewritten with three differentiated use cases. The 
 **Launch definition:** silent publish — site publicly reachable, URL not shared anywhere at launch.
 
 **MUST (blocks launch):**
-- [ ] **Self-host fonts (GDPR)**: replace Google Fonts with self-hosted alternative. Lead: fontshare.com
-- [ ] **Calendly link**: add real Calendly URL to Contact section (primary CTA — currently placeholder)
-- [ ] **Favicon**: create favicon
-- [ ] **robots.txt**: create robots.txt with `Disallow: /` to keep silent publish silent until ready
+- [x] **Self-host fonts (GDPR)**: Cardo + DM Sans self-hosted as woff2 in `src/assets/fonts/`. Google Fonts links removed.
+- [x] **Calendly link**: real URL wired in Contact.jsx.
+- [x] **Favicon**: stroke-only diamond SVG in `src/public/favicon.svg`, linked in index.html.
+- [x] **robots.txt**: `Disallow: /` in `src/public/robots.txt`. Remove before public launch.
 - [x] **Problem card illustrations**: all 3 cards have custom illustrations (diamond in rock, fragmented faces, sketch on paper). Wired in `TheProblem.jsx`.
-- [ ] **iPad responsive**: review iPad portrait and landscape viewports
+- [ ] **Copy review with Tiziano**: review copy of the whole website
+- [x] **Review section order**: moved Challenges after How I Help. Bg sync unaffected (ID-based).
+- [ ] **Testimonials selection**: review which testimonials to show on the website
 
 **SHOULD / COULD (to be triaged next session):**
+- [ ] **iPad responsive**: review iPad portrait and landscape viewports
 - [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
 - [ ] **Review nav items**: ensure menu items match website sections; review section names
 - [ ] **Principles illustrations** *(optional)*: create illustrations for the 3 principles
-- [ ] **Testimonials selection**: review which testimonials to show on the website
 - [ ] **Testimonial profile pictures**: add profile photos to testimonial cards
-- [ ] **Copy review with Tiziano**: review copy of the whole website
 - [ ] **Social preview**: create OG/meta preview for social networks
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
 - [ ] **Client logo strip**: add rotating/scrolling strip of client logos in Hero section (Giuseppe to provide logos)
 
 **Done:**
 - [x] **Problem → How I Help spacing**: dynamic JS scroll region sizing based on frame/card height
+
+**Public launch (after silent publish):**
+- [ ] **Open robots.txt**: change `Disallow: /` to `Allow: /` in `src/public/robots.txt` so search engines can index the site
 
 ## Open Questions
 
