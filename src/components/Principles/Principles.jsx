@@ -1,4 +1,5 @@
 import { useFadeIn } from '../../hooks/useFadeIn.js'
+import illustrationHowIWork from '../../assets/illustration-how-I-work.png'
 import './Principles.css'
 
 const principles = [
@@ -24,15 +25,6 @@ const principles = [
     ),
   },
   {
-    title: 'Always a recommendation',
-    body: 'I don\'t leave you with options and no opinion. No matter how complex the situation, I provide a clear next step. Otherwise we stay stuck.',
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M6 16h18M18 9l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
     title: 'Progress happens through people',
     body: 'Complex organisations move through trust, not processes. I map who matters and earn their buy-in. On the ground, I elevate the team I work with \u2014 improving rituals, ways of working, how they function together. The right people aligned and growing is what makes the work last.',
     icon: (
@@ -41,6 +33,15 @@ const principles = [
         <circle cx="7" cy="22" r="3.5" stroke="currentColor" strokeWidth="1.5" />
         <circle cx="25" cy="22" r="3.5" stroke="currentColor" strokeWidth="1.5" />
         <path d="M12 11l-3 8M20 11l3 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Always a recommendation',
+    body: 'I don\'t leave you with options and no opinion. No matter how complex the situation, I provide a clear next step. Otherwise we stay stuck.',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M6 16h18M18 9l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -64,6 +65,10 @@ export default function Principles() {
     <section className="principles" id="principles" aria-labelledby="principles-label">
       <div className="section-wrapper principles-outer">
         <p className="section-label" id="principles-label">How I work</p>
+
+        <div className="principles-visual">
+          <img src={illustrationHowIWork} alt="" aria-hidden="true" className="principles-illustration" />
+        </div>
 
         <p ref={introRef} className="principles-intro fade-up">I take ownership of the work, stay ahead of what's coming, and see things through to results.</p>
 

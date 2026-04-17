@@ -14,6 +14,18 @@
   margin-bottom: 0;
 }
 
+/* ─── Illustration ─── */
+.principles-visual {
+  width: 20rem;
+  align-self: flex-start;
+}
+
+.principles-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ─── Intro ─── */
 .principles-intro {
   font-family: var(--font-serif);
@@ -25,34 +37,23 @@
   max-width: var(--content-width-lg);
 }
 
-/* ─── Grid ─── */
+/* ─── 3-column grid ─── */
 .principles-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
   margin-top: var(--space-xxl);
-}
-
-/* Top row: 3 items spanning 2 columns each */
-.principles-item:nth-child(-n+3) {
-  grid-column: span 2;
-}
-
-/* Bottom row: 2 items centred (columns 2-3 and 4-5 of 6) */
-.principles-item:nth-child(4) {
-  grid-column: 2 / 4;
-}
-
-.principles-item:nth-child(5) {
-  grid-column: 4 / 6;
 }
 
 .principles-item {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  padding-top: var(--space-xl);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-white);
 }
 
 .principles-icon {
@@ -76,19 +77,23 @@
   color: var(--color-text-secondary);
 }
 
-/* ─── Mobile — 768px ─── */
+/* ─── Mobile ─── */
 @media (max-width: 768px) {
   .principles-outer {
     gap: var(--space-lg);
   }
 
+  .principles-visual {
+    width: 16rem;
+  }
 
   .principles-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
   }
 
   .principles-item {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg);
   }
 }
