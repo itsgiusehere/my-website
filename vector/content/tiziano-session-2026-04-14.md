@@ -52,15 +52,15 @@ The client's underlying question is binary: *do I need someone to help me figure
 
 - **Title:** Visioning
 - **Duration label:** Weeks to months
-- **Subtitle:** Turning a half-formed direction into a picture the team can build from.
-- **Body:** The work runs through understanding, reframing, opening up options, and converging on a direction. Conversations with users, PMs, marketers, engineers become insights, journey maps, experience flows. What lands is a vision deck and tangible concepts, co-created with the team and concrete enough that they can keep testing and building from them.
+- **Subtitle:** Turning a half-formed direction into a concept the team can build from.
+- **Body:** The work runs through understanding, reframing, opening up options, and converging on a direction. Conversations with users, PMs, marketers, engineers become insights, journey maps, experience flows. What lands is a UX concept, a product vision, or the design of a customer experience across channels — co-created with the team and concrete enough to keep testing and building from.
 
 ### Embedded partnership
 
 - **Title:** Embedded partnership
 - **Duration label:** Months, sometimes across initiatives
 - **Subtitle:** Holding the direction, so vision survives delivery.
-- **Body:** I join the team inside an initiative, or across several, and stay for the arc of it. Part sparring partner to leadership, part connector across functions, part hands-on where the work needs it. I keep the line open between where the company is going and what actually ships — hypotheses written, experiments run, lessons folded back in. Direction survives contact with execution.
+- **Body:** I join the team inside an initiative, or across several, and stay for the arc of it. Part sparring partner to leadership, part connector across functions, part hands-on where the work needs it. The outputs accumulate: hypotheses, prototypes, tested concepts, decisions documented and shared. I keep the line open between where the company is going and what actually ships. Direction survives contact with execution.
 
 ---
 
