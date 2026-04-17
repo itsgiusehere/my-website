@@ -18,7 +18,7 @@ export const engagementModes = [
     title: 'Embedded partnership',
     duration: 'Months, sometimes across initiatives',
     body: 'I join the team inside an initiative, or across several, and stay for the arc of it. Part sparring partner to leadership, part connector across functions, part hands-on where the work needs it. I keep the line open between where the company is going and what actually ships \u2014 hypotheses written, experiments run, lessons folded back in. Direction survives contact with execution.',
-    accent: 'var(--color-accent-lavender)',
+    accent: 'var(--color-accent-yellow)',
     statement: 'Holding the direction, so vision survives delivery.',
   },
 ]

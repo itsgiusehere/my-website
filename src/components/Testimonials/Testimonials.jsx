@@ -1,7 +1,22 @@
 import { useState } from 'react'
 import { testimonials } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
+import photoRachel from '../../assets/Rachel.jpeg'
+import photoSamta from '../../assets/Samta.png'
+import photoSimon from '../../assets/Simon.jpeg'
+import photoGerrit from '../../assets/GerritE..jpeg'
+import photoDietrich from '../../assets/Dietrich.jpeg'
+import photoDenis from '../../assets/DenisW..jpeg'
 import './Testimonials.css'
+
+const PHOTOS = {
+  'rachel-hill': photoRachel,
+  'samta-kothari': photoSamta,
+  'simon-allen': photoSimon,
+  'gerrit-elvers': photoGerrit,
+  'dietrich-pfluger': photoDietrich,
+  'denis-w': photoDenis,
+}
 
 const VISIBLE_COUNT = 2
 
@@ -10,9 +25,10 @@ export default function Testimonials() {
   const gridRef = useFadeIn()
   const [expanded, setExpanded] = useState(false)
 
-  const featured = testimonials[0]
-  const visible = testimonials.slice(1, 1 + VISIBLE_COUNT)
-  const hidden = testimonials.slice(1 + VISIBLE_COUNT)
+  const withPhotos = testimonials.map(t => ({ ...t, photo: PHOTOS[t.id] || null }))
+  const featured = withPhotos[0]
+  const visible = withPhotos.slice(1, 1 + VISIBLE_COUNT)
+  const hidden = withPhotos.slice(1 + VISIBLE_COUNT)
 
   const toggle = () => setExpanded((prev) => !prev)
 
