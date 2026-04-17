@@ -46,6 +46,9 @@
 /* Fluid root font-size: ~14.5px at 1440px, 16px at 2000px+ */
 html {
   font-size: clamp(14.5px, 0.27vw + 10.6px, 16px);
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga" 1;
 }
 
 :root {

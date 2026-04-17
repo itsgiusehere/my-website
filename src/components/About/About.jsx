@@ -20,8 +20,8 @@ export default function About() {
             />
           </div>
           <div className="about-bio-text">
-            <p>After a period away from work, I sat in a coaching session about understanding the work I love doing and how it fits in my life. What came was an image: a room full of books and sticky notes, plants growing everywhere, warm light through a window looking out onto something green. A place where knowledge accumulates and stays alive. It made something click: what I do is seek coherence where there are fragments and build it where the dots don't connect yet. It's what draws me to a forest, to a landscape, to the green outside that window. Complexity that feels whole. It's what I try to craft in the work.</p>
-            <p>15 years across logistics, fintech, hardware, music software, manufacturing. Each new domain is the part that excites me most. Mapping concepts, finding the first principles underneath, crafting to understand and to make that understanding shared.</p>
+            <p className="about-lead">15 years across logistics, fintech, hardware, music software, manufacturing. Each new domain is the part that excites me most. Mapping concepts, finding the first principles underneath, crafting to understand and to make that understanding shared.</p>
+            <p className="about-story">After a period away from work, I sat in a coaching session about understanding the work I love doing and how it fits in my life. What came was an image: a room full of books and sticky notes, plants growing everywhere, warm light through a window looking out onto something green. A place where knowledge accumulates and stays alive. It made something click: what I do is seek coherence where there are fragments and build it where the dots don't connect yet. It's what draws me to a forest, to a landscape, to the green outside that window. Complexity that feels whole. It's what I try to craft in the work.</p>
           </div>
         </div>
 

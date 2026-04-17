@@ -10,7 +10,7 @@ export const engagementModes = [
     title: 'Visioning',
     duration: 'Weeks to months',
     body: 'The work runs through understanding, reframing, opening up options, and converging on a direction. Conversations with users, PMs, marketers, engineers become insights, journey maps, experience flows. What lands is a vision deck and tangible concepts, co-created with the team and concrete enough that they can keep testing and building from them.',
-    accent: 'var(--color-accent-yellow)',
+    accent: 'var(--color-accent-lavender)',
     statement: 'Turning a half-formed direction into a picture the team can build from.',
   },
   {
@@ -18,7 +18,7 @@ export const engagementModes = [
     title: 'Embedded partnership',
     duration: 'Months, sometimes across initiatives',
     body: 'I join the team inside an initiative, or across several, and stay for the arc of it. Part sparring partner to leadership, part connector across functions, part hands-on where the work needs it. I keep the line open between where the company is going and what actually ships \u2014 hypotheses written, experiments run, lessons folded back in. Direction survives contact with execution.',
-    accent: 'var(--color-accent-teal)',
+    accent: 'var(--color-accent-lavender)',
     statement: 'Holding the direction, so vision survives delivery.',
   },
 ]

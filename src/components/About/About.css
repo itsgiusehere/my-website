@@ -41,13 +41,21 @@
   gap: var(--space-xl);
 }
 
-.about-bio-text p {
+.about-lead {
   font-family: var(--font-serif);
   font-size: var(--text-headline);
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
+}
+
+.about-story {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
 }
 
 /* ─── Tablet — 1024px ─── */
@@ -80,13 +88,5 @@
 
   .about-bio-text {
     padding-top: 0;
-  }
-
-  .about-bio-text p {
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    line-height: 1.6;
-    letter-spacing: 0;
-    color: var(--color-text-secondary);
   }
 }
