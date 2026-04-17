@@ -178,6 +178,11 @@
   max-width: 42rem;
 }
 
+.accordion-body strong {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
 /* ─── Read more toggle — hidden on desktop ─── */
 .accordion-more-toggle {
   display: none;
