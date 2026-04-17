@@ -29,9 +29,23 @@
 .principles-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--space-xl);
   margin-top: var(--space-xxl);
+}
+
+/* Top row: 3 items spanning 2 columns each */
+.principles-item:nth-child(-n+3) {
+  grid-column: span 2;
+}
+
+/* Bottom row: 2 items centred (columns 2-3 and 4-5 of 6) */
+.principles-item:nth-child(4) {
+  grid-column: 2 / 4;
+}
+
+.principles-item:nth-child(5) {
+  grid-column: 4 / 6;
 }
 
 .principles-item {

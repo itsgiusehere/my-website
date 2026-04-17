@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import profilePicture from '../../assets/profile-picture.jpeg'
 import './Nav.css'
 
 const links = [
@@ -33,7 +34,13 @@ export default function Nav() {
     <>
       <nav className="nav" aria-label="Main navigation">
         <div className="nav-inner">
-          <a href="#hero" className="nav-identity" aria-label="Back to top" />
+          <div className="nav-left">
+            <a href="#hero" className="nav-identity" aria-label="Back to top">
+              <img src={profilePicture} alt="Giuseppe de Cesare" className="nav-avatar" />
+              <span className="nav-name">Hello, I'm Giuseppe</span>
+            </a>
+            <span className="nav-pill">Booked until Q3 2026</span>
+          </div>
 
           {/* Desktop links */}
           <ul className="nav-links" role="list">
@@ -76,7 +83,7 @@ export default function Nav() {
               </a>
             </li>
           ))}
-          <li style={{ '--i': links.length }}>
+          <li style={{ '--i': links.length }} className="nav-drawer-cta-group">
             <a
               href="#contact"
               className="nav-drawer-cta btn btn-primary"
@@ -84,6 +91,7 @@ export default function Nav() {
             >
               Get in touch
             </a>
+            <span className="nav-drawer-pill">Booked until Q3 2026</span>
           </li>
         </ul>
       </div>

@@ -16,30 +16,19 @@
   max-width: 75rem;
 }
 
-/* ─── Intro block: avatar + name ─── */
-.hero-intro {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
+/* ─── Illustration — leads the section ─── */
+.hero-visual {
+  width: 18rem;
+  margin-bottom: var(--space-xxl);
 }
 
-.hero-avatar {
-  width: 4.875rem;
-  height: 4.875rem;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
+.hero-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.hero-name {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-}
-
-/* ─── Headline ─── */
+/* ─── Headline — two-beat rhythm ─── */
 .hero-headline {
   font-family: var(--font-serif);
   font-size: var(--text-display-lg);
@@ -47,7 +36,6 @@
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--color-text-primary);
-  margin-top: var(--space-xl);
 }
 
 .hero-headline em {
@@ -55,20 +43,15 @@
   color: var(--color-text-secondary);
 }
 
-/* ─── Subheadline ─── */
+/* ─── Subheadline — body size, explanatory ─── */
 .hero-subheadline {
   font-family: var(--font-sans);
   font-size: var(--text-body);
+  font-weight: 400;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  max-width: 50rem;
-  margin-top: var(--space-3xl);
-}
-
-.hero-subheadline mark {
-  background: none;
-  color: var(--color-text-primary);
-  font-weight: 500;
+  max-width: 42rem;
+  margin-top: var(--space-xxl);
 }
 
 /* ─── Scroll indicator ─── */
@@ -116,8 +99,8 @@
     max-width: 100%;
   }
 
-  .hero-subheadline {
-    max-width: 38rem;
+  .hero-visual {
+    width: 10rem;
   }
 }
 
@@ -125,24 +108,23 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh;
-    padding-top: var(--space-xxl);
+    padding-top: calc(var(--nav-height) + var(--space-xl));
     padding-bottom: var(--space-3xl);
   }
 
-  .hero-avatar {
-    width: 2.75rem;
-    height: 2.75rem;
+  .hero-visual {
+    width: 14rem;
+    margin-bottom: var(--space-xl);
   }
 
   .hero-headline {
-    font-size: clamp(3.25rem, 14vw, 7rem);
-    line-height: 1.02;
-    letter-spacing: -0.025em;
-    margin-top: var(--space-xxl);
+    font-size: var(--text-display);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
 
   .hero-subheadline {
-    display: none;
+    margin-top: var(--space-xl);
   }
 
   .hero-scroll {

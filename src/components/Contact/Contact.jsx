@@ -10,7 +10,7 @@ export default function Contact() {
         <p className="section-label" id="contact-label">Contact</p>
 
         <div ref={ref} className="contact-body fade-up">
-          <p className="contact-intro">If something here resonates with a challenge you're navigating or you want to think out loud about a project I'm happy to chat.</p>
+          <p className="contact-intro">If something here resonated, or you want to think out loud about a project, I'm happy to chat.</p>
 
           <div className="contact-links">
             <a

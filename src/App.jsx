@@ -51,8 +51,8 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <HowIWork />
         <TheProblem />
+        <HowIWork />
         {/* <SelectedWork /> */}
         <Testimonials />
         <About />
