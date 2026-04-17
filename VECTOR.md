@@ -75,7 +75,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
 | How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
-| What clients say | Reviewed | Done | Featured pull-quote + white-bg card grid. White nav bg. Section divider. Responsive: done. Mobile: 3 visible, rest behind Show more/less. |
+| What clients say | Tiziano pass done (2026-04-17) | Done | Selection finalised: 6 testimonials. Rachel Hill (featured), Samta, Simon Allen (visible), Gerrit, Dietrich, Denis W. (behind Show more). **Pending Bulk: add Rachel H. + Denis W. to `core/content.js`, remove Maria/Simon Cross/Samantha, reorder array. Update all names to first name + last initial. Giuseppe to provide profile photos for all six.** |
 | About me | Tiziano pass done (2026-04-17) | Done | Full rewrite. Coaching session + room image + coherence through-line + beauty/nature. **Pending Bulk: wire new copy into `About.jsx`, consider room illustration as visual, drop old headline.** |
 | Contact | Reviewed | Done | Serif display intro, Book a chat (real Calendly URL), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
 | Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
@@ -122,14 +122,16 @@ About me, The Problem cards, How I work (Principles) reworked.
 - How I work intro: "I X so you Y" triplet collapsed to one sentence.
 - Principles 1–3: em dashes cleaned, Principle 2 tightened ("where the risk is highest").
 - Two new principles added: "Progress happens through people" (absorbs stakeholder unlocking + levelling up the team) and "Your problem becomes my problem" (absorbs high drive + easy to work with).
+- Contact intro tightened.
+- Testimonials: selection finalised (6 of 7+). Rachel Hill featured. Denis W. added. Maria, Simon Cross, Samantha dropped.
 
 All new copy in `vector/content/tiziano-session-2026-04-14.md`.
 
 **Outstanding for Tiziano:**
-1. Contact intro — minor, lightly passive.
-2. General em dash reduction pass.
-3. Refresh `vector/content/site-copy.md` once all sections reviewed.
-4. Testimonials selection (VECTOR launch blocker).
+1. ~~Contact intro~~ — done (2026-04-17).
+2. General em dash reduction pass (mostly addressed in individual section passes).
+3. Refresh `vector/content/site-copy.md` once all changes are wired.
+4. ~~Testimonials selection~~ — done (2026-04-17).
 
 **Pending for Bulk (triggered by both sessions):**
 - Wire new Hero copy into `Hero.jsx`.
@@ -141,6 +143,8 @@ All new copy in `vector/content/tiziano-session-2026-04-14.md`.
 - Expand `Principles.jsx` from 3 to 5 cards, new SVG icons for principles 4+5, review grid layout (3+2? 5-col?).
 - Wire new About copy into `About.jsx`. Consider room illustration as visual. Drop old headline.
 - Review nav items: "Challenges" label may need updating to match new section label.
+- Add Rachel H. + Denis W. to `testimonials` in `core/content.js`. Remove Maria, Simon Cross, Samantha. Reorder array. Update all names to first name + last initial. Wire profile photos (Giuseppe to provide).
+- Wire new Contact intro copy into `Contact.jsx`.
 
 ## Content Improvements — Pending (Cooper, 2026-03-19)
 
@@ -166,7 +170,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [x] **Problem card illustrations**: all 3 cards have custom illustrations (diamond in rock, fragmented faces, sketch on paper). Wired in `TheProblem.jsx`.
 - [ ] **Copy review with Tiziano**: review copy of the whole website
 - [x] **Review section order**: moved Challenges after How I Help. Bg sync unaffected (ID-based).
-- [ ] **Testimonials selection**: review which testimonials to show on the website
+- [x] **Testimonials selection**: done (2026-04-17). See `vector/content/tiziano-session-2026-04-14.md`
 
 **SHOULD / COULD (to be triaged next session):**
 - [ ] **iPad responsive**: review iPad portrait and landscape viewports

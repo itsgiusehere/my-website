@@ -193,6 +193,72 @@ The cards describe situations, not challenges. "Where things usually start" invi
 
 ---
 
+## Contact
+
+**Body:**
+
+> If something here resonated, or you want to think out loud about a project, I'm happy to chat.
+
+**What changed:** *Resonates with a challenge you're navigating* → *resonated*. One word, past tense — the reader has already read the page. Missing comma added. Corporate filler dropped.
+
+**Consequences for design and build (Bulk to consider)**
+- Copy-only update in `Contact.jsx`. No structural changes.
+
+---
+
+## Testimonials — selection and order
+
+**Name format:** First name + last initial (e.g. Rachel H.). Title and company shown in full. Photo provided by Giuseppe. Rationale: testimonials were shared on LinkedIn, not written for this site. First name + initial respects the person's control; title and company carry the credibility.
+
+### Featured pull-quote
+
+**Rachel H.** — VP of Design, Native Instruments
+> At a pivotal moment for the company Giuseppe quickly gained cross-disciplinary trust and respect from stakeholders as well as from a team of designers, content strategists and PMs. He was an invaluable sparring partner for me in my role as the company strategy evolved throughout the year.
+
+**Why featured:** Target audience title (VP of Design). Names trust-building, cross-disciplinary work, sparring partner, navigating change. Directly validates the Embedded partnership engagement and principle 4.
+
+### Visible cards
+
+1. **Samta K.** — Lead PM, Sennder
+> Faced with a tight deadline and complex requirements, Giuseppe distilled vast amounts of information into a clear, coherent structure that users loved. His sharp intellect, calm demeanour and commitment to excellence set him apart.
+
+2. **Simon A.** — Design Strategy Lead, EOS
+> Giuseppe's ability to research, synthesise and communicate that synthesis in a clear and inspiring manner is phenomenal. When priorities are changing weekly, this is super helpful.
+
+### Behind Show more
+
+3. **Gerrit E.** — CPO, PRO360 Bosch Power Tools
+> Giuseppe brings everything together cohesively in an understandable way. His work brought us forward as no one did before.
+
+4. **Dietrich P.** — VP Growth, Native Instruments
+> What sets Giuseppe apart is his thorough discovery and stakeholder management upfront. If you need someone who can architect connected experiences across channels and align diverse stakeholders around a shared vision, Giuseppe delivers.
+
+5. **Denis W.** — Lead Engineer, Futurice
+> I was impressed by Giuseppe's systematic, professional approach, the empathetic but honest way he communicates with clients and the quality of his deliverables.
+
+### Dropped
+
+- Maria B. (Senior MP, SumUp) — warm but generic, doesn't name anything specific about the work.
+- Simon C. (CTPO, Native Instruments) — strong quote, but three NI testimonials was too many. Replaced by Denis W. for company diversity and an engineering perspective.
+- Samantha L. (CPO, MoreTo) — concrete outcome (pivot in strategy) but less memorable overall.
+
+### What changed and why
+
+- Rachel H. is new to the site — wasn't in `core/content.js`. Needs adding.
+- Denis W. is new to the site — wasn't in `core/content.js`. Needs adding.
+- Name format changed from full names to first name + last initial across all testimonials.
+- Order designed for the scroll: featured names trust and partnership (the relationship), visible cards name synthesis and coherence (the work), behind Show more reinforces both.
+- Company diversity: Native Instruments (x2), Sennder, EOS, Bosch, Futurice. No single company dominates.
+
+**Consequences for design and build (Bulk to consider)**
+- Add Rachel H. and Denis W. to `testimonials` array in `core/content.js`.
+- Remove Maria B., Simon C., Samantha L. from the array (or keep in code but don't render).
+- Reorder array: Rachel first (featured), then Samta, Simon A., Gerrit, Dietrich, Denis.
+- Update all `name` fields in `testimonials` array to first name + last initial format.
+- Giuseppe to provide profile photos for all six. Wire into `photo` field (component already supports it).
+
+---
+
 ## Consequences for design and build (Bulk to consider)
 
 1. **`core/content.js` — `engagementModes` array** needs restructuring from three items to two. Rename keys, update bodies, statements, durations. Accents may need reassignment (currently lavender / yellow / teal — now only two needed).
@@ -216,10 +282,12 @@ Ordered by impact (from today's full-site assessment):
 
 4. ~~**Principle 2 (Validate only what matters)**~~ — done (2026-04-17). "What truly moves things forward" → "where the risk is highest".
 
-5. **Contact intro** — solid, lightly passive. Low priority.
+5. ~~**Contact intro**~~ — done (2026-04-17). *Resonated* replaces *resonates with a challenge you're navigating*.
 
 6. ~~**Section label mismatch**~~ — resolved (2026-04-17). Changed to "Where things usually start".
 
-7. **General pass on em dashes** — reduce across the site per Giuseppe's preference (sparingly, only when a comma or full stop genuinely doesn't do the same job).
+7. **General pass on em dashes** — reduce across the site per Giuseppe's preference (sparingly, only when a comma or full stop genuinely doesn't do the same job). Most em dashes already addressed in individual section passes above.
 
-8. **`vector/content/site-copy.md`** — refresh once remaining sections are reviewed. Currently stale in multiple places.
+8. **`vector/content/site-copy.md`** — refresh once all changes are wired. Currently stale in multiple places.
+
+9. ~~**Testimonials selection**~~ — done (2026-04-17). Six testimonials selected and ordered. Rachel Hill and Denis W. added. Maria Bykova, Simon Cross, Samantha Lim dropped. **Action needed: Giuseppe to confirm Denis W.'s full surname for the site.**
