@@ -168,16 +168,16 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [x] **Favicon**: stroke-only diamond SVG in `src/public/favicon.svg`, linked in index.html.
 - [x] **robots.txt**: `Disallow: /` in `src/public/robots.txt`. Remove before public launch.
 - [x] **Problem card illustrations**: all 3 cards have custom illustrations (diamond in rock, fragmented faces, sketch on paper). Wired in `TheProblem.jsx`.
-- [ ] **Copy review with Tiziano**: review copy of the whole website
-- [x] **Review section order**: moved Challenges after How I Help. Bg sync unaffected (ID-based).
-- [x] **Testimonials selection**: done (2026-04-17). See `vector/content/tiziano-session-2026-04-14.md`
+- [x] **Copy review with Tiziano**: all sections wired (2026-04-17). Hero, How I help (3→2 engagements), Challenges, How I work, About, Contact, Testimonials.
+- [x] **Review section order**: Hero → Where things usually start → How I help → Testimonials → How I work → About → Contact.
+- [x] **Testimonials selection**: done (2026-04-17). 6 testimonials, profile photos wired.
+- [x] **Testimonial profile pictures**: all 6 photos wired in Testimonials.jsx.
+- [x] **Review nav items**: How I help, Testimonials, How I work, About me, Get in touch.
 
-**SHOULD / COULD (to be triaged next session):**
+**SHOULD / COULD:**
 - [ ] **iPad responsive**: review iPad portrait and landscape viewports
 - [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
-- [ ] **Review nav items**: ensure menu items match website sections; review section names
-- [ ] **Principles illustrations** *(optional)*: create illustrations for the 3 principles
-- [ ] **Testimonial profile pictures**: add profile photos to testimonial cards
+- [ ] **Principles illustrations** *(optional)*: create illustrations for the principles
 - [ ] **Social preview**: create OG/meta preview for social networks
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
 - [ ] **Client logo strip**: add rotating/scrolling strip of client logos in Hero section (Giuseppe to provide logos)
