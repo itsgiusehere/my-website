@@ -163,8 +163,33 @@ The cards describe situations, not challenges. "Where things usually start" invi
 
 **What changed:** Em dash → full stop. The closer lands as its own beat.
 
+### Principle 4 — Progress happens through people (NEW)
+
+- **Title:** Progress happens through people
+- **Body:** Complex organisations move through trust, not processes. I map who matters and earn their buy-in. On the ground, I elevate the team I work with — improving rituals, ways of working, how they function together. The right people aligned and growing is what makes the work last.
+
+**Source:** Absorbs two raw themes from VECTOR post-launch list: *strategic stakeholder unlocking* (upward: mapping who matters, earning trust) and *levelling up the team* (on the ground: improving rituals, ways of working). Both are consequences of the same belief — progress happens through people — so they belong in one principle, not two.
+
+### Principle 5 — Your problem becomes my problem (NEW)
+
+- **Title:** Your problem becomes my problem
+- **Body:** I care about the work and the people doing it. I'm always there, I go further than expected, and I stay until it's right. Clients don't have to chase me for progress or worry about quality.
+
+**Source:** Absorbs two raw themes: *high drive and standards* and *easy to work with*. Both describe the same thing from different angles — what it feels like to have Giuseppe on the team. The title names the client's experience, not a trait.
+
+### The five principles as a set
+
+1. **Not just user-centred** — who I involve
+2. **Validate only what matters** — how I prioritise
+3. **Always a recommendation** — how I decide
+4. **Progress happens through people** — how I navigate and elevate
+5. **Your problem becomes my problem** — how I show up
+
 **Consequences for design and build (Bulk to consider)**
-- No structural changes. Copy-only updates in `Principles.jsx`.
+- Two new principle cards. `Principles.jsx` currently renders three — Bulk to expand to five.
+- New SVG icons needed for principles 4 and 5.
+- Grid layout may need adjusting (3-column → 5 items). Options: 3+2, 5-column, or different treatment.
+- Copy-only updates for existing principles 1–3.
 
 ---
 

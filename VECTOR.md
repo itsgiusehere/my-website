@@ -73,7 +73,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
 | How I help | Tiziano pass done (2026-04-14) | Needs rebuild | Engagement modes collapsed from 3 to 2 — Visioning + Embedded partnership (see ADR-002). New copy in `vector/content/tiziano-session-2026-04-14.md`. **Pending Bulk: restructure `engagementModes` in `core/content.js`, review layout weight with 2 accordions, decide on third illustration.** |
 | Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
-| How I work | Tiziano pass done (2026-04-17) | Done | Intro rewritten (collapsed "I X so you Y" triplet). Principle 1: em dash → colon. Principle 2: tightened. Principle 3: em dash → full stop. **Pending Bulk: update copy in `Principles.jsx`.** |
+| How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
 | What clients say | Reviewed | Done | Featured pull-quote + white-bg card grid. White nav bg. Section divider. Responsive: done. Mobile: 3 visible, rest behind Show more/less. |
 | About me | Tiziano pass done (2026-04-17) | Done | Full rewrite. Coaching session + room image + coherence through-line + beauty/nature. **Pending Bulk: wire new copy into `About.jsx`, consider room illustration as visual, drop old headline.** |
@@ -121,6 +121,7 @@ About me, The Problem cards, How I work (Principles) reworked.
 - The Problem: section label → "Where things usually start". Cards trimmed (consultancy language, prescriptions, em dashes).
 - How I work intro: "I X so you Y" triplet collapsed to one sentence.
 - Principles 1–3: em dashes cleaned, Principle 2 tightened ("where the risk is highest").
+- Two new principles added: "Progress happens through people" (absorbs stakeholder unlocking + levelling up the team) and "Your problem becomes my problem" (absorbs high drive + easy to work with).
 
 All new copy in `vector/content/tiziano-session-2026-04-14.md`.
 
@@ -137,7 +138,7 @@ All new copy in `vector/content/tiziano-session-2026-04-14.md`.
 - Decide fate of the third accordion illustration.
 - Review `HowIWork.jsx` layout: do 2 accordions still carry the section's visual weight?
 - Update section label in `TheProblem.jsx` + card data in `core/content.js`.
-- Update copy in `Principles.jsx`.
+- Expand `Principles.jsx` from 3 to 5 cards, new SVG icons for principles 4+5, review grid layout (3+2? 5-col?).
 - Wire new About copy into `About.jsx`. Consider room illustration as visual. Drop old headline.
 - Review nav items: "Challenges" label may need updating to match new section label.
 
@@ -184,11 +185,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [ ] **Open robots.txt**: change `Disallow: /` to `Allow: /` in `src/public/robots.txt` so search engines can index the site
 
 **Post-launch:**
-- [ ] **Enrich How I Work section**: expand with additional dimensions of how Giuseppe operates inside engagements. Raw themes to develop with Cooper/Tiziano:
-  1. **Strategic stakeholder unlocking** — always maps who to talk to, who to involve, how to make progress by earning trust of key stakeholders. Strategic mindset by default.
-  2. **Levelling up the team** — improves rituals, ways of working, and team functioning as a natural byproduct of the engagement.
-  3. **High drive and standards** — brings energy and a push for great results that lifts team morale.
-  4. **Easy to work with** — embeds quickly, works in service of the team, just a good person to have around.
+- [x] **Enrich How I Work section**: all four raw themes absorbed into two new principles (2026-04-17). Themes 1+2 → "Progress happens through people." Themes 3+4 → "Your problem becomes my problem." See `vector/content/tiziano-session-2026-04-14.md`.
 
 ## Open Questions
 
