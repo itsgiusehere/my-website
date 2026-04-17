@@ -49,7 +49,7 @@ function AccordionItem({ item, isOpen, headingId, panelId, onToggle, itemRef }) 
               <p className="accordion-statement">{item.statement}</p>
               <div className="accordion-body-wrapper">
                 <div className="accordion-body-inner">
-                  <p className="accordion-body">{item.body}</p>
+                  <p className="accordion-body" dangerouslySetInnerHTML={{ __html: item.body }} />
                 </div>
               </div>
               <button
