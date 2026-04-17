@@ -70,13 +70,13 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Reviewed | Done | Profile picture, headline, differentiator subheadline (pending Tiziano pass for voice), scroll CTA. Responsive: done. |
-| How I help | Reviewed | Done | Positioning intro (serif display). Accordions with extra top margin for visual mass. Section divider. Responsive: done. |
-| Challenges I help leaders with | Reviewed | Done | Moved after How I Help. 3 custom illustrations (diamond motif). Sticky card stack. Responsive: done. Pending: Tiziano pass for voice. |
-| How I work | Reviewed | Done | New section (was principles in About). Ownership statement intro + 3 principles with SVG icons (DM Sans bold titles). Section divider. Responsive: done. |
+| Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
+| How I help | Tiziano pass done (2026-04-14) | Needs rebuild | Engagement modes collapsed from 3 to 2 — Visioning + Embedded partnership (see ADR-002). New copy in `vector/content/tiziano-session-2026-04-14.md`. **Pending Bulk: restructure `engagementModes` in `core/content.js`, review layout weight with 2 accordions, decide on third illustration.** |
+| Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
+| How I work | Tiziano pass done (2026-04-17) | Done | Intro rewritten (collapsed "I X so you Y" triplet). Principle 1: em dash → colon. Principle 2: tightened. Principle 3: em dash → full stop. **Pending Bulk: update copy in `Principles.jsx`.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
 | What clients say | Reviewed | Done | Featured pull-quote + white-bg card grid. White nav bg. Section divider. Responsive: done. Mobile: 3 visible, rest behind Show more/less. |
-| About me | Reviewed | Done | Photo + bio (Cardo serif headline on desktop, DM Sans body on mobile). Section divider. Responsive: done. |
+| About me | Tiziano pass done (2026-04-17) | Done | Full rewrite. Coaching session + room image + coherence through-line + beauty/nature. **Pending Bulk: wire new copy into `About.jsx`, consider room illustration as visual, drop old headline.** |
 | Contact | Reviewed | Done | Serif display intro, Book a chat (real Calendly URL), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
 | Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
 
@@ -89,29 +89,69 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 ## Decisions
 
-- **Engagement modes:** All three (Vision Sprint / Embedded Leadership / Strategic Clarity) appear on the site. Legibility of the framing to clients is still to be validated.
+- **Engagement modes:** Collapsed from three to two — Visioning + Embedded partnership (see ADR-002, 2026-04-14). Old model (Vision Sprint / Embedded Leadership / Strategic Clarity) retired.
 - **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Real Calendly URL wired.
 - **Site structure:** Single page, scroll-based, eight sections (Selected Work hidden):
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
-  2. **How I help** — positioning intro + three engagement modes (accordions)
-  3. **Challenges I help leaders with** — sticky card stack with custom illustrations
+  2. **How I help** — positioning intro + two engagement modes (accordions)
+  3. **Where things usually start** — sticky card stack with custom illustrations
   4. **How I work** — ownership intro + three principles with icons
   5. ~~**Selected work**~~ — hidden, content on `selected-work` branch
   6. **What clients say** — featured pull-quote + card grid
   7. **About me** — photo + bio
   8. **Contact** — intro + Calendly, LinkedIn, email (no form)
 
+## Tiziano Sessions
+
+### Session 1 — 2026-04-14
+
+Full-site copy assessment. Hero and How I help reworked.
+
+**Done:**
+- Hero headline + subheadline rewritten — see ADR-001.
+- How I help frame shift: 3 engagements collapsed to 2 (Visioning + Embedded partnership) — see ADR-002.
+- New copy for both engagements drafted in `vector/content/tiziano-session-2026-04-14.md`.
+
+### Session 2 — 2026-04-17
+
+About me, The Problem cards, How I work (Principles) reworked.
+
+**Done:**
+- About me: full rewrite. Coaching session + room image + coherence through-line + beauty as coherence.
+- The Problem: section label → "Where things usually start". Cards trimmed (consultancy language, prescriptions, em dashes).
+- How I work intro: "I X so you Y" triplet collapsed to one sentence.
+- Principles 1–3: em dashes cleaned, Principle 2 tightened ("where the risk is highest").
+
+All new copy in `vector/content/tiziano-session-2026-04-14.md`.
+
+**Outstanding for Tiziano:**
+1. Contact intro — minor, lightly passive.
+2. General em dash reduction pass.
+3. Refresh `vector/content/site-copy.md` once all sections reviewed.
+4. Testimonials selection (VECTOR launch blocker).
+
+**Pending for Bulk (triggered by both sessions):**
+- Wire new Hero copy into `Hero.jsx`.
+- Restructure `engagementModes` in `core/content.js` from 3 items to 2.
+- Reassign accordion accents (currently 3 — lavender, yellow, teal — now only 2 needed).
+- Decide fate of the third accordion illustration.
+- Review `HowIWork.jsx` layout: do 2 accordions still carry the section's visual weight?
+- Update section label in `TheProblem.jsx` + card data in `core/content.js`.
+- Update copy in `Principles.jsx`.
+- Wire new About copy into `About.jsx`. Consider room illustration as visual. Drop old headline.
+- Review nav items: "Challenges" label may need updating to match new section label.
+
 ## Content Improvements — Pending (Cooper, 2026-03-19)
 
 The Problem section has been rewritten with three differentiated use cases. The following narrative issues remain across Hero → How I Work:
 
-1. **Hero subheadline overlaps with The Problem.** The subheadline already names the audience, the situation ("everyone has a different picture"), and the value prop ("tangible vision to align around"). The Problem section now does this more specifically through three tabs — so the Hero subheadline may be doing too much. Consider tightening it to positioning only and letting The Problem carry the situational weight.
+1. ~~**Hero subheadline overlaps with The Problem.**~~ **Resolved (2026-04-14).** Hero rewritten — subheadline now carries the altitude-range differentiator only. Situation weight stays in The Problem cards. See ADR-001.
 
-2. **How I Work body copy echoes The Problem situations.** Vision Sprint opens with "You have fragments of an idea but no shared direction yet" — which restates Problem tab 3. Strategic Clarity opens with "Your organisation is going through change and needs everyone pointed in the same direction" — close to the old Problem tab 2. Now that The Problem tabs are sharper, the How I Work accordion bodies should focus purely on *what the engagement looks like*, not re-describe the situation.
+2. ~~**How I Work body copy echoes The Problem situations.**~~ **Resolved (2026-04-14/17).** Engagement modes collapsed to two. Bodies now describe the engagement shape, not the situation. Problem cards trimmed and de-overlapped.
 
-3. ~~**The differentiator line is buried.**~~ **Resolved (2026-03-20).** Old two-pole comparison scrapped — replaced with new differentiator line about altitude range and process. Moved to Hero subheadline. Old descriptive subheadline repurposed as a bridge section between The Problem and How I Work. Pending: Tiziano pass on new differentiator for voice.
+3. ~~**The differentiator line is buried.**~~ **Resolved (2026-03-20).** Old two-pole comparison scrapped — replaced with new differentiator line about altitude range and process. Moved to Hero subheadline. Old descriptive subheadline repurposed as a bridge section between The Problem and How I Work. Tiziano pass done (2026-04-14).
 
-4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). Check How I Work accordion bodies and any remaining CTA copy against this rule.
+4. **Principle: never tell the reader what they need.** Established during this session. All copy should describe situations and outcomes — never prescribe ("you need", "what's needed is"). **Applied across all sections during Tiziano sessions 2026-04-14/17.**
 
 ## Pre-Launch Todos
 
