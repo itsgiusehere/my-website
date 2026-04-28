@@ -48,7 +48,7 @@ export default function HowIWork() {
     <section className="how-i-work" id="how-i-help" aria-labelledby="hiw-label">
       <div className="section-wrapper hiw-inner">
         <p className="section-label" id="hiw-label">How I help</p>
-        <p className="hiw-intro">Engagements tend to take one of two shapes.</p>
+        <p className="hiw-intro">I provide strategic design and design stewardship: from shaping product vision through to the concrete concepts and first actions teams can take. Engagements tend to take one of two shapes.</p>
         <div ref={ref} className="hiw-content fade-up">
           <Accordion
             items={itemsWithIllustrations}

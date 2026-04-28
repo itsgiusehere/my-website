@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
-| How I help | Tiziano pass done (2026-04-14) | Needs rebuild | Engagement modes collapsed from 3 to 2 — Visioning + Embedded partnership (see ADR-002). New copy in `vector/content/tiziano-session-2026-04-14.md`. **Pending Bulk: restructure `engagementModes` in `core/content.js`, review layout weight with 2 accordions, decide on third illustration.** |
+| How I help | Tiziano pass done (2026-04-28) | Done | Engagement modes collapsed from 3 to 2 — Visioning + Embedded partnership (see ADR-002). Section intro line wired (2026-04-28). "Visioning" → "Visioning Project" wired. Subtitle updated ("or an emerging opportunity" added). Layout reviewed — 2 accordions still carry visual weight. Third illustration retired (not rendered). **Bulk: done 2026-04-28.** |
 | Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
 | How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
@@ -90,6 +90,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 ## Decisions
 
 - **Engagement modes:** Collapsed from three to two — Visioning + Embedded partnership (see ADR-002, 2026-04-14). Old model (Vision Sprint / Embedded Leadership / Strategic Clarity) retired.
+- **Visioning renamed:** "Visioning" → "Visioning Project" (2026-04-28). "Project" signals a bounded engagement with a defined start, end, and deliverable — vs. an open-ended mode of working. Pairs with "Embedded partnership": one is a project, one is a relationship.
 - **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Real Calendly URL wired.
 - **Site structure:** Single page, scroll-based, eight sections (Selected Work hidden):
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
@@ -102,6 +103,14 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
   8. **Contact** — intro + Calendly, LinkedIn, email (no form)
 
 ## Tiziano Sessions
+
+### Session 3 — 2026-04-28
+
+How I help section intro.
+
+**Done:**
+- New intro line added before "Engagements tend to take one of two shapes.": "I provide strategic design and design stewardship: from shaping product vision through to the concrete concepts and first actions teams can take." Copy in `vector/content/tiziano-session-2026-04-28.md`.
+- "Visioning" renamed to "Visioning Project".
 
 ### Session 1 — 2026-04-14
 

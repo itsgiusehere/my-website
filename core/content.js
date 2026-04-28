@@ -7,11 +7,11 @@
 export const engagementModes = [
   {
     id: 'visioning',
-    title: 'Visioning',
+    title: 'Visioning Project',
     duration: 'Weeks to months',
     body: 'The work runs through understanding, reframing, opening up options, and converging on a direction. Conversations with users, PMs, marketers, engineers become <strong>insights, journey maps, experience flows</strong>. What lands is a <strong>UX concept</strong>, a <strong>product vision</strong>, or the <strong>design of a customer experience across channels</strong> \u2014 co-created with the team and concrete enough to keep testing and building from.',
     accent: 'var(--color-accent-lavender)',
-    statement: 'Turning a half-formed direction into a concept the team can build from.',
+    statement: 'Turning half-formed direction or an emerging opportunity into a concept the team can build from.',
   },
   {
     id: 'embedded',
