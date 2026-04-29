@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
-| How I help | Tiziano pass pending (2026-04-29) | Needs rebuild | Engagement modes expanded from 2 to 3 — Concept Sprint + Visioning Project + Embedded partnership (see ADR-003). "Visioning Project" (current) → renamed "Concept Sprint". New "Visioning Project" = futures/foresight engagement, content direction done (see ADR-003). **Pending Tiziano: copy pass on both Concept Sprint and new Visioning Project (brief in ADR-003). Pending Bulk: add third accordion, update engagement names and copy in `core/content.js`, review layout for 3 accordions.** |
+| How I help | Tiziano pass done (2026-04-29) | Done | Three engagement shapes: Concept Sprint + Visioning Project + Embedded partnership (see ADR-003). Section intro updated to "three shapes". Concept Sprint wired (id: concept-sprint, lavender, new body). Visioning Project added as new entry (id: visioning, teal, 3–6 months). Embedded partnership unchanged. Illustration map updated. **Bulk: done 2026-04-29.** |
 | Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
 | How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
@@ -107,13 +107,14 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 ## Tiziano Sessions
 
-### Session 4 — pending (briefed 2026-04-29)
+### Session 4 — 2026-04-29
 
 How I help — engagement modes restructured to three shapes.
 
-**Brief in ADR-003.** Two tasks:
-1. Copy pass on **Concept Sprint** (renamed from current Visioning Project) — tone should carry the sprint quality: compression, intensity, urgency toward convergence. Current subtitle and body are the starting point.
-2. Full copy pass on **Visioning Project** (new, futures/foresight engagement) — content direction, subtitle, and body draft all in ADR-003. Voice and rhythm need a full pass.
+**Done:**
+- Section intro updated: "one of two shapes" → "one of three shapes."
+- **Concept Sprint** (renamed from Visioning Project): duration "Weeks to months", subtitle and body passed. Body carries sprint signal: "in weeks, not months." Copy in `vector/content/tiziano-session-2026-04-29.md`.
+- **Visioning Project** (new, futures/foresight): duration "3–6 months", subtitle and body written from scratch. Single-paragraph body. Copy in `vector/content/tiziano-session-2026-04-29.md`.
 
 ---
 

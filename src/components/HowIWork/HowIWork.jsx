@@ -2,12 +2,14 @@ import { useState, useEffect, useRef } from 'react'
 import { engagementModes } from '../../../core/content.js'
 import { useFadeIn } from '../../hooks/useFadeIn.js'
 import Accordion from './Accordion.jsx'
-import illustrationVisioning from '../../assets/illustration-how-i-work-vision-sprint.png'
+import illustrationVisionSprint from '../../assets/illustration-how-i-work-vision-sprint.png'
 import illustrationEmbedded from '../../assets/illustration-strategic-clarity.png'
+import illustrationHero from '../../assets/illustration-embedded-leadership.png'
 import './HowIWork.css'
 
 const ILLUSTRATIONS = {
-  'visioning': illustrationVisioning,
+  'concept-sprint': illustrationHero,
+  'visioning': illustrationVisionSprint,
   'embedded': illustrationEmbedded,
 }
 
@@ -48,7 +50,7 @@ export default function HowIWork() {
     <section className="how-i-work" id="how-i-help" aria-labelledby="hiw-label">
       <div className="section-wrapper hiw-inner">
         <p className="section-label" id="hiw-label">How I help</p>
-        <p className="hiw-intro">I provide strategic design and design stewardship: from shaping product vision through to the concrete concepts and first actions teams can take. Engagements tend to take one of two shapes.</p>
+        <p className="hiw-intro">I provide strategic design and design stewardship: from shaping product vision through to the concrete concepts and first actions teams can take. Engagements tend to take one of three shapes:</p>
         <div ref={ref} className="hiw-content fade-up">
           <Accordion
             items={itemsWithIllustrations}

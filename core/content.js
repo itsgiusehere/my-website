@@ -6,12 +6,20 @@
 
 export const engagementModes = [
   {
-    id: 'visioning',
-    title: 'Visioning Project',
+    id: 'concept-sprint',
+    title: 'Concept Sprint',
     duration: 'Weeks to months',
-    body: 'The work runs through understanding, reframing, opening up options, and converging on a direction. Conversations with users, PMs, marketers, engineers become <strong>insights, journey maps, experience flows</strong>. What lands is a <strong>UX concept</strong>, a <strong>product vision</strong>, or the <strong>design of a customer experience across channels</strong> \u2014 co-created with the team and concrete enough to keep testing and building from.',
+    body: 'The work runs through understanding, reframing, opening up options, and converging on a concept \u2014 in weeks, not months. Conversations with users, PMs, marketers, engineers become <strong>insights, journey maps, experience flows</strong>. What lands is a <strong>UX concept</strong>, co-created with the team and concrete enough to test and build from.',
     accent: 'var(--color-accent-lavender)',
     statement: 'Turning half-formed direction or an emerging opportunity into a concept the team can build from.',
+  },
+  {
+    id: 'visioning',
+    title: 'Visioning Project',
+    duration: '3\u20136 months',
+    body: 'It starts not with a problem, but with a domain that needs a map of future problems and opportunities. The process is both explorative \u2014 <strong>expert interviews, strategy sessions, desk research</strong> \u2014 and convergent, through iterative co-creation sessions that bring fragments of future solution to the surface. Visualisations like <strong>value chains, journey maps, and early design directions</strong> serve as artefacts for testing: are the projected futures sound? Is the focus right? What lands is a <strong>set of concepts</strong>, each describing the future problem it solves and the benefit it delivers \u2014 held together by a narrative that helps the client inform their roadmap.',
+    accent: 'var(--color-accent-teal)',
+    statement: 'Scanning how a domain is changing \u2014 and framing what it will be worth designing for.',
   },
   {
     id: 'embedded',
