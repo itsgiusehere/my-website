@@ -71,7 +71,7 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
 | Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
-| How I help | Tiziano pass done (2026-04-28) | Done | Engagement modes collapsed from 3 to 2 — Visioning + Embedded partnership (see ADR-002). Section intro line wired (2026-04-28). "Visioning" → "Visioning Project" wired. Subtitle updated ("or an emerging opportunity" added). Layout reviewed — 2 accordions still carry visual weight. Third illustration retired (not rendered). **Bulk: done 2026-04-28.** |
+| How I help | Tiziano pass pending (2026-04-29) | Needs rebuild | Engagement modes expanded from 2 to 3 — Concept Sprint + Visioning Project + Embedded partnership (see ADR-003). "Visioning Project" (current) → renamed "Concept Sprint". New "Visioning Project" = futures/foresight engagement, content direction done (see ADR-003). **Pending Tiziano: copy pass on both Concept Sprint and new Visioning Project (brief in ADR-003). Pending Bulk: add third accordion, update engagement names and copy in `core/content.js`, review layout for 3 accordions.** |
 | Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
 | How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
@@ -89,12 +89,15 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 ## Decisions
 
+- **Engagement modes expanded to three** (2026-04-29, see ADR-003): Concept Sprint + Visioning Project + Embedded partnership. Previous two-shape model (Visioning Project + Embedded partnership) retired.
+- **Concept Sprint** (2026-04-29): Replaces the current "Visioning Project" name. Near-term, convergent. Takes a known problem and produces a concept the team can build from. Duration: weeks. "Sprint" signals compression and urgency; "Concept" names the deliverable.
+- **Visioning Project** (2026-04-29): Moves to the futures/foresight engagement. Scans how a domain is evolving, frames what will be worth designing for, produces design definitions + narrative. Duration: months. Content direction in ADR-003.
 - **Engagement modes:** Collapsed from three to two — Visioning + Embedded partnership (see ADR-002, 2026-04-14). Old model (Vision Sprint / Embedded Leadership / Strategic Clarity) retired.
 - **Visioning renamed:** "Visioning" → "Visioning Project" (2026-04-28). "Project" signals a bounded engagement with a defined start, end, and deliverable — vs. an open-ended mode of working. Pairs with "Embedded partnership": one is a project, one is a relationship.
 - **Call to action:** Book a chat (Calendly, secondary btn), Connect on LinkedIn, email. Form removed. Real Calendly URL wired.
 - **Site structure:** Single page, scroll-based, eight sections (Selected Work hidden):
   1. **Hero** — name, headline, differentiator subheadline, scroll CTA
-  2. **How I help** — positioning intro + two engagement modes (accordions)
+  2. **How I help** — positioning intro + three engagement modes (accordions)
   3. **Where things usually start** — sticky card stack with custom illustrations
   4. **How I work** — ownership intro + three principles with icons
   5. ~~**Selected work**~~ — hidden, content on `selected-work` branch
@@ -103,6 +106,16 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
   8. **Contact** — intro + Calendly, LinkedIn, email (no form)
 
 ## Tiziano Sessions
+
+### Session 4 — pending (briefed 2026-04-29)
+
+How I help — engagement modes restructured to three shapes.
+
+**Brief in ADR-003.** Two tasks:
+1. Copy pass on **Concept Sprint** (renamed from current Visioning Project) — tone should carry the sprint quality: compression, intensity, urgency toward convergence. Current subtitle and body are the starting point.
+2. Full copy pass on **Visioning Project** (new, futures/foresight engagement) — content direction, subtitle, and body draft all in ADR-003. Voice and rhythm need a full pass.
+
+---
 
 ### Session 3 — 2026-04-28
 
