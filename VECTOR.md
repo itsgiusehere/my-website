@@ -70,15 +70,15 @@ Visiting design leaders and CPOs can quickly assess whether Giuseppe's way of wo
 
 | Section | Copy | Component | Notes |
 |---------|------|-----------|-------|
-| Hero | Tiziano pass done (2026-04-14) | Done | Profile picture, headline, subheadline rewritten for voice (see ADR-001). Scroll CTA. Responsive: done. **Pending Bulk: wire new copy into Hero.jsx.** |
+| Hero | Giuseppe approved (2026-06-22) | Done | Headline updated: "north star teams can build toward." Subheadline trimmed ("frame a digital product…"). Availability pill added: pulsing green dot + "AVAILABLE FREELANCE IN Q3 2026", positioned above illustration. Nav name changed to "Giuseppe de Cesare". Hamburger breakpoint moved to 1024px. Illustration responsive progression fixed: 18rem → 14rem → 12rem. Hero layout anchored top (flex-start). **Bulk: done 2026-06-22.** |
 | How I help | Tiziano pass done (2026-04-29) | Done | Three engagement shapes: Concept Sprint + Visioning Project + Embedded partnership (see ADR-003). Section intro updated to "three shapes". Concept Sprint wired (id: concept-sprint, lavender, new body). Visioning Project added as new entry (id: visioning, teal, 3–6 months). Embedded partnership unchanged. Illustration map updated. **Bulk: done 2026-04-29.** |
-| Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start". Cards trimmed (consultancy language, em dashes, prescriptions removed). **Pending Bulk: update label in `TheProblem.jsx`, update card data in `core/content.js`.** |
-| How I work | Tiziano pass done (2026-04-17) | Needs rebuild | Intro rewritten. Principles 1–3 tightened. Two new principles added (4: Progress happens through people, 5: Your problem becomes my problem). **Pending Bulk: expand `Principles.jsx` from 3 to 5 cards, new SVG icons for 4+5, review grid layout.** |
+| Challenges I help leaders with | Tiziano pass done (2026-04-17) | Done | Section label → "Where things usually start" wired in `TheProblem.jsx`. Card data updated in `core/content.js`. **Bulk: done 2026-06-22.** |
+| How I work | Tiziano pass done (2026-04-17) | Done | 5 principles in `Principles.jsx`. SVG icons for all 5. Intro rewritten. **Bulk: done 2026-06-22.** |
 | Selected Work | Hidden | Draft | Commented out in App.jsx. Content on `selected-work` branch. |
-| What clients say | Tiziano pass done (2026-04-17) | Done | Selection finalised: 6 testimonials. Rachel Hill (featured), Samta, Simon Allen (visible), Gerrit, Dietrich, Denis W. (behind Show more). **Pending Bulk: add Rachel H. + Denis W. to `core/content.js`, remove Maria/Simon Cross/Samantha, reorder array. Update all names to first name + last initial. Giuseppe to provide profile photos for all six.** |
-| About me | Tiziano pass done (2026-04-17) | Done | Full rewrite. Coaching session + room image + coherence through-line + beauty/nature. **Pending Bulk: wire new copy into `About.jsx`, consider room illustration as visual, drop old headline.** |
+| What clients say | Tiziano pass done (2026-04-17) | Done | 6 testimonials: Rachel H. (featured), Samta K., Simon A., Gerrit E., Dietrich P., Denis W. All photos wired. Names in first name + last initial format. **Bulk: done 2026-06-22.** |
+| About me | Tiziano pass done (2026-04-17) | Done | Coaching session + room image + coherence through-line wired in `About.jsx`. Old headline dropped. **Bulk: done 2026-06-22.** |
 | Contact | Reviewed | Done | Serif display intro, Book a chat (real Calendly URL), Connect on LinkedIn, email. No form. Beige bg. Double bottom padding. Section divider. Responsive: done. |
-| Nav | Reviewed | Done | Links: "How I help", "Testimonials", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
+| Nav | Reviewed | Done | Links: "How I help", "Testimonials", "How I work", "About me", "Get in touch". Responsive: done. Mobile: hamburger drawer. |
 
 ## Key Assumptions (Seed These Early)
 
@@ -184,6 +184,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 ## Pre-Launch Todos
 
 **Launch definition:** silent publish — site publicly reachable, URL not shared anywhere at launch.
+**Public launch: 2026-06-22.** robots.txt opened (`Allow: /`). Site is live and indexable.
 
 **MUST (blocks launch):**
 - [x] **Self-host fonts (GDPR)**: Cardo + DM Sans self-hosted as woff2 in `src/assets/fonts/`. Google Fonts links removed.
@@ -200,6 +201,11 @@ The Problem section has been rewritten with three differentiated use cases. The 
 **SHOULD / COULD:**
 - [ ] **iPad responsive**: review iPad portrait and landscape viewports
 - [ ] **SEO + LLM discoverability**: optimise copy and implementation for search engines and LLMs
+  - [x] Fix stale meta description — updated to match new hero copy (2026-06-22)
+  - [x] Add canonical URL — `<link rel="canonical">` wired in index.html (2026-06-22)
+  - [x] Add sitemap.xml — single-page sitemap at `src/public/sitemap.xml` (2026-06-22)
+  - [x] Add JSON-LD Person schema — wired in index.html (2026-06-22)
+  - [x] Open Graph tags — og:title, og:description, og:url, og:type wired (2026-06-22); **og:image pending** (Giuseppe to provide 1200×630 image)
 - [ ] **Principles illustrations** *(optional)*: create illustrations for the principles
 - [ ] **Social preview**: create OG/meta preview for social networks
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
@@ -209,7 +215,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [x] **Problem → How I Help spacing**: dynamic JS scroll region sizing based on frame/card height
 
 **Public launch (after silent publish):**
-- [ ] **Open robots.txt**: change `Disallow: /` to `Allow: /` in `src/public/robots.txt` so search engines can index the site
+- [x] **Open robots.txt**: changed `Disallow: /` to `Allow: /` in `src/public/robots.txt` — done 2026-06-22.
 
 **Post-launch:**
 - [x] **Enrich How I Work section**: all four raw themes absorbed into two new principles (2026-04-17). Themes 1+2 → "Progress happens through people." Themes 3+4 → "Your problem becomes my problem." See `vector/content/tiziano-session-2026-04-14.md`.

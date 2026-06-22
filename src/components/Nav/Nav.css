@@ -198,15 +198,8 @@ body.bg-white .nav-drawer {
   display: none;
 }
 
-/* ─── Tablet: tighten link spacing ─── */
+/* ─── Tablet and below: swap to hamburger ─── */
 @media (max-width: 1024px) {
-  .nav-links {
-    gap: var(--space-lg);
-  }
-}
-
-/* ─── Mobile: swap to hamburger ─── */
-@media (max-width: 768px) {
   .nav-links {
     display: none;
   }

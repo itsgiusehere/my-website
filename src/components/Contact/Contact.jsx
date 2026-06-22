@@ -27,7 +27,7 @@ export default function Contact() {
               Book a chat
             </a>
             <a
-              href="https://linkedin.com/in/giuseppedecesare"
+              href="https://www.linkedin.com/in/giusedecesare/"
               className="contact-link"
               target="_blank"
               rel="noopener noreferrer"
