@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: flex-start;
-  padding-top: calc(var(--nav-height) + var(--space-xxl));
+  justify-content: center;
+  padding-top: var(--nav-height);
   padding-bottom: var(--space-3xl);
   position: relative;
 }
@@ -165,7 +165,7 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh;
-    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-top: var(--nav-height);
     padding-bottom: var(--space-3xl);
   }
 
