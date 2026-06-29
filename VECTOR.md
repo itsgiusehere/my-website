@@ -210,6 +210,7 @@ The Problem section has been rewritten with three differentiated use cases. The 
 - [ ] **Social preview**: create OG/meta preview for social networks
 - [ ] **CV link in bio**: add link to CV/resume in the About me section
 - [ ] **Client logo strip**: add rotating/scrolling strip of client logos in Hero section (Giuseppe to provide logos)
+- [ ] **Migrate to SSG**: site is currently client-side React (CSR). Googlebot indexes it eventually but with a crawl delay; social unfurlers (LinkedIn, Slack, WhatsApp) get no body content. Consider migrating to static generation (Astro or vite-plugin-ssr) so full HTML is in the initial response. Low urgency now; worth revisiting if organic search becomes a priority.
 
 **Done:**
 - [x] **Problem → How I Help spacing**: dynamic JS scroll region sizing based on frame/card height
